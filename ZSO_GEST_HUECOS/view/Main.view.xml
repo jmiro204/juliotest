@@ -1,0 +1,122 @@
+<mvc:View controllerName="inetum.ZSO_GEST_HUECOS.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+	xmlns:f="sap.f" xmlns:core="sap.ui.core" xmlns:fb="sap.ui.comp.filterbar" xmlns:l="sap.ui.layout">
+	<Shell id="shell" appWidthLimited="false">
+		<App id="app">
+			<pages>
+				<Page id="pageID" showHeader="false">
+					<content>
+						<HBox width="100%" class="customBoxInput">
+							<MultiInput showValueHelp="true" value="{modelFilter>/grupArti}" liveChange="onSearchLive" submit="onSubmitGrArt"
+								placeholder="{i18n>seleccionSec}" valueHelpRequest="handleValueHelpGrupArti" id="INGrArti2" valueHelpOnly="false" tokenUpdate="onSearchLive"
+								width="{= ${device>/system/phone} ? '100%' : '15em'}"/>
+						</HBox>
+						<Table id="tablePrincipal" mode="SingleSelectMaster" width="auto" fixedLayout="false" growingThreshold="7"
+							items="{ path:'huecos_Model>/ProductSet', events: { dataReceived: '.onCountriesReceived' } }" sticky="ColumnHeaders,HeaderToolbar"
+							inset="false" growing="true">
+							<headerToolbar>
+								<OverflowToolbar>
+									<Image id="imgInetum" src="" width="6em"/>
+									<Text id="numberOfItemsText" text="" textAlign="Begin"/>
+									<Button icon="sap-icon://bar-code" id="customScan" press="openScan" type="Accept"/>
+									<ToolbarSeparator/>
+									<ToolbarSpacer/>
+									<Button icon="sap-icon://excel-attachment" press="exportExcel" tooltip="{i18n>exportExcel}"/>
+									<Button id="toggleButton" icon="sap-icon://show" press="onToggleColumnsVisibility" visible="false"/>
+								</OverflowToolbar>
+							</headerToolbar>
+							<items>
+								<ColumnListItem vAlign="Middle" type="Navigation" press="onAdjust">
+									<cells>
+										<Text text="{huecos_Model>Matnr}" wrapping="true" textAlign="Begin"/>
+										<Text text="{huecos_Model>Marca}" wrapping="true" textAlign="Begin"/>
+										<Text text="{huecos_Model>Descripcion}" wrapping="true" textAlign="Begin"/>
+										<Text text="{path: 'huecos_Model>Stock', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 0 } }" wrapping="true"
+											textAlign="Begin"/>
+										<Text text="{path: 'huecos_Model>UltVenta' , type: 'sap.ui.model.type.Date' , formatOptions: { pattern: 'dd/MM/yyyy'}}" wrapping="true"
+											textAlign="Begin"/>
+										<Text text="{path: 'huecos_Model>UltEm' , type: 'sap.ui.model.type.Date' , formatOptions: { pattern: 'dd/MM/yyyy'}}" wrapping="true"
+											textAlign="Begin"/>
+										<Text text="{path: 'huecos_Model>UltInv' , type: 'sap.ui.model.type.Date' , formatOptions: { pattern: 'dd/MM/yyyy'}}" wrapping="true"
+											textAlign="Begin"/>
+										<Text text="{huecos_Model>Mtarttext} ({huecos_Model>Mtart})" wrapping="true" textAlign="Begin"/>
+										<Text text="{huecos_Model>Matkl}" wrapping="true" textAlign="Begin"/>
+										<Text text="{huecos_Model>Cantidad}" wrapping="true" textAlign="Begin"/>
+										<Text text="{huecos_Model>Unidad}" wrapping="true" textAlign="Begin"/>
+										<HBox justifyContent="Center" alignItems="Center">
+											<Button icon="sap-icon://simulate" type="Transparent" tooltip="{i18n>Contar}" press="onContarRow"/>
+											<Button icon="sap-icon://edit" type="Transparent" tooltip="{i18n>Ajustar}" press="onAjustarRow"/>
+											<Button icon="sap-icon://delete" type="Transparent" tooltip="{i18n>Borrar}" press="onDeleteRow"/>
+										</HBox>
+									</cells>
+								</ColumnListItem>
+							</items>
+							<columns >
+								<Column id="Articulo" hAlign="Initial" demandPopin="false" width="auto" vAlign="Middle">
+									<header>
+										<Label text="{i18n>articulo}" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+								<Column id="Marca" hAlign="Initial" demandPopin="false" width="auto" vAlign="Middle" minScreenWidth="Tablet">
+									<header>
+										<Label text="{i18n>marca}" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+								<Column id="Descripcion" hAlign="Initial" demandPopin="false" width="auto" vAlign="Middle">
+									<header>
+										<Label text="{i18n>descripcion}" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+								<Column id="canStock" hAlign="Initial" demandPopin="true" minScreenWidth="Tablet" width="auto" vAlign="Middle">
+									<header>
+										<Label text="{i18n>cantStock}" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+								<Column id="ultVenta" hAlign="Initial" demandPopin="false" width="auto" vAlign="Middle" minScreenWidth="Tablet">
+									<header>
+										<Label text="{i18n>ultVenta}" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+								<Column id="ultEntradaMercancias" hAlign="Initial" demandPopin="false" width="auto" vAlign="Middle" minScreenWidth="Tablet">
+									<header>
+										<Label text="{i18n>ultEntradaMercancias}" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+								<Column id="ultInventario" hAlign="Initial" demandPopin="false" width="auto" vAlign="Middle" minScreenWidth="Tablet">
+									<header>
+										<Label text="{i18n>ultInventario}" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+								<Column id="Sec" hAlign="Initial" demandPopin="false" width="auto" vAlign="Middle" minScreenWidth="Tablet">
+									<header>
+										<Label text="{i18n>Sec}" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+								<Column id="groupArtic" hAlign="Initial" demandPopin="false" width="auto" vAlign="Middle" minScreenWidth="Tablet">
+									<header>
+										<Label text="{i18n>GrupoArticulo}" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+								<Column id="cantidadArtic" hAlign="Initial" demandPopin="true" minScreenWidth="Tablet" width="auto" vAlign="Middle">
+									<header>
+										<Label text="{i18n>CantidadContada}" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+								<Column id="unidadArtic" hAlign="Initial" demandPopin="false" width="auto" vAlign="Middle" minScreenWidth="Tablet">
+									<header>
+										<Label text="{i18n>Unidad}" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+								<Column id="colAcciones" hAlign="Initial" demandPopin="true" minScreenWidth="Tablet" width="auto" vAlign="Middle"
+									popinDisplay="WithoutHeader">
+									<header>
+										<Label text="" textAlign="Center" wrapping="true"/>
+									</header>
+								</Column>
+							</columns>
+						</Table>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

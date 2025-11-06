@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<SelectDialog noDataText="{i18n>noGrupArti}" title="{i18n>seleccionGrupArti}" search="handleSearchGrupArti" id="valueHelpGrupArti"
+		confirm="handleHelpConfirmGrupArti" cancel="handleHelpCloseGrupArti" items="{path:'stock_Model>/ProductsFamilySet' }" multiSelect="true"
+		class="sapUiPopupWithPadding" rememberSelections="false">
+		<StandardListItem title="{stock_Model>Familia}" description="{stock_Model>Descripcion}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

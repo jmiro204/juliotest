@@ -1,0 +1,46 @@
+<core:FragmentDefinition 
+xmlns="sap.m"
+xmlns:core="sap.ui.core"
+xmlns:ui="sap.ui.table"
+xmlns:l="sap.ui.layout"
+xmlns:u="sap.ui.unified"
+xmlns:f="sap.ui.layout.form">
+	<Dialog icon="sap-icon://bar-code" contentWidth="auto" contentHeight="auto" resizable="false" draggable="false"
+		class="sapUiResponsiveMargin">
+		<content>
+			<f:SimpleForm
+				editable="true"
+				layout="ResponsiveGridLayout"
+				labelSpanL="4"
+				labelSpanM="4"
+				emptySpanL="0"
+				emptySpanM="0"
+				width="100%">
+				<f:content>
+					<Label text="{i18n>Material}" />
+					<Text text="{scanModel>/Maktg} - {scanModel>/Matnr}" />
+
+					<Label text="{i18n>Stock}" />
+					<Text text="{scanModel>/Stock}" />
+
+					<Label text="{i18n>CantidadContada}" />
+					<Input value="{scanModel>/Cantidad}" type="Number"/>
+
+					<Label text="{i18n>UnidadMedidaBase}" />
+					<Text text="{scanModel>/Meins}" />
+
+					<Label text="{i18n>EAN}" />
+					<Input id="inputEan"
+						placeholder="{i18n>IntCod}"
+						liveChange="liveChangeScan"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<beginButton >
+			<Button press="confirmCustomScan" text="{i18n>OK}"/>
+		</beginButton>
+		<endButton >
+			<Button press="closeCustomScan" text="{i18n>Cerrar}"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

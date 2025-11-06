@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<SelectDialog noDataText="{i18n>noCentro}" title="{i18n>seleccionCentro}" search="handleSearchCentro" id="valueHelpCentro"
+		confirm="handleHelpConfirmCentro" cancel="handleHelpCloseCentro" items="{path:'mainModel>/I_MatlDocPlantVH' }" multiSelect="true"
+		class="sapUiPopupWithPadding" rememberSelections="true">
+		<StandardListItem title="{mainModel>Plant}" description="{mainModel>PlantName}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,1463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-s2aa57004.dispatcher.eu3.hana.ondemand.com/destinations/PrimaPixs/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s2aa57004.dispatcher.eu3.hana.ondemand.com/destinations/PrimaPixs/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s2aa57004.dispatcher.eu3.hana.ondemand.com/destinations/PrimaPixs/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s2aa57004.dispatcher.eu3.hana.ondemand.com/destinations/PrimaPixs/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s2aa57004.dispatcher.eu3.hana.ondemand.com/destinations/PrimaPixs/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s2aa57004.dispatcher.eu3.hana.ondemand.com/destinations/PrimaPixs/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s2aa57004.dispatcher.eu3.hana.ondemand.com/destinations/PrimaPixs/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s2aa57004.dispatcher.eu3.hana.ondemand.com/destinations/PrimaPixs/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/></edmx:Reference>
+	<edmx:Reference
+		Uri="https://webidecp-s2aa57004.dispatcher.eu3.hana.ondemand.com/destinations/PrimaPixs/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="MMIM_SLOWORNONMOVINGMATERIAL_SRV" xml:lang="es" sap:schema-version="1"
+			xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="C_SlowOrNonMovingMatlOPgResult" sap:semantics="aggregate"
+				sap:label="PÃ¡gina de objeto de materiales lentos o sin movimiento" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CnsmpnLatestPostgDate_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="InventorySpecialStockType_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="InventoryStockType_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MatlDocLatestPostgDate_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SpecialStockIdfgSalesOrder_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SpecialStockIdfgSalesOrderItem_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SpecialStockIdfgStockOwner_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SpecialStockIdfgSupplier_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Material" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:text="MaterialName" sap:label="Material" sap:quickinfo="NÃºmero de material"/><Property Name="Plant" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:text="PlantName"
+					sap:label="Centro"/><Property Name="StockIdentifyingBatch" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="SID de lote" sap:quickinfo="NÃºmero de lote (identificador de stock)"/><Property Name="SpecialStockIdfgSupplier" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="SpecialStockIdfgSupplier_fc" sap:label="ID stock prov." sap:quickinfo="Proveedor de stock especial"/><Property Name="SpecialStockIdfgSalesOrder" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="SpecialStockIdfgSalesOrder_fc" sap:label="Pedido de cliente"
+					sap:quickinfo="NÃºmero pedido cliente de stock para pedido cliente valorado"/><Property Name="SpecialStockIdfgSalesOrderItem" Type="Edm.String" MaxLength="6" sap:aggregation-role="dimension"
+					sap:display-format="NonNegative" sap:field-control="SpecialStockIdfgSalesOrderItem_fc" sap:label="Pos.pedido cliente"
+					sap:quickinfo="PosiciÃ³n pedido cliente de stock p.pedido cliente valorado"/><Property Name="SpecialStockIdfgCustomer" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="ID stock cliente" sap:quickinfo="Cliente para stock especial"/><Property Name="SpecialStockIdfgStockOwner" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="SpecialStockIdfgStockOwner_fc" sap:label="Proveedor adicional para stock especial"/><Property Name="InventorySpecialStockType" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="InventorySpecialStockType_fc" sap:label="Tipo de stocks especial"/><Property Name="InventoryStockType" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="InventoryStockType_fc" sap:label="Tipo de stock"
+					sap:quickinfo="Tipo stock de movimiento de mercancÃ­as (identificador stock)"/><Property Name="MaterialBaseUnit" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Unidad medida base"
+					sap:quickinfo="Unidad de medida base" sap:semantics="unit-of-measure"/><Property Name="MatlWrhsStkQtyInMatlBaseUnit" Type="Edm.Decimal" Precision="17" Scale="3" sap:aggregation-role="measure"
+					sap:unit="MaterialBaseUnit" sap:label="Cantidad de stocks" sap:quickinfo="Cantidad de stocks en unidad de medida base"
+					sap:filterable="false"/><Property Name="StockValueInCCCrcy" Type="Edm.Decimal" Precision="18" Scale="3" sap:aggregation-role="measure" sap:unit="Currency"
+					sap:label="Valor de stock en moneda de sociedad" sap:filterable="false"/><Property Name="StockValueInDisplayCurrency" Type="Edm.Decimal" Precision="18" Scale="3" sap:aggregation-role="measure"
+					sap:unit="DisplayCurrency" sap:label="Valor de stocks" sap:quickinfo="Valor de stock en moneda de visualizaciÃ³n" sap:filterable="false"/><Property Name="CnsmpnLatestPostgDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="measure" sap:display-format="Date"
+					sap:field-control="CnsmpnLatestPostgDate_fc" sap:label="Ãšltimo consumo" sap:quickinfo="Fecha de Ãºltima contabilizaciÃ³n de consumo"/><Property Name="MatlDocLatestPostgDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="measure" sap:display-format="Date"
+					sap:field-control="MatlDocLatestPostgDate_fc" sap:label="Ãšltima contab." sap:quickinfo="Fecha de la Ãºltima contabilizaciÃ³n"/><Property Name="NumberOfDaysSinceLastCnsmpn" Type="Edm.Int32" sap:aggregation-role="measure" sap:label="DÃ­as sin consumo"
+					sap:quickinfo="Cantidad de dÃ­as desde Ãºltima contabilizaciÃ³n de consumo"/><Property Name="NumberOfDaysSinceLastMovement" Type="Edm.Int32" sap:aggregation-role="measure" sap:label="DÃ­as sin contabiliz."
+					sap:quickinfo="Cantidad de dÃ­as desde Ãºltima contabilizaciÃ³n"/><Property Name="Currency" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:label="Moneda"
+					sap:quickinfo="Clave de moneda" sap:semantics="currency-code"/><Property Name="DisplayCurrency" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:label="Moneda visualizaciÃ³n"
+					sap:quickinfo="Moneda de visualizaciÃ³n" sap:semantics="currency-code"/><Property Name="MaterialGroup" Type="Edm.String" MaxLength="9" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:text="MaterialGroupName" sap:label="Grupo de artÃ­culos"/><Property Name="MaterialGroupName" Type="Edm.String" MaxLength="20" sap:label="DescripciÃ³n del grupo de artÃ­culos"/><Property Name="MaterialType" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:text="MaterialTypeName" sap:label="Tipo material" sap:quickinfo="Tipo de material"/><Property Name="MaterialTypeName" Type="Edm.String" MaxLength="25" sap:label="DescripciÃ³n del tipo de material"/><Property Name="MaterialName" Type="Edm.String" MaxLength="40" sap:label="Texto breve material" sap:quickinfo="Texto breve de material"/><Property Name="PlantName" Type="Edm.String" MaxLength="30" sap:label="Nombre de centro"/><Property Name="CnsmpnQtyInBaseUnitOnRefDate" Type="Edm.Decimal" Precision="31" Scale="3" sap:aggregation-role="measure"
+					sap:unit="MaterialBaseUnit" sap:label="Cantidad de consumo" sap:quickinfo="Cantidad de consumo en unidad de medida base"
+					sap:filterable="false"/><Property Name="ConsumptionToStockRatio" Type="Edm.Decimal" Precision="31" Scale="2" sap:aggregation-role="measure"
+					sap:label="Indicador de baja rotaciÃ³n" sap:quickinfo="Ratio normalizado de volumen de consumo y cantidad de stocks"/><Property Name="NumberOfBOMUsingTheMaterial" Type="Edm.Int32" sap:aggregation-role="measure" sap:label="Utilizado en LMat"
+					sap:quickinfo="Cantidad de LMat en las que material se usa como componente"/><Property Name="KeyDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date"
+					sap:label="Fecha de referencia" sap:quickinfo="Fecha de referencia p.anÃ¡lisis de stocks"/><Property Name="NumberOfDays" Type="Edm.Int32" sap:aggregation-role="dimension" sap:label="DÃ­as con bajo consumo"
+					sap:quickinfo="Cantidad de dÃ­as con bajo consumo"/><NavigationProperty Name="to_Currency" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_ABED319AA51A7F3F65FA41394BB16A17"
+					FromRole="FromRole_assoc_ABED319AA51A7F3F65FA41394BB16A17" ToRole="ToRole_assoc_ABED319AA51A7F3F65FA41394BB16A17"/><NavigationProperty Name="Parameters" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_DD53057AC4F144C157FA1CAD761CA6A6"
+					FromRole="ToRole_assoc_DD53057AC4F144C157FA1CAD761CA6A6" ToRole="FromRole_assoc_DD53057AC4F144C157FA1CAD761CA6A6" sap:filterable="false"/></EntityType>
+			<EntityType Name="C_SlowOrNonMovingMatlOPgParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="P_NumberOfDays"/><PropertyRef Name="P_KeyDate"/><PropertyRef Name="P_DisplayCurrency"/><PropertyRef Name="P_InventoryConsumptionGroup"/></Key><Property Name="P_NumberOfDays" Type="Edm.Int32" Nullable="false" sap:parameter="mandatory" sap:label="DÃ­as con bajo consumo"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="P_KeyDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory"
+					sap:label="Fecha de referencia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="P_DisplayCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:parameter="mandatory"
+					sap:label="Moneda visualizaciÃ³n" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"
+					sap:value-list="standard" sap:semantics="currency-code"/><Property Name="P_InventoryConsumptionGroup" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative"
+					sap:parameter="mandatory" sap:label="Grupo de consumo de inventario" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" sap:value-list="fixed-values"/><NavigationProperty Name="Results" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_DD53057AC4F144C157FA1CAD761CA6A6"
+					FromRole="FromRole_assoc_DD53057AC4F144C157FA1CAD761CA6A6" ToRole="ToRole_assoc_DD53057AC4F144C157FA1CAD761CA6A6"/></EntityType>
+			<EntityType Name="C_SlowOrNonMovingMatlOPgHdrType" sap:label="SlowNonMvgMaterial: Cabecera de pÃ¡gina de objeto" sap:content-version="1">
+				<Key><PropertyRef Name="P_DisplayCurrency"/><PropertyRef Name="P_KeyDate"/><PropertyRef Name="P_NumberOfDays"/><PropertyRef Name="P_InventoryConsumptionGroup"/><PropertyRef Name="Material"/><PropertyRef Name="Plant"/></Key><Property Name="P_DisplayCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Moneda visualizaciÃ³n"
+					sap:semantics="currency-code"/><Property Name="P_KeyDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Fecha natural"/><Property Name="P_NumberOfDays" Type="Edm.Int32" Nullable="false" sap:label="NÃºmero natural"/><Property Name="P_InventoryConsumptionGroup" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative"
+					sap:label="Grupo de consumo de inventario"/><Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:text="MaterialName"
+					sap:label="Material" sap:quickinfo="NÃºmero de material"/><Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="PlantName"
+					sap:label="Centro"/><Property Name="MaterialBaseUnit" Type="Edm.String" MaxLength="3" sap:label="Unidad medida base" sap:quickinfo="Unidad de medida base"
+					sap:semantics="unit-of-measure"/><Property Name="MatlWrhsStkQtyInMatlBaseUnit" Type="Edm.Decimal" Precision="17" Scale="3" sap:unit="MaterialBaseUnit"
+					sap:label="Cantidad de stocks" sap:quickinfo="Cantidad de stocks en unidad de medida base"/><Property Name="StockValueInCCCrcy" Type="Edm.Decimal" Precision="18" Scale="3" sap:unit="Currency"
+					sap:label="Valor de stock en moneda de sociedad"/><Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Moneda" sap:quickinfo="Clave de moneda" sap:semantics="currency-code"/><Property Name="DisplayCurrency" Type="Edm.String" MaxLength="5" sap:label="Moneda visualizaciÃ³n" sap:quickinfo="Moneda de visualizaciÃ³n"
+					sap:semantics="currency-code"/><Property Name="StockValueInDisplayCurrency" Type="Edm.Decimal" Precision="18" Scale="3" sap:unit="DisplayCurrency"
+					sap:label="Valor de stocks" sap:quickinfo="Valor de stock en moneda de visualizaciÃ³n"/><Property Name="CnsmpnLatestPostgDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Ãšltimo consumo"
+					sap:quickinfo="Fecha de Ãºltima contabilizaciÃ³n de consumo"/><Property Name="MatlDocLatestPostgDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Ãšltima contab."
+					sap:quickinfo="Fecha de la Ãºltima contabilizaciÃ³n"/><Property Name="NumberOfDaysSinceLastCnsmpn" Type="Edm.Int32" sap:label="DÃ­as sin consumo"
+					sap:quickinfo="Cantidad de dÃ­as desde Ãºltima contabilizaciÃ³n de consumo"/><Property Name="NumberOfDaysSinceLastMovement" Type="Edm.Int32" sap:label="DÃ­as sin contabiliz."
+					sap:quickinfo="Cantidad de dÃ­as desde Ãºltima contabilizaciÃ³n"/><Property Name="NumberOfDaysSinceFirstMovement" Type="Edm.Int32" sap:label="DÃ­as sin contabiliz."
+					sap:quickinfo="NÃºmero de dÃ­as desde la primera contabilizaciÃ³n"/><Property Name="CnsmpnQtyInBaseUnitOnRefDate" Type="Edm.Decimal" Precision="31" Scale="3" sap:unit="MaterialBaseUnit"
+					sap:label="Cantidad de consumo" sap:quickinfo="Cantidad de consumo en unidad de medida base"/><Property Name="ConsumptionToStockRatio" Type="Edm.Decimal" Precision="31" Scale="2" sap:label="Indicador de baja rotaciÃ³n"
+					sap:quickinfo="Ratio normalizado de volumen de consumo y cantidad de stocks"/><Property Name="KeyDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Fecha de referencia"
+					sap:quickinfo="Fecha de referencia p.anÃ¡lisis de stocks"/><Property Name="NumberOfDays" Type="Edm.Int32" sap:label="DÃ­as con bajo consumo" sap:quickinfo="Cantidad de dÃ­as con bajo consumo"/><Property Name="MaterialGroup" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase" sap:text="MaterialGroupName"
+					sap:label="Grupo de artÃ­culos"/><Property Name="MaterialGroupName" Type="Edm.String" MaxLength="20" sap:label="Denom.gr-artÃ­culos"
+					sap:quickinfo="DenominaciÃ³n del grupo de artÃ­culos"/><Property Name="MaterialType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="MaterialTypeName"
+					sap:label="Tipo material" sap:quickinfo="Tipo de material"/><Property Name="MaterialTypeName" Type="Edm.String" MaxLength="25" sap:label="Descrip.tp.material"
+					sap:quickinfo="DenominaciÃ³n del tipo de material"/><Property Name="MaterialName" Type="Edm.String" MaxLength="40" sap:label="Texto breve material" sap:quickinfo="Texto breve de material"/><Property Name="PlantName" Type="Edm.String" MaxLength="30" sap:label="Nombre de centro"/><NavigationProperty Name="Parameters" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_B10FED797F7F043694553E5087E16DFE"
+					FromRole="ToRole_assoc_B10FED797F7F043694553E5087E16DFE" ToRole="FromRole_assoc_B10FED797F7F043694553E5087E16DFE" sap:filterable="false"/></EntityType>
+			<EntityType Name="C_SlowOrNonMovingMatlOPgHdrParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="P_DisplayCurrency"/><PropertyRef Name="P_KeyDate"/><PropertyRef Name="P_NumberOfDays"/><PropertyRef Name="P_InventoryConsumptionGroup"/></Key><Property Name="P_DisplayCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:parameter="mandatory"
+					sap:label="Moneda visualizaciÃ³n" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"
+					sap:semantics="currency-code"/><Property Name="P_KeyDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory"
+					sap:label="Fecha natural" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="P_NumberOfDays" Type="Edm.Int32" Nullable="false" sap:parameter="mandatory" sap:label="NÃºmero natural" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="P_InventoryConsumptionGroup" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative"
+					sap:parameter="mandatory" sap:label="Grupo de consumo de inventario" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><NavigationProperty Name="Set" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_B10FED797F7F043694553E5087E16DFE"
+					FromRole="FromRole_assoc_B10FED797F7F043694553E5087E16DFE" ToRole="ToRole_assoc_B10FED797F7F043694553E5087E16DFE"/></EntityType>
+			<EntityType Name="C_SlowOrNonMovingMatlPredictedResult" sap:semantics="aggregate" sap:label="PredicciÃ³n de materiales de baja rotaciÃ³n"
+				sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="YearPeriod" Type="Edm.String" MaxLength="6" sap:aggregation-role="dimension"/><Property Name="Material" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Material stock" sap:quickinfo="Material en base al cual se gestiona el stock"/><Property Name="Plant" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Centro"/><Property Name="MaterialBaseUnit" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Unidad medida base"
+					sap:quickinfo="Unidad de medida base" sap:semantics="unit-of-measure"/><Property Name="StartDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date"/><Property Name="EndDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date"/><Property Name="MatlWrhsStkQtyInMatlBaseUnit" Type="Edm.Decimal" Precision="31" Scale="14" sap:aggregation-role="measure"
+					sap:unit="MaterialBaseUnit" sap:filterable="false"/><Property Name="CnsmpnQtyInBaseUnitOnRefDate" Type="Edm.Decimal" Precision="31" Scale="14" sap:aggregation-role="measure"
+					sap:unit="MaterialBaseUnit" sap:filterable="false"/><Property Name="ConsumptionToStockRatio" Type="Edm.Decimal" Precision="31" Scale="2" sap:aggregation-role="measure"
+					sap:label="Indicador de baja rotaciÃ³n" sap:quickinfo="Ratio normalizado de volumen de consumo y cantidad de stocks" sap:filterable="false"/><NavigationProperty Name="Parameters" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_24D8B9975DAA44BC9D0E129B95889160"
+					FromRole="ToRole_assoc_24D8B9975DAA44BC9D0E129B95889160" ToRole="FromRole_assoc_24D8B9975DAA44BC9D0E129B95889160" sap:filterable="false"/></EntityType>
+			<EntityType Name="C_SlowOrNonMovingMatlPredictedParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="P_KeyDate"/><PropertyRef Name="P_InventoryConsumptionGroup"/></Key><Property Name="P_KeyDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory"
+					sap:label="Fecha de referencia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="P_InventoryConsumptionGroup" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative"
+					sap:parameter="mandatory" sap:label="Grupo de consumo de inventario" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><NavigationProperty Name="Results" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_24D8B9975DAA44BC9D0E129B95889160"
+					FromRole="FromRole_assoc_24D8B9975DAA44BC9D0E129B95889160" ToRole="ToRole_assoc_24D8B9975DAA44BC9D0E129B95889160"/></EntityType>
+			<EntityType Name="C_SlowOrNonMovingMatlQryResult" sap:semantics="aggregate" sap:label="Consulta de materiales de baja rotaciÃ³n"
+				sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CnsmpnLatestPostgDate_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="InventorySpecialStockType_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="InventoryStockType_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MaterialGroup_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MaterialType_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MatlDocLatestPostgDate_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SpecialStockIdfgCustomer_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SpecialStockIdfgSalesOrder_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SpecialStockIdfgSalesOrderItem_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SpecialStockIdfgStockOwner_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SpecialStockIdfgSupplier_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="StorageLocation_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="WBSElementExternalID_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Material" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:text="MaterialName" sap:label="Material" sap:quickinfo="NÃºmero de material" sap:value-list="standard"/><Property Name="Plant" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:text="PlantName"
+					sap:label="Centro" sap:value-list="standard"/><Property Name="StorageLocation" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="StorageLocation_fc" sap:text="StorageLocationName" sap:label="AlmacÃ©n" sap:value-list="standard"/><Property Name="StockIdentifyingBatch" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Lote" sap:quickinfo="NÃºmero de lote (identificador de stock)"/><Property Name="SpecialStockIdfgSupplier" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="SpecialStockIdfgSupplier_fc" sap:label="Proveedor" sap:quickinfo="Proveedor de stock especial" sap:value-list="standard"/><Property Name="SpecialStockIdfgSalesOrder" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="SpecialStockIdfgSalesOrder_fc" sap:label="Pedido de cliente"
+					sap:quickinfo="NÃºmero pedido cliente de stock para pedido cliente valorado" sap:value-list="standard"/><Property Name="SpecialStockIdfgSalesOrderItem" Type="Edm.String" MaxLength="6" sap:aggregation-role="dimension"
+					sap:display-format="NonNegative" sap:field-control="SpecialStockIdfgSalesOrderItem_fc" sap:label="PosiciÃ³n de pedido de cliente"
+					sap:quickinfo="PosiciÃ³n pedido cliente de stock p.pedido cliente valorado" sap:value-list="standard"/><Property Name="SpecialStockIdfgWBSElement" Type="Edm.String" MaxLength="24" sap:aggregation-role="dimension"
+					sap:display-format="NonNegative" sap:label="Elemento PEP" sap:quickinfo="Elemento PEP del stock para pedido de cliente valorado"/><Property Name="SpecialStockIdfgCustomer" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="SpecialStockIdfgCustomer_fc" sap:label="Cliente" sap:quickinfo="Cliente para stock especial" sap:value-list="standard"/><Property Name="SpecialStockIdfgStockOwner" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="SpecialStockIdfgStockOwner_fc" sap:label="Proveedor adicional para stock especial" sap:value-list="standard"/><Property Name="InventorySpecialStockType" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="InventorySpecialStockType_fc" sap:label="Tipo de stocks especial" sap:value-list="standard"/><Property Name="InventoryStockType" Type="Edm.String" MaxLength="2" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="InventoryStockType_fc" sap:label="Tipo de stock"
+					sap:quickinfo="Tipo stock de movimiento de mercancÃ­as (identificador stock)" sap:value-list="standard"/><Property Name="MaterialBaseUnit" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Unidad medida base"
+					sap:quickinfo="Unidad de medida base" sap:semantics="unit-of-measure"/><Property Name="WBSElementExternalID" Type="Edm.String" MaxLength="24" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="WBSElementExternalID_fc" sap:label="Elemento PEP" sap:quickinfo="Elemento plan estruct.proyecto (elemento PEP) editado"
+					sap:value-list="standard"/><Property Name="MatlWrhsStkQtyInMatlBaseUnit" Type="Edm.Decimal" Precision="17" Scale="3" sap:aggregation-role="measure"
+					sap:unit="MaterialBaseUnit" sap:label="Cantidad de stocks" sap:quickinfo="Cantidad de stocks en unidad de medida base"
+					sap:filterable="false"/><Property Name="StockValueInCCCrcy" Type="Edm.Decimal" Precision="18" Scale="3" sap:aggregation-role="measure" sap:unit="Currency"
+					sap:label="Valor de stock en moneda de sociedad" sap:filterable="false"/><Property Name="StockValueInDisplayCurrency" Type="Edm.Decimal" Precision="18" Scale="3" sap:aggregation-role="measure"
+					sap:unit="DisplayCurrency" sap:label="Valor de stocks" sap:quickinfo="Valor de stock en moneda de visualizaciÃ³n" sap:filterable="false"/><Property Name="CnsmpnLatestPostgDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="measure" sap:display-format="Date"
+					sap:field-control="CnsmpnLatestPostgDate_fc" sap:label="Ãšltimo consumo" sap:quickinfo="Fecha de Ãºltima contabilizaciÃ³n de consumo"/><Property Name="MatlDocLatestPostgDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="measure" sap:display-format="Date"
+					sap:field-control="MatlDocLatestPostgDate_fc" sap:label="Ãšltima contab." sap:quickinfo="Fecha de la Ãºltima contabilizaciÃ³n"/><Property Name="NumberOfDaysSinceLastCnsmpn" Type="Edm.Int32" sap:aggregation-role="measure" sap:label="DÃ­as sin consumo"
+					sap:quickinfo="Cantidad de dÃ­as desde Ãºltima contabilizaciÃ³n de consumo"/><Property Name="NumberOfDaysSinceLastMovement" Type="Edm.Int32" sap:aggregation-role="measure" sap:label="DÃ­as sin contabiliz."
+					sap:quickinfo="Cantidad de dÃ­as desde Ãºltima contabilizaciÃ³n"/><Property Name="Currency" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:label="Moneda"
+					sap:quickinfo="Clave de moneda" sap:value-list="standard" sap:semantics="currency-code"/><Property Name="DisplayCurrency" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:label="Moneda visualizaciÃ³n"
+					sap:quickinfo="Moneda de visualizaciÃ³n" sap:semantics="currency-code"/><Property Name="MaterialGroup" Type="Edm.String" MaxLength="9" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="MaterialGroup_fc" sap:text="MaterialGroupName" sap:label="Grupo de artÃ­culos" sap:value-list="standard"/><Property Name="MaterialGroupName" Type="Edm.String" MaxLength="20" sap:label="DescripciÃ³n del grupo de artÃ­culos"/><Property Name="MaterialType" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:field-control="MaterialType_fc" sap:text="MaterialTypeName" sap:label="Tipo material" sap:quickinfo="Tipo de material"
+					sap:value-list="standard"/><Property Name="MaterialTypeName" Type="Edm.String" MaxLength="25" sap:label="DescripciÃ³n del tipo de material"/><Property Name="MaterialName" Type="Edm.String" MaxLength="40" sap:label="Texto breve material" sap:quickinfo="Texto breve de material"/><Property Name="PlantName" Type="Edm.String" MaxLength="30" sap:label="Nombre de centro"/><Property Name="StorageLocationName" Type="Edm.String" MaxLength="16" sap:label="Nombre de almacÃ©n"/><Property Name="CnsmpnQtyInBaseUnitOnRefDate" Type="Edm.Decimal" Precision="31" Scale="3" sap:aggregation-role="measure"
+					sap:unit="MaterialBaseUnit" sap:label="Cantidad de consumo" sap:quickinfo="Cantidad de consumo en unidad de medida base"
+					sap:filterable="false"/><Property Name="ConsumptionToStockRatio" Type="Edm.Decimal" Precision="31" Scale="2" sap:aggregation-role="measure"
+					sap:label="Indicador de baja rotaciÃ³n" sap:quickinfo="Ratio normalizado de volumen de consumo y cantidad de stocks"/><Property Name="NumberOfBOMUsingTheMaterial" Type="Edm.Int32" sap:aggregation-role="measure" sap:label="Utilizado en LMat"
+					sap:quickinfo="Cantidad de LMat en las que material se usa como componente"/><NavigationProperty Name="to_Currency" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_C42E4ED48AD51FFAB60D03E2C802579C"
+					FromRole="FromRole_assoc_C42E4ED48AD51FFAB60D03E2C802579C" ToRole="ToRole_assoc_C42E4ED48AD51FFAB60D03E2C802579C"/><NavigationProperty Name="to_InventorySpecialStockType"
+					Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_34927EE276D8576A3FFBE86BA930D3FC"
+					FromRole="FromRole_assoc_34927EE276D8576A3FFBE86BA930D3FC" ToRole="ToRole_assoc_34927EE276D8576A3FFBE86BA930D3FC"/><NavigationProperty Name="to_InventoryStockType" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_1C98FEB8606A2E3563F5A9CBDCD3B177"
+					FromRole="FromRole_assoc_1C98FEB8606A2E3563F5A9CBDCD3B177" ToRole="ToRole_assoc_1C98FEB8606A2E3563F5A9CBDCD3B177"/><NavigationProperty Name="to_Material" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_EFE46A57E1DF0505162EDBDFBC654397"
+					FromRole="FromRole_assoc_EFE46A57E1DF0505162EDBDFBC654397" ToRole="ToRole_assoc_EFE46A57E1DF0505162EDBDFBC654397"/><NavigationProperty Name="to_MaterialGroup" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_602853A57A4ABC3CB991309B9ACC60AE"
+					FromRole="FromRole_assoc_602853A57A4ABC3CB991309B9ACC60AE" ToRole="ToRole_assoc_602853A57A4ABC3CB991309B9ACC60AE"/><NavigationProperty Name="to_MaterialType" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_BCE7CABB8E28198206EF616F8C6C8FC8"
+					FromRole="FromRole_assoc_BCE7CABB8E28198206EF616F8C6C8FC8" ToRole="ToRole_assoc_BCE7CABB8E28198206EF616F8C6C8FC8"/><NavigationProperty Name="to_Plant" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_C9BD97D5BE67F67987EB5A51EEE9827A"
+					FromRole="FromRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A" ToRole="ToRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A"/><NavigationProperty Name="to_SpecialStockIdfgCustomer"
+					Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_35DE56930968AFAEFB327941E735990C"
+					FromRole="FromRole_assoc_35DE56930968AFAEFB327941E735990C" ToRole="ToRole_assoc_35DE56930968AFAEFB327941E735990C"/><NavigationProperty Name="to_SpecialStockIdfgSalesOrder"
+					Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_07B11FD50E492E3368329D70BD4B1312"
+					FromRole="FromRole_assoc_07B11FD50E492E3368329D70BD4B1312" ToRole="ToRole_assoc_07B11FD50E492E3368329D70BD4B1312"/><NavigationProperty Name="to_SpecialStockIdfgSalesOrderItm"
+					Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_F9E881DA86D6D3ADFC7631D99F55C3F2"
+					FromRole="FromRole_assoc_F9E881DA86D6D3ADFC7631D99F55C3F2" ToRole="ToRole_assoc_F9E881DA86D6D3ADFC7631D99F55C3F2"/><NavigationProperty Name="to_SpecialStockIdfgStockOwner"
+					Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_4C4B36EF0653B179BDC995AD2B61B570"
+					FromRole="FromRole_assoc_4C4B36EF0653B179BDC995AD2B61B570" ToRole="ToRole_assoc_4C4B36EF0653B179BDC995AD2B61B570"/><NavigationProperty Name="to_SpecialStockIdfgSupplier"
+					Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_4B418E08CD9C47F8F6DB55261D7BC979"
+					FromRole="FromRole_assoc_4B418E08CD9C47F8F6DB55261D7BC979" ToRole="ToRole_assoc_4B418E08CD9C47F8F6DB55261D7BC979"/><NavigationProperty Name="to_SpecialStockIdfgWBSElement"
+					Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_64E3AC09EE55D051F390B0D487E790BC"
+					FromRole="FromRole_assoc_64E3AC09EE55D051F390B0D487E790BC" ToRole="ToRole_assoc_64E3AC09EE55D051F390B0D487E790BC"/><NavigationProperty Name="to_StorageLocation" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_1404F672AE1F164DD57869B32B652288"
+					FromRole="FromRole_assoc_1404F672AE1F164DD57869B32B652288" ToRole="ToRole_assoc_1404F672AE1F164DD57869B32B652288"/><NavigationProperty Name="Parameters" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6"
+					FromRole="ToRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" ToRole="FromRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" sap:filterable="false"/></EntityType>
+			<EntityType Name="C_SlowOrNonMovingMatlQryParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="P_NumberOfDays"/><PropertyRef Name="P_KeyDate"/><PropertyRef Name="P_DisplayCurrency"/><PropertyRef Name="P_InventoryConsumptionGroup"/></Key><Property Name="P_NumberOfDays" Type="Edm.Int32" Nullable="false" DefaultValue="90" sap:parameter="mandatory"
+					sap:label="DÃ­as con bajo consumo" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="P_KeyDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory"
+					sap:label="Fecha de referencia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="P_DisplayCurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:parameter="mandatory"
+					sap:label="Moneda visualizaciÃ³n" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"
+					sap:value-list="standard" sap:semantics="currency-code"/><Property Name="P_InventoryConsumptionGroup" Type="Edm.String" Nullable="false" DefaultValue="000" MaxLength="3"
+					sap:display-format="NonNegative" sap:parameter="mandatory" sap:label="Grupo de consumo de inventario" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:value-list="fixed-values"/><NavigationProperty Name="Results" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6"
+					FromRole="FromRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" ToRole="ToRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6"/></EntityType>
+			<EntityType Name="C_SlowOrNonMovingMatlTmeSersResult" sap:semantics="aggregate"
+				sap:label="Consulta de series cronolÃ³gicas materiales lentos o s/mov." sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="YearPeriod" Type="Edm.String" MaxLength="6" sap:aggregation-role="dimension"/><Property Name="Material" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Material stock" sap:quickinfo="Material en base al cual se gestiona el stock"/><Property Name="Plant" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Centro"/><Property Name="MaterialBaseUnit" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Unidad medida base"
+					sap:quickinfo="Unidad de medida base" sap:semantics="unit-of-measure"/><Property Name="StartDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date"/><Property Name="EndDate" Type="Edm.DateTime" Precision="0" sap:aggregation-role="dimension" sap:display-format="Date"/><Property Name="MatlWrhsStkQtyInMatlBaseUnit" Type="Edm.Decimal" Precision="31" Scale="14" sap:aggregation-role="measure"
+					sap:unit="MaterialBaseUnit" sap:filterable="false"/><Property Name="CnsmpnQtyInBaseUnitOnRefDate" Type="Edm.Decimal" Precision="31" Scale="14" sap:aggregation-role="measure"
+					sap:unit="MaterialBaseUnit" sap:filterable="false"/><Property Name="ConsumptionToStockRatio" Type="Edm.Decimal" Precision="31" Scale="2" sap:aggregation-role="measure"
+					sap:label="Indicador de baja rotaciÃ³n" sap:quickinfo="Ratio normalizado de volumen de consumo y cantidad de stocks" sap:filterable="false"/><Property Name="NumberOfBOMUsingTheMaterial" Type="Edm.Int32" sap:aggregation-role="measure" sap:label="Utilizado en LMat"
+					sap:quickinfo="Cantidad de LMat en las que material se usa como componente" sap:filterable="false"/><NavigationProperty Name="Parameters" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_16D9434989ECA62CE8FB6AE4B2C2F167"
+					FromRole="ToRole_assoc_16D9434989ECA62CE8FB6AE4B2C2F167" ToRole="FromRole_assoc_16D9434989ECA62CE8FB6AE4B2C2F167" sap:filterable="false"/></EntityType>
+			<EntityType Name="C_SlowOrNonMovingMatlTmeSersParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="P_KeyDate"/><PropertyRef Name="P_InventoryConsumptionGroup"/></Key><Property Name="P_KeyDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory"
+					sap:label="Fecha de referencia" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="P_InventoryConsumptionGroup" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative"
+					sap:parameter="mandatory" sap:label="Grupo de consumo de inventario" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><NavigationProperty Name="Results" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_16D9434989ECA62CE8FB6AE4B2C2F167"
+					FromRole="FromRole_assoc_16D9434989ECA62CE8FB6AE4B2C2F167" ToRole="ToRole_assoc_16D9434989ECA62CE8FB6AE4B2C2F167"/></EntityType>
+			<EntityType Name="C_SlowOrNonMvgMatlBOMUsageType" sap:label="SlowNonMovingMaterials: UtilizaciÃ³n de lista de materiales"
+				sap:content-version="1">
+				<Key><PropertyRef Name="P_KeyDate"/><PropertyRef Name="BillOfMaterial"/><PropertyRef Name="BillOfMaterialVariant"/><PropertyRef Name="BillOfMaterialVersion"/><PropertyRef Name="EngineeringChangeDocument"/><PropertyRef Name="Material"/><PropertyRef Name="Plant"/><PropertyRef Name="BillOfMaterialVariantUsage"/><PropertyRef Name="BillOfMaterialComponent"/><PropertyRef Name="ValidityStartDate"/><PropertyRef Name="ValidityEndDate"/></Key><Property Name="P_KeyDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date"
+					sap:label="Elemento de datos de fecha para SYST"/><Property Name="BillOfMaterial" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase"
+					sap:label="Lista de materiales"/><Property Name="BillOfMaterialVariant" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase"
+					sap:label="Lista mat.alternat." sap:quickinfo="Alternativa de la lista de materiales"/><Property Name="BillOfMaterialVersion" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase"
+					sap:label="VersiÃ³n LM"/><Property Name="EngineeringChangeDocument" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase"
+					sap:label="NÃºmero modificaciÃ³n" sap:quickinfo="NÃºmero de modificaciÃ³n"/><Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:label="Material"
+					sap:quickinfo="NÃºmero de material"/><Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Centro"/><Property Name="BillOfMaterialVariantUsage" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase"
+					sap:label="UtilizaciÃ³n LMat" sap:quickinfo="UtilizaciÃ³n de la lista de materiales"/><Property Name="BillOfMaterialComponent" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase"
+					sap:label="Componente" sap:quickinfo="Componente de lista de materiales"/><Property Name="ValidityStartDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="VÃ¡lido de"
+					sap:quickinfo="Fecha inicio validez"/><Property Name="ValidityEndDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Fin de validez"
+					sap:quickinfo="Fecha fin validez"/><NavigationProperty Name="Parameters" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_19D3FDF655CCB7704B3F6A1004EC16D1"
+					FromRole="ToRole_assoc_19D3FDF655CCB7704B3F6A1004EC16D1" ToRole="FromRole_assoc_19D3FDF655CCB7704B3F6A1004EC16D1" sap:filterable="false"/></EntityType>
+			<EntityType Name="C_SlowOrNonMvgMatlBOMUsageParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="P_KeyDate"/></Key><Property Name="P_KeyDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory"
+					sap:label="Elemento de datos de fecha para SYST" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="Set" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_19D3FDF655CCB7704B3F6A1004EC16D1"
+					FromRole="FromRole_assoc_19D3FDF655CCB7704B3F6A1004EC16D1" ToRole="ToRole_assoc_19D3FDF655CCB7704B3F6A1004EC16D1"/></EntityType>
+			<EntityType Name="C_SlowOrNonMvgMatlCnsmpnByMvtResult" sap:semantics="aggregate" sap:label="Tipo de movimiento SlowNonMovingMaterial"
+				sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Material" Type="Edm.String" MaxLength="40" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Material stock" sap:quickinfo="Material en base al cual se gestiona el stock"/><Property Name="Plant" Type="Edm.String" MaxLength="4" sap:aggregation-role="dimension" sap:display-format="UpperCase" sap:label="Centro"/><Property Name="MaterialBaseUnit" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:label="Unidad medida base"
+					sap:quickinfo="Unidad de medida base" sap:semantics="unit-of-measure"/><Property Name="GoodsMovementType" Type="Edm.String" MaxLength="3" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Clase de movimiento" sap:quickinfo="Clase de movimiento (gestiÃ³n stocks)"/><Property Name="GoodsMovementTypeName" Type="Edm.String" MaxLength="20" sap:label="Texto clase de mov."
+					sap:quickinfo="Texto de clase de movimiento (GestiÃ³n de stocks)"/><Property Name="MatlWrhsStkQtyInMatlBaseUnit" Type="Edm.Decimal" Precision="31" Scale="14" sap:aggregation-role="measure"
+					sap:unit="MaterialBaseUnit" sap:filterable="false"/><Property Name="MatlCnsmpnQtyInMatlBaseUnit" Type="Edm.Decimal" Precision="31" Scale="14" sap:aggregation-role="measure"
+					sap:unit="MaterialBaseUnit" sap:filterable="false"/><NavigationProperty Name="Parameters" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_4E1368241C49D378964B7A6240C48EF0"
+					FromRole="ToRole_assoc_4E1368241C49D378964B7A6240C48EF0" ToRole="FromRole_assoc_4E1368241C49D378964B7A6240C48EF0" sap:filterable="false"/></EntityType>
+			<EntityType Name="C_SlowOrNonMvgMatlCnsmpnByMvtParameters" sap:semantics="parameters" sap:content-version="1">
+				<Key><PropertyRef Name="P_InventoryConsumptionGroup"/><PropertyRef Name="P_StartDate"/><PropertyRef Name="P_EndDate"/></Key><Property Name="P_InventoryConsumptionGroup" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative"
+					sap:parameter="mandatory" sap:label="Grupo de consumo de inventario" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="P_StartDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory"
+					sap:label="Fe.inicio anÃ¡lisis" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="P_EndDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:parameter="mandatory"
+					sap:label="Fecha final anÃ¡lisis" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="Results" Relationship="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_4E1368241C49D378964B7A6240C48EF0"
+					FromRole="FromRole_assoc_4E1368241C49D378964B7A6240C48EF0" ToRole="ToRole_assoc_4E1368241C49D378964B7A6240C48EF0"/></EntityType>
+			<EntityType Name="I_ControllingAreaType" sap:label="Sociedad CO" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="ControllingArea"/></Key><Property Name="ControllingArea" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase"
+					sap:text="ControllingAreaName" sap:label="Sociedad CO"/><Property Name="FiscalYearVariant" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Variante ejercicio"
+					sap:quickinfo="Variante del ejercicio"/><Property Name="ControllingAreaName" Type="Edm.String" MaxLength="25" sap:label="Nombre sociedad SO"/><Property Name="ControllingAreaCurrency" Type="Edm.String" MaxLength="5" sap:label="Moneda" sap:quickinfo="Clave de moneda"
+					sap:semantics="currency-code"/><Property Name="ChartOfAccounts" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="ChartOfAccounts_Text"
+					sap:label="Plan de cuentas"/><Property Name="ChartOfAccounts_Text" Type="Edm.String" MaxLength="50" sap:label="DenominaciÃ³n"
+					sap:quickinfo="DenominaciÃ³n del plan de cuentas" sap:creatable="false" sap:updatable="false"/><Property Name="CostCenterStandardHierarchy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="JerarquÃ­a std. CeCo"
+					sap:quickinfo="JerarquÃ­a estÃ¡ndar para centros de coste"/><Property Name="ProfitCenterStandardHierarchy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Ãrea de jerarquÃ­a"
+					sap:quickinfo="Ãrea de centros de beneficio"/><Property Name="FinancialManagementArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Entidad CP"/><Property Name="ControllingAreaCurrencyRole" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Tipo de moneda"
+					sap:quickinfo="Tipo de moneda de la sociedad CO"/><Property Name="CtrlgStdFinStatementVersion" Type="Edm.String" MaxLength="42" sap:display-format="UpperCase"
+					sap:text="CtrlgStdFinStatementVersion_Text" sap:label="VersiÃ³n BC principal" sap:quickinfo="VersiÃ³n BC controlling principal"/><Property Name="CtrlgStdFinStatementVersion_Text" Type="Edm.String" MaxLength="50" sap:label="DescripciÃ³n"
+					sap:quickinfo="DescripciÃ³n de jerarquÃ­a" sap:creatable="false" sap:updatable="false"/><Property Name="ProfitCenterAccountingCurrency" Type="Edm.String" MaxLength="5" sap:label="Moneda local CeBe"
+					sap:quickinfo="Moneda local centro beneficio" sap:semantics="currency-code"/></EntityType>
+			<EntityType Name="I_CostCenterStdVHType" sap:label="Centro de coste" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="ControllingArea"/><PropertyRef Name="CostCenter"/><PropertyRef Name="ValidityEndDate"/></Key><Property Name="ControllingArea" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Sociedad CO"/><Property Name="CostCenter" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="CostCenter_Text"
+					sap:label="Centro de coste"/><Property Name="CostCenter_Text" Type="Edm.String" MaxLength="20" sap:label="Nombre centro coste" sap:creatable="false"
+					sap:updatable="false"/><Property Name="ValidityEndDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Fin de validez"
+					sap:quickinfo="Fecha fin validez"/><Property Name="ValidityStartDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="VÃ¡lido de"
+					sap:quickinfo="Fecha inicio validez"/></EntityType>
+			<EntityType Name="I_CurrencyType" sap:label="Moneda" sap:content-version="1">
+				<Key><PropertyRef Name="Currency"/></Key><Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:text="Currency_Text" sap:label="Moneda"
+					sap:quickinfo="Clave de moneda" sap:semantics="currency-code"/><Property Name="Currency_Text" Type="Edm.String" MaxLength="40" sap:label="DescripciÃ³n" sap:creatable="false" sap:updatable="false"/><Property Name="Decimals" Type="Edm.Byte" sap:visible="false" sap:label="Decimales" sap:quickinfo="Cantidad de decimales"
+					sap:filterable="false"/><Property Name="CurrencyISOCode" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:visible="false" sap:label="CÃ³digo ISO"
+					sap:quickinfo="CÃ³digo de moneda ISO" sap:filterable="false"/><Property Name="AlternativeCurrencyKey" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:visible="false"
+					sap:label="Clave alternativa" sap:filterable="false"/><Property Name="IsPrimaryCurrencyForISOCrcy" Type="Edm.Boolean" sap:display-format="UpperCase" sap:visible="false" sap:label="Primario"
+					sap:quickinfo="CÃ³digo moneda SAP primario p.cÃ³digo ISO" sap:filterable="false"/></EntityType>
+			<EntityType Name="I_Customer_VHType" sap:label="Cliente" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="Customer"/></Key><Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="CustomerName"
+					sap:label="Cliente" sap:quickinfo="NÃºmero de cliente"/><Property Name="OrganizationBPName1" Type="Edm.String" MaxLength="35" sap:label="Nombre 1"/><Property Name="OrganizationBPName2" Type="Edm.String" MaxLength="35" sap:label="Nombre 2"/><Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="PaÃ­s" sap:quickinfo="Clave de paÃ­s"/><Property Name="CityName" Type="Edm.String" MaxLength="35" sap:label="PoblaciÃ³n"/><Property Name="StreetName" Type="Edm.String" MaxLength="35" sap:label="Calle" sap:quickinfo="Calle y nÂº"/><Property Name="CustomerName" Type="Edm.String" MaxLength="80" sap:label="Nombre de cliente"/><Property Name="CustomerAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Grupo de cuentas"
+					sap:quickinfo="Grupo de ctas.deudor"/><Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="AutorizaciÃ³n"
+					sap:quickinfo="Grupo autorizaciones"/><Property Name="IsBusinessPurposeCompleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase"
+					sap:label="Etiqueta de objetivo completado" sap:quickinfo="Indicador para objetivo empresarial cumplido"/></EntityType>
+			<EntityType Name="I_InventoryCnsmpnGroupVHType" sap:label="Ayuda para entradas para grupos de consumo de inventario" sap:value-list="true"
+				sap:content-version="1">
+				<Key><PropertyRef Name="InventoryConsumptionGroup"/></Key><Property Name="InventoryConsumptionGroup" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative"
+					sap:text="InventoryConsumptionGroup_Text" sap:label="Grupo de consumo de inventario"/><Property Name="InventoryConsumptionGroup_Text" Type="Edm.String" MaxLength="30" sap:label="DescripciÃ³n de grupo consumo inventario"
+					sap:quickinfo="DescripciÃ³n de grupo de consumo de inventario" sap:creatable="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="I_MaterialGroupType" sap:label="Grupo de artÃ­culos" sap:content-version="1">
+				<Key><PropertyRef Name="MaterialGroup"/></Key><Property Name="MaterialGroup" Type="Edm.String" Nullable="false" MaxLength="9" sap:display-format="UpperCase" sap:text="MaterialGroup_Text"
+					sap:label="Grupo de productos"/><Property Name="MaterialGroup_Text" Type="Edm.String" MaxLength="20" sap:label="Des.grupo productos"
+					sap:quickinfo="DescripciÃ³n grupo de productos" sap:creatable="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="I_MaterialTypeType" sap:label="Tipo de material" sap:content-version="1">
+				<Key><PropertyRef Name="MaterialType"/></Key><Property Name="MaterialType" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="MaterialType_Text"
+					sap:label="Tipo material" sap:quickinfo="Tipo de material"/><Property Name="MaterialType_Text" Type="Edm.String" MaxLength="25" sap:label="Descrip.tp.material"
+					sap:quickinfo="DenominaciÃ³n del tipo de material" sap:creatable="false" sap:updatable="false"/><Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Gr.autorizaciones"
+					sap:quickinfo="Grupo autorizaciÃ³n en maestro materiales"/></EntityType>
+			<EntityType Name="I_MatlDocInvtrySpclStkTypeVHType" sap:label="Contabilizaciones de inventario en tipos stock especiales"
+				sap:content-version="1">
+				<Key><PropertyRef Name="InventorySpecialStockType"/></Key><Property Name="InventorySpecialStockType" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase"
+					sap:label="Tipo de stocks especial"/><Property Name="InventorySpecialStockTypeName" Type="Edm.String" MaxLength="20" sap:label="Descr.stock especial"
+					sap:quickinfo="DescripciÃ³n de tipo de stock especial"/></EntityType>
+			<EntityType Name="I_MatlDocInvtryStkTypeVHType" sap:label="Contabilizaciones de gestiÃ³n de inventario en tipos stock"
+				sap:content-version="1">
+				<Key><PropertyRef Name="InventoryStockType"/></Key><Property Name="InventoryStockType" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="UpperCase"
+					sap:label="Tipo de stock" sap:quickinfo="Tipo stock de movimiento de mercancÃ­as (identificador stock)"/><Property Name="InventoryStockTypeName" Type="Edm.String" MaxLength="60" sap:label="DescripciÃ³n de tipo de stock"
+					sap:quickinfo="DescripciÃ³n de tipo de stocks"/></EntityType>
+			<EntityType Name="I_MatlDocMaterialVHType" sap:label="Contabilizaciones de gestiÃ³n de inventario para materiales" sap:content-version="1">
+				<Key><PropertyRef Name="Material"/><PropertyRef Name="Plant"/></Key><Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:text="MaterialName"
+					sap:label="Material" sap:quickinfo="NÃºmero de material"/><Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="PlantName"
+					sap:label="Centro"/><Property Name="MaterialName" Type="Edm.String" MaxLength="40" sap:label="Texto breve material" sap:quickinfo="Texto breve de material"/><Property Name="PlantName" Type="Edm.String" MaxLength="30" sap:label="Nombre de centro"/><Property Name="MaterialGroup" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase" sap:text="MaterialGroupName"
+					sap:label="Grupo de artÃ­culos"/><Property Name="MaterialGroupName" Type="Edm.String" MaxLength="20" sap:label="DescripciÃ³n del grupo de artÃ­culos"/><Property Name="MaterialType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="MaterialTypeName"
+					sap:label="Tipo material" sap:quickinfo="Tipo de material"/><Property Name="MaterialTypeName" Type="Edm.String" MaxLength="25" sap:label="DescripciÃ³n del tipo de material"/></EntityType>
+			<EntityType Name="I_MatlDocPlantVHType" sap:label="Contabilizaciones de gestiÃ³n de inventario en centro" sap:content-version="1">
+				<Key><PropertyRef Name="Plant"/></Key><Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="PlantName"
+					sap:label="Centro"/><Property Name="PlantName" Type="Edm.String" MaxLength="30" sap:label="Nombre de centro"/><Property Name="Country" Type="Edm.String" MaxLength="3" sap:label="PaÃ­s" sap:quickinfo="Clave de paÃ­s"/><Property Name="CityCode" Type="Edm.String" MaxLength="12" sap:label="CÃ³digo postal"/><Property Name="CityName" Type="Edm.String" MaxLength="40" sap:label="PoblaciÃ³n"/><Property Name="StreetName" Type="Edm.String" MaxLength="60" sap:label="Calle"/><Property Name="HouseNumber" Type="Edm.String" MaxLength="10" sap:label="NÂº (edificio)"/></EntityType>
+			<EntityType Name="I_MatlDocStkIdfgSlsOrdItmVHType" sap:label="Contab.gestiÃ³n inventario en SOI ident.stock" sap:content-version="1">
+				<Key><PropertyRef Name="SpecialStockIdfgSalesOrder"/><PropertyRef Name="SpecialStockIdfgSalesOrderItem"/></Key><Property Name="SpecialStockIdfgSalesOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Pedido de cliente"/><Property Name="SpecialStockIdfgSalesOrderItem" Type="Edm.String" Nullable="false" MaxLength="6" sap:display-format="NonNegative"
+					sap:label="Pos.pedido cliente" sap:quickinfo="DescripciÃ³n para posiciÃ³n de pedido de cliente"/><Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="OrganizaciÃ³n ventas"
+					sap:quickinfo="OrganizaciÃ³n de ventas"/><Property Name="DistributionChannel" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Canal distribuciÃ³n"
+					sap:quickinfo="Canal de distribuciÃ³n"/><Property Name="SalesOffice" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Oficina de ventas"/><Property Name="SalesGroup" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Grupo de vendedores"/><Property Name="SalesOrderType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="ClPedClte"
+					sap:quickinfo="Clase de pedido de cliente"/><Property Name="SoldToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Solicitante"
+					sap:value-list="standard"/><Property Name="OrganizationDivision" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Sector"/><Property Name="MaterialGroup" Type="Edm.String" MaxLength="9" sap:display-format="UpperCase" sap:label="Grupo de artÃ­culos"/></EntityType>
+			<EntityType Name="I_MatlDocStkIdfgSlsOrdVHType" sap:label="Contab.gestiÃ³n inventario en SO ident.stock" sap:content-version="1">
+				<Key><PropertyRef Name="SpecialStockIdfgSalesOrder"/></Key><Property Name="SpecialStockIdfgSalesOrder" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Pedido de cliente"/><Property Name="SalesOrganization" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="OrganizaciÃ³n ventas"
+					sap:quickinfo="OrganizaciÃ³n de ventas"/><Property Name="DistributionChannel" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Canal distribuciÃ³n"
+					sap:quickinfo="Canal de distribuciÃ³n"/><Property Name="SalesOffice" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Oficina de ventas"/><Property Name="SalesGroup" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Grupo de vendedores"/><Property Name="SalesOrderType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="ClPedClte"
+					sap:quickinfo="Clase de pedido de cliente"/><Property Name="SoldToParty" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Solicitante"
+					sap:value-list="standard"/><Property Name="OrganizationDivision" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Sector"/></EntityType>
+			<EntityType Name="I_MatlDocStockIdfgCustomerVHType" sap:label="Contab.gestiÃ³n inventario en cliente ident.stock" sap:content-version="1">
+				<Key><PropertyRef Name="SpecialStockIdfgCustomer"/></Key><Property Name="SpecialStockIdfgCustomer" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Cliente" sap:quickinfo="NÃºmero de cliente"/><Property Name="CustomerName" Type="Edm.String" MaxLength="80" sap:label="Nombre de cliente"/><Property Name="StreetName" Type="Edm.String" MaxLength="35" sap:label="Calle" sap:quickinfo="Calle y nÂº"/><Property Name="CityName" Type="Edm.String" MaxLength="35" sap:label="PoblaciÃ³n"/><Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="PaÃ­s" sap:quickinfo="Clave de paÃ­s"/><Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="CÃ³digo postal"/><Property Name="CustomerAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Grupo de cuentas"
+					sap:quickinfo="Grupo de ctas.deudor"/><Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="AutorizaciÃ³n"
+					sap:quickinfo="Grupo autorizaciones"/></EntityType>
+			<EntityType Name="I_MatlDocStockIdfgOwnerVHType" sap:label="Contab.gestiÃ³n inventario en propio ident.stock" sap:content-version="1">
+				<Key><PropertyRef Name="SpecialStockIdfgStockOwner"/></Key><Property Name="SpecialStockIdfgStockOwner" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Proveedor adicional para stock especial"/><Property Name="SupplierName" Type="Edm.String" MaxLength="80" sap:label="Nombre del proveedor"/><Property Name="StreetName" Type="Edm.String" MaxLength="35" sap:label="Calle" sap:quickinfo="Calle y nÂº"/><Property Name="CityName" Type="Edm.String" MaxLength="35" sap:label="PoblaciÃ³n"/><Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="PaÃ­s" sap:quickinfo="Clave de paÃ­s"/><Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="CÃ³digo postal"/><Property Name="SupplierAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Grupo de cuentas"
+					sap:quickinfo="Grupo de cuentas acreedor"/><Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="AutorizaciÃ³n"
+					sap:quickinfo="Grupo autorizaciones"/></EntityType>
+			<EntityType Name="I_MatlDocStockIdfgSupplierVHType" sap:label="Contab.gestiÃ³n inventario en sup.ident.stock" sap:content-version="1">
+				<Key><PropertyRef Name="SpecialStockIdfgSupplier"/></Key><Property Name="SpecialStockIdfgSupplier" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Proveedor"/><Property Name="SupplierName" Type="Edm.String" MaxLength="80" sap:label="Nombre del proveedor"/><Property Name="StreetName" Type="Edm.String" MaxLength="35" sap:label="Calle" sap:quickinfo="Calle y nÂº"/><Property Name="CityName" Type="Edm.String" MaxLength="35" sap:label="PoblaciÃ³n"/><Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="PaÃ­s" sap:quickinfo="Clave de paÃ­s"/><Property Name="PostalCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="CÃ³digo postal"/><Property Name="SupplierAccountGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Grupo de cuentas"
+					sap:quickinfo="Grupo de cuentas acreedor"/><Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="AutorizaciÃ³n"
+					sap:quickinfo="Grupo autorizaciones"/></EntityType>
+			<EntityType Name="I_MatlDocStockIdfgWBSVHType" sap:label="Contab.gestiÃ³n inventario en PEP ident.stock" sap:content-version="1">
+				<Key><PropertyRef Name="SpecialStockIdfgWBSElement"/></Key><Property Name="SpecialStockIdfgWBSElement" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="NonNegative"
+					sap:label="Elemento PEP" sap:quickinfo="Elemento PEP del stock para pedido de cliente valorado"/><Property Name="WBSElement" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:label="Elemento PEP"
+					sap:quickinfo="Elemento del plan de estructura de proyecto (elemento PEP)"/><Property Name="WBSElementExternalID" Type="Edm.String" MaxLength="24" sap:display-format="UpperCase" sap:text="WBSDescription"
+					sap:label="Elemento PEP" sap:quickinfo="Elemento plan estruct.proyecto (elemento PEP) editado"/><Property Name="WBSDescription" Type="Edm.String" MaxLength="40" sap:label="Nombre elemento PEP"/><Property Name="WBSElementObject" Type="Edm.String" MaxLength="22" sap:display-format="UpperCase" sap:label="NÂº objeto"
+					sap:quickinfo="NÃºmero de objeto"/><Property Name="ApplicantName" Type="Edm.String" MaxLength="25" sap:label="Solicitante"/><Property Name="Plant" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Centro"/><Property Name="Location" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Emplaz."/><Property Name="ProjectInternalID" Type="Edm.String" MaxLength="8" sap:display-format="NonNegative" sap:label="DefiniciÃ³n de proyecto"
+					sap:quickinfo="Proyecto (interno)"/><Property Name="ProjectType" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Clase de proyecto"
+					sap:quickinfo="Clase del proyecto"/><Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Sociedad CO"
+					sap:value-list="standard"/><Property Name="ResponsibleCostCenter" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase"
+					sap:label="Centro de coste responsable" sap:value-list="standard"/><Property Name="RespCostCenterControllingArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase"
+					sap:label="SocCO CeCo respons." sap:quickinfo="Sociedad CO del centro de coste responsable"/><Property Name="ProfitCenter" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Centro de beneficio"
+					sap:value-list="standard"/><Property Name="ResponsiblePersonName" Type="Edm.String" MaxLength="25" sap:label="Responsable"
+					sap:quickinfo="Nombre de responsable (jefe de proyecto)"/></EntityType>
+			<EntityType Name="I_MatlDocStorageLocationVHType" sap:label="ContabilizaciÃ³n gestiÃ³n inventario en almacÃ©n" sap:content-version="1">
+				<Key><PropertyRef Name="StorageLocation"/><PropertyRef Name="Plant"/></Key><Property Name="StorageLocation" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase"
+					sap:text="StorageLocationName" sap:label="AlmacÃ©n"/><Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Centro"/><Property Name="StorageLocationName" Type="Edm.String" MaxLength="16" sap:label="Nombre de ubicaciÃ³n de almacenamiento"/><Property Name="PlantName" Type="Edm.String" MaxLength="30" sap:label="Nombre de centro"/></EntityType>
+			<EntityType Name="I_ProductGroupVHType" sap:label="Ayuda para entradas de grupo de productos" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="ProductGroup"/></Key><Property Name="ProductGroup" Type="Edm.String" Nullable="false" MaxLength="9" sap:display-format="UpperCase" sap:text="ProductGroup_Text"
+					sap:label="Grupo de productos"/><Property Name="ProductGroup_Text" Type="Edm.String" MaxLength="20" sap:label="DescripciÃ³n de grupo de productos" sap:creatable="false"
+					sap:updatable="false"/></EntityType>
+			<EntityType Name="I_ProductGroup_2Type" sap:label="Grupo de productos" sap:content-version="1">
+				<Key><PropertyRef Name="ProductGroup"/></Key><Property Name="ProductGroup" Type="Edm.String" Nullable="false" MaxLength="9" sap:display-format="UpperCase" sap:text="ProductGroup_Text"
+					sap:label="Grupo de productos"/><Property Name="ProductGroup_Text" Type="Edm.String" MaxLength="20" sap:label="DescripciÃ³n de grupo de productos" sap:creatable="false"
+					sap:updatable="false"/></EntityType>
+			<EntityType Name="I_ProducttypeType" sap:label="Tipo de producto" sap:content-version="1">
+				<Key><PropertyRef Name="ProductType"/></Key><Property Name="ProductType" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="ProductType_Text"
+					sap:label="Clase de producto"/><Property Name="ProductType_Text" Type="Edm.String" MaxLength="25" sap:label="DescripciÃ³n de tipo de producto"
+					sap:quickinfo="DescripciÃ³n del tipo de producto" sap:creatable="false" sap:updatable="false"/><Property Name="ProductTypeCode" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Gpo.tipos producto"
+					sap:quickinfo="Grupo de tipos de producto"/><Property Name="AuthorizationGroup" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Gr.autorizaciones"
+					sap:quickinfo="Grupo autorizaciÃ³n en maestro materiales"/><Property Name="MaintenanceStatus" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="Status actualizaciÃ³n"
+					sap:quickinfo="Status de actualizaciÃ³n"/><Property Name="ReferenceProductType" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Tipo-mat. modelo"
+					sap:quickinfo="Tipo de material modelo"/><Property Name="AcctCategoryRef" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Ref-categ-cuentas"
+					sap:quickinfo="Referencia de categorÃ­a de cuentas"/></EntityType>
+			<EntityType Name="I_ProductTypeVHType" sap:label="Ayuda para entradas de tipo de producto" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="ProductType"/></Key><Property Name="ProductType" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="ProductType_Text"
+					sap:label="Clase de producto"/><Property Name="ProductType_Text" Type="Edm.String" MaxLength="25" sap:label="DescripciÃ³n de tipo de producto"
+					sap:quickinfo="DescripciÃ³n del tipo de producto" sap:creatable="false" sap:updatable="false"/><Property Name="ProductTypeCode" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Gpo.tipos producto"
+					sap:quickinfo="Grupo de tipos de producto"/></EntityType>
+			<EntityType Name="I_ProfitCenterStdVHType" sap:label="Centro de beneficio" sap:value-list="true" sap:content-version="1">
+				<Key><PropertyRef Name="ControllingArea"/><PropertyRef Name="ProfitCenter"/><PropertyRef Name="ValidityEndDate"/></Key><Property Name="ControllingArea" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Sociedad CO"/><Property Name="ProfitCenter" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="ProfitCenter_Text"
+					sap:label="Centro de beneficio"/><Property Name="ProfitCenter_Text" Type="Edm.String" MaxLength="20" sap:label="Centro de beneficio"
+					sap:quickinfo="DescripciÃ³n del centro de beneficio" sap:creatable="false" sap:updatable="false"/><Property Name="ValidityEndDate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Fin de validez"
+					sap:quickinfo="Fecha fin validez"/><Property Name="ValidityStartDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="VÃ¡lido de"
+					sap:quickinfo="Fecha inicio validez"/></EntityType>
+			<Association Name="assoc_ABED319AA51A7F3F65FA41394BB16A17" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlOPgResult" Multiplicity="1"
+				Role="FromRole_assoc_ABED319AA51A7F3F65FA41394BB16A17"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_CurrencyType" Multiplicity="0..1" Role="ToRole_assoc_ABED319AA51A7F3F65FA41394BB16A17"/></Association>
+			<Association Name="assoc_C42E4ED48AD51FFAB60D03E2C802579C" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_C42E4ED48AD51FFAB60D03E2C802579C"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_CurrencyType" Multiplicity="0..1" Role="ToRole_assoc_C42E4ED48AD51FFAB60D03E2C802579C"/></Association>
+			<Association Name="assoc_34927EE276D8576A3FFBE86BA930D3FC" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_34927EE276D8576A3FFBE86BA930D3FC"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocInvtrySpclStkTypeVHType" Multiplicity="0..1"
+				Role="ToRole_assoc_34927EE276D8576A3FFBE86BA930D3FC"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_34927EE276D8576A3FFBE86BA930D3FC"><PropertyRef Name="InventorySpecialStockType"/></Principal>
+					<Dependent Role="FromRole_assoc_34927EE276D8576A3FFBE86BA930D3FC"><PropertyRef Name="InventorySpecialStockType"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_1C98FEB8606A2E3563F5A9CBDCD3B177" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_1C98FEB8606A2E3563F5A9CBDCD3B177"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocInvtryStkTypeVHType" Multiplicity="0..1"
+				Role="ToRole_assoc_1C98FEB8606A2E3563F5A9CBDCD3B177"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_1C98FEB8606A2E3563F5A9CBDCD3B177"><PropertyRef Name="InventoryStockType"/></Principal>
+					<Dependent Role="FromRole_assoc_1C98FEB8606A2E3563F5A9CBDCD3B177"><PropertyRef Name="InventoryStockType"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_EFE46A57E1DF0505162EDBDFBC654397" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_EFE46A57E1DF0505162EDBDFBC654397"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocMaterialVHType" Multiplicity="0..1"
+				Role="ToRole_assoc_EFE46A57E1DF0505162EDBDFBC654397"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_EFE46A57E1DF0505162EDBDFBC654397"><PropertyRef Name="Plant"/><PropertyRef Name="Material"/></Principal>
+					<Dependent Role="FromRole_assoc_EFE46A57E1DF0505162EDBDFBC654397"><PropertyRef Name="Plant"/><PropertyRef Name="Material"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_602853A57A4ABC3CB991309B9ACC60AE" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_602853A57A4ABC3CB991309B9ACC60AE"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MaterialGroupType" Multiplicity="0..1" Role="ToRole_assoc_602853A57A4ABC3CB991309B9ACC60AE"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_602853A57A4ABC3CB991309B9ACC60AE"><PropertyRef Name="MaterialGroup"/></Principal>
+					<Dependent Role="FromRole_assoc_602853A57A4ABC3CB991309B9ACC60AE"><PropertyRef Name="MaterialGroup"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_BCE7CABB8E28198206EF616F8C6C8FC8" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_BCE7CABB8E28198206EF616F8C6C8FC8"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MaterialTypeType" Multiplicity="0..1" Role="ToRole_assoc_BCE7CABB8E28198206EF616F8C6C8FC8"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_BCE7CABB8E28198206EF616F8C6C8FC8"><PropertyRef Name="MaterialType"/></Principal>
+					<Dependent Role="FromRole_assoc_BCE7CABB8E28198206EF616F8C6C8FC8"><PropertyRef Name="MaterialType"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_C9BD97D5BE67F67987EB5A51EEE9827A" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocPlantVHType" Multiplicity="0..1" Role="ToRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A"><PropertyRef Name="Plant"/></Principal>
+					<Dependent Role="FromRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A"><PropertyRef Name="Plant"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_35DE56930968AFAEFB327941E735990C" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_35DE56930968AFAEFB327941E735990C"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStockIdfgCustomerVHType" Multiplicity="0..1"
+				Role="ToRole_assoc_35DE56930968AFAEFB327941E735990C"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_35DE56930968AFAEFB327941E735990C"><PropertyRef Name="SpecialStockIdfgCustomer"/></Principal>
+					<Dependent Role="FromRole_assoc_35DE56930968AFAEFB327941E735990C"><PropertyRef Name="SpecialStockIdfgCustomer"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_07B11FD50E492E3368329D70BD4B1312" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_07B11FD50E492E3368329D70BD4B1312"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStkIdfgSlsOrdVHType" Multiplicity="0..1"
+				Role="ToRole_assoc_07B11FD50E492E3368329D70BD4B1312"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_07B11FD50E492E3368329D70BD4B1312"><PropertyRef Name="SpecialStockIdfgSalesOrder"/></Principal>
+					<Dependent Role="FromRole_assoc_07B11FD50E492E3368329D70BD4B1312"><PropertyRef Name="SpecialStockIdfgSalesOrder"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_F9E881DA86D6D3ADFC7631D99F55C3F2" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_F9E881DA86D6D3ADFC7631D99F55C3F2"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStkIdfgSlsOrdItmVHType" Multiplicity="0..1"
+				Role="ToRole_assoc_F9E881DA86D6D3ADFC7631D99F55C3F2"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_F9E881DA86D6D3ADFC7631D99F55C3F2"><PropertyRef Name="SpecialStockIdfgSalesOrderItem"/><PropertyRef Name="SpecialStockIdfgSalesOrder"/></Principal>
+					<Dependent Role="FromRole_assoc_F9E881DA86D6D3ADFC7631D99F55C3F2"><PropertyRef Name="SpecialStockIdfgSalesOrderItem"/><PropertyRef Name="SpecialStockIdfgSalesOrder"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_4C4B36EF0653B179BDC995AD2B61B570" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_4C4B36EF0653B179BDC995AD2B61B570"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStockIdfgOwnerVHType" Multiplicity="0..1"
+				Role="ToRole_assoc_4C4B36EF0653B179BDC995AD2B61B570"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_4C4B36EF0653B179BDC995AD2B61B570"><PropertyRef Name="SpecialStockIdfgStockOwner"/></Principal>
+					<Dependent Role="FromRole_assoc_4C4B36EF0653B179BDC995AD2B61B570"><PropertyRef Name="SpecialStockIdfgStockOwner"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_4B418E08CD9C47F8F6DB55261D7BC979" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_4B418E08CD9C47F8F6DB55261D7BC979"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStockIdfgSupplierVHType" Multiplicity="0..1"
+				Role="ToRole_assoc_4B418E08CD9C47F8F6DB55261D7BC979"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_4B418E08CD9C47F8F6DB55261D7BC979"><PropertyRef Name="SpecialStockIdfgSupplier"/></Principal>
+					<Dependent Role="FromRole_assoc_4B418E08CD9C47F8F6DB55261D7BC979"><PropertyRef Name="SpecialStockIdfgSupplier"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_64E3AC09EE55D051F390B0D487E790BC" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_64E3AC09EE55D051F390B0D487E790BC"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStockIdfgWBSVHType" Multiplicity="0..1"
+				Role="ToRole_assoc_64E3AC09EE55D051F390B0D487E790BC"/></Association>
+			<Association Name="assoc_1404F672AE1F164DD57869B32B652288" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="1"
+				Role="FromRole_assoc_1404F672AE1F164DD57869B32B652288"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStorageLocationVHType" Multiplicity="0..1"
+				Role="ToRole_assoc_1404F672AE1F164DD57869B32B652288"/>
+				<ReferentialConstraint>
+					<Principal Role="ToRole_assoc_1404F672AE1F164DD57869B32B652288"><PropertyRef Name="StorageLocation"/><PropertyRef Name="Plant"/></Principal>
+					<Dependent Role="FromRole_assoc_1404F672AE1F164DD57869B32B652288"><PropertyRef Name="StorageLocation"/><PropertyRef Name="Plant"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryParameters" Multiplicity="1"
+				Role="FromRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult" Multiplicity="*"
+				Role="ToRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6"/></Association>
+			<Association Name="assoc_4E1368241C49D378964B7A6240C48EF0" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMvgMatlCnsmpnByMvtParameters" Multiplicity="1"
+				Role="FromRole_assoc_4E1368241C49D378964B7A6240C48EF0"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMvgMatlCnsmpnByMvtResult" Multiplicity="*"
+				Role="ToRole_assoc_4E1368241C49D378964B7A6240C48EF0"/></Association>
+			<Association Name="assoc_16D9434989ECA62CE8FB6AE4B2C2F167" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlTmeSersParameters" Multiplicity="1"
+				Role="FromRole_assoc_16D9434989ECA62CE8FB6AE4B2C2F167"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlTmeSersResult" Multiplicity="*"
+				Role="ToRole_assoc_16D9434989ECA62CE8FB6AE4B2C2F167"/></Association>
+			<Association Name="assoc_DD53057AC4F144C157FA1CAD761CA6A6" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlOPgParameters" Multiplicity="1"
+				Role="FromRole_assoc_DD53057AC4F144C157FA1CAD761CA6A6"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlOPgResult" Multiplicity="*"
+				Role="ToRole_assoc_DD53057AC4F144C157FA1CAD761CA6A6"/></Association>
+			<Association Name="assoc_24D8B9975DAA44BC9D0E129B95889160" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlPredictedParameters" Multiplicity="1"
+				Role="FromRole_assoc_24D8B9975DAA44BC9D0E129B95889160"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlPredictedResult" Multiplicity="*"
+				Role="ToRole_assoc_24D8B9975DAA44BC9D0E129B95889160"/></Association>
+			<Association Name="assoc_19D3FDF655CCB7704B3F6A1004EC16D1" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMvgMatlBOMUsageParameters" Multiplicity="1"
+				Role="FromRole_assoc_19D3FDF655CCB7704B3F6A1004EC16D1"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMvgMatlBOMUsageType" Multiplicity="*"
+				Role="ToRole_assoc_19D3FDF655CCB7704B3F6A1004EC16D1"/></Association>
+			<Association Name="assoc_B10FED797F7F043694553E5087E16DFE" sap:content-version="1"><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlOPgHdrParameters" Multiplicity="1"
+				Role="FromRole_assoc_B10FED797F7F043694553E5087E16DFE"/><End Type="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlOPgHdrType" Multiplicity="*"
+				Role="ToRole_assoc_B10FED797F7F043694553E5087E16DFE"/></Association>
+			<EntityContainer Name="MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="C_SlowOrNonMovingMatlOPgResults" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlOPgResult"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMovingMatlOPg" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlOPgParameters"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMovingMatlOPgHdrSet" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlOPgHdrType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMovingMatlOPgHdr" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlOPgHdrParameters"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMovingMatlPredictedResults" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlPredictedResult"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMovingMatlPredicted" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlPredictedParameters"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMovingMatlQryResults" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMovingMatlQry" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryParameters"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMovingMatlTmeSersResults" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlTmeSersResult"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMovingMatlTmeSers" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlTmeSersParameters"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMvgMatlBOMUsageSet" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMvgMatlBOMUsageType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMvgMatlBOMUsage" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMvgMatlBOMUsageParameters"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMvgMatlCnsmpnByMvtResults" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMvgMatlCnsmpnByMvtResult"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="C_SlowOrNonMvgMatlCnsmpnByMvt" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMvgMatlCnsmpnByMvtParameters"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="I_ControllingArea" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_ControllingAreaType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_CostCenterStdVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_CostCenterStdVHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_Currency" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_CurrencyType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_Customer_VH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_Customer_VHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_InventoryCnsmpnGroupVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_InventoryCnsmpnGroupVHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MaterialGroup" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MaterialGroupType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MaterialType" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MaterialTypeType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MatlDocInvtrySpclStkTypeVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocInvtrySpclStkTypeVHType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MatlDocInvtryStkTypeVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocInvtryStkTypeVHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MatlDocMaterialVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocMaterialVHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MatlDocPlantVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocPlantVHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MatlDocStkIdfgSlsOrdItmVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStkIdfgSlsOrdItmVHType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MatlDocStkIdfgSlsOrdVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStkIdfgSlsOrdVHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MatlDocStockIdfgCustomerVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStockIdfgCustomerVHType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MatlDocStockIdfgOwnerVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStockIdfgOwnerVHType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MatlDocStockIdfgSupplierVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStockIdfgSupplierVHType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MatlDocStockIdfgWBSVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStockIdfgWBSVHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_MatlDocStorageLocationVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStorageLocationVHType"
+				sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_ProductGroupVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_ProductGroupVHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_ProductGroup_2" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_ProductGroup_2Type" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_Producttype" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_ProducttypeType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_ProductTypeVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_ProductTypeVHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="I_ProfitCenterStdVH" EntityType="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_ProfitCenterStdVHType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+				<AssociationSet Name="assoc_34927EE276D8576A3FFBE86BA930D3FC"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_34927EE276D8576A3FFBE86BA930D3FC" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_34927EE276D8576A3FFBE86BA930D3FC"/><End EntitySet="I_MatlDocInvtrySpclStkTypeVH" Role="ToRole_assoc_34927EE276D8576A3FFBE86BA930D3FC"/></AssociationSet>
+				<AssociationSet Name="assoc_4E1368241C49D378964B7A6240C48EF0"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_4E1368241C49D378964B7A6240C48EF0" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMvgMatlCnsmpnByMvt" Role="FromRole_assoc_4E1368241C49D378964B7A6240C48EF0"/><End EntitySet="C_SlowOrNonMvgMatlCnsmpnByMvtResults" Role="ToRole_assoc_4E1368241C49D378964B7A6240C48EF0"/></AssociationSet>
+				<AssociationSet Name="assoc_C42E4ED48AD51FFAB60D03E2C802579C"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_C42E4ED48AD51FFAB60D03E2C802579C" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_C42E4ED48AD51FFAB60D03E2C802579C"/><End EntitySet="I_Currency" Role="ToRole_assoc_C42E4ED48AD51FFAB60D03E2C802579C"/></AssociationSet>
+				<AssociationSet Name="assoc_35DE56930968AFAEFB327941E735990C"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_35DE56930968AFAEFB327941E735990C" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_35DE56930968AFAEFB327941E735990C"/><End EntitySet="I_MatlDocStockIdfgCustomerVH" Role="ToRole_assoc_35DE56930968AFAEFB327941E735990C"/></AssociationSet>
+				<AssociationSet Name="assoc_4C4B36EF0653B179BDC995AD2B61B570"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_4C4B36EF0653B179BDC995AD2B61B570" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_4C4B36EF0653B179BDC995AD2B61B570"/><End EntitySet="I_MatlDocStockIdfgOwnerVH" Role="ToRole_assoc_4C4B36EF0653B179BDC995AD2B61B570"/></AssociationSet>
+				<AssociationSet Name="assoc_64E3AC09EE55D051F390B0D487E790BC"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_64E3AC09EE55D051F390B0D487E790BC" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_64E3AC09EE55D051F390B0D487E790BC"/><End EntitySet="I_MatlDocStockIdfgWBSVH" Role="ToRole_assoc_64E3AC09EE55D051F390B0D487E790BC"/></AssociationSet>
+				<AssociationSet Name="assoc_C9BD97D5BE67F67987EB5A51EEE9827A"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_C9BD97D5BE67F67987EB5A51EEE9827A" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A"/><End EntitySet="I_MatlDocPlantVH" Role="ToRole_assoc_C9BD97D5BE67F67987EB5A51EEE9827A"/></AssociationSet>
+				<AssociationSet Name="assoc_DD53057AC4F144C157FA1CAD761CA6A6"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_DD53057AC4F144C157FA1CAD761CA6A6" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlOPg" Role="FromRole_assoc_DD53057AC4F144C157FA1CAD761CA6A6"/><End EntitySet="C_SlowOrNonMovingMatlOPgResults" Role="ToRole_assoc_DD53057AC4F144C157FA1CAD761CA6A6"/></AssociationSet>
+				<AssociationSet Name="assoc_24D8B9975DAA44BC9D0E129B95889160"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_24D8B9975DAA44BC9D0E129B95889160" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlPredicted" Role="FromRole_assoc_24D8B9975DAA44BC9D0E129B95889160"/><End EntitySet="C_SlowOrNonMovingMatlPredictedResults" Role="ToRole_assoc_24D8B9975DAA44BC9D0E129B95889160"/></AssociationSet>
+				<AssociationSet Name="assoc_ABED319AA51A7F3F65FA41394BB16A17"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_ABED319AA51A7F3F65FA41394BB16A17" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlOPgResults" Role="FromRole_assoc_ABED319AA51A7F3F65FA41394BB16A17"/><End EntitySet="I_Currency" Role="ToRole_assoc_ABED319AA51A7F3F65FA41394BB16A17"/></AssociationSet>
+				<AssociationSet Name="assoc_07B11FD50E492E3368329D70BD4B1312"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_07B11FD50E492E3368329D70BD4B1312" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_07B11FD50E492E3368329D70BD4B1312"/><End EntitySet="I_MatlDocStkIdfgSlsOrdVH" Role="ToRole_assoc_07B11FD50E492E3368329D70BD4B1312"/></AssociationSet>
+				<AssociationSet Name="assoc_1404F672AE1F164DD57869B32B652288"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_1404F672AE1F164DD57869B32B652288" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_1404F672AE1F164DD57869B32B652288"/><End EntitySet="I_MatlDocStorageLocationVH" Role="ToRole_assoc_1404F672AE1F164DD57869B32B652288"/></AssociationSet>
+				<AssociationSet Name="assoc_16D9434989ECA62CE8FB6AE4B2C2F167"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_16D9434989ECA62CE8FB6AE4B2C2F167" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlTmeSers" Role="FromRole_assoc_16D9434989ECA62CE8FB6AE4B2C2F167"/><End EntitySet="C_SlowOrNonMovingMatlTmeSersResults" Role="ToRole_assoc_16D9434989ECA62CE8FB6AE4B2C2F167"/></AssociationSet>
+				<AssociationSet Name="assoc_BCE7CABB8E28198206EF616F8C6C8FC8"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_BCE7CABB8E28198206EF616F8C6C8FC8" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_BCE7CABB8E28198206EF616F8C6C8FC8"/><End EntitySet="I_MaterialType" Role="ToRole_assoc_BCE7CABB8E28198206EF616F8C6C8FC8"/></AssociationSet>
+				<AssociationSet Name="assoc_EFE46A57E1DF0505162EDBDFBC654397"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_EFE46A57E1DF0505162EDBDFBC654397" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_EFE46A57E1DF0505162EDBDFBC654397"/><End EntitySet="I_MatlDocMaterialVH" Role="ToRole_assoc_EFE46A57E1DF0505162EDBDFBC654397"/></AssociationSet>
+				<AssociationSet Name="assoc_602853A57A4ABC3CB991309B9ACC60AE"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_602853A57A4ABC3CB991309B9ACC60AE" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_602853A57A4ABC3CB991309B9ACC60AE"/><End EntitySet="I_MaterialGroup" Role="ToRole_assoc_602853A57A4ABC3CB991309B9ACC60AE"/></AssociationSet>
+				<AssociationSet Name="assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQry" Role="FromRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6"/><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="ToRole_assoc_AB36C5C799A29EF05A2F95F1B6FCAAF6"/></AssociationSet>
+				<AssociationSet Name="assoc_19D3FDF655CCB7704B3F6A1004EC16D1"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_19D3FDF655CCB7704B3F6A1004EC16D1" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMvgMatlBOMUsage" Role="FromRole_assoc_19D3FDF655CCB7704B3F6A1004EC16D1"/><End EntitySet="C_SlowOrNonMvgMatlBOMUsageSet" Role="ToRole_assoc_19D3FDF655CCB7704B3F6A1004EC16D1"/></AssociationSet>
+				<AssociationSet Name="assoc_1C98FEB8606A2E3563F5A9CBDCD3B177"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_1C98FEB8606A2E3563F5A9CBDCD3B177" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_1C98FEB8606A2E3563F5A9CBDCD3B177"/><End EntitySet="I_MatlDocInvtryStkTypeVH" Role="ToRole_assoc_1C98FEB8606A2E3563F5A9CBDCD3B177"/></AssociationSet>
+				<AssociationSet Name="assoc_4B418E08CD9C47F8F6DB55261D7BC979"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_4B418E08CD9C47F8F6DB55261D7BC979" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_4B418E08CD9C47F8F6DB55261D7BC979"/><End EntitySet="I_MatlDocStockIdfgSupplierVH" Role="ToRole_assoc_4B418E08CD9C47F8F6DB55261D7BC979"/></AssociationSet>
+				<AssociationSet Name="assoc_F9E881DA86D6D3ADFC7631D99F55C3F2"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_F9E881DA86D6D3ADFC7631D99F55C3F2" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlQryResults" Role="FromRole_assoc_F9E881DA86D6D3ADFC7631D99F55C3F2"/><End EntitySet="I_MatlDocStkIdfgSlsOrdItmVH" Role="ToRole_assoc_F9E881DA86D6D3ADFC7631D99F55C3F2"/></AssociationSet>
+				<AssociationSet Name="assoc_B10FED797F7F043694553E5087E16DFE"
+					Association="MMIM_SLOWORNONMOVINGMATERIAL_SRV.assoc_B10FED797F7F043694553E5087E16DFE" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="C_SlowOrNonMovingMatlOPgHdr" Role="FromRole_assoc_B10FED797F7F043694553E5087E16DFE"/><End EntitySet="C_SlowOrNonMovingMatlOPgHdrSet" Role="ToRole_assoc_B10FED797F7F043694553E5087E16DFE"/></AssociationSet>
+			</EntityContainer>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlOPgParameters/P_DisplayCurrency"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Currency"/><PropertyValue Property="CollectionPath" String="I_Currency"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="P_DisplayCurrency"/><PropertyValue Property="ValueListProperty" String="Currency"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Currency_Text"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Decimals"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CurrencyISOCode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="AlternativeCurrencyKey"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="IsPrimaryCurrencyForISOCrcy"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlOPgParameters/P_InventoryConsumptionGroup"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Value Help for Inventory Consumption Groups"/><PropertyValue Property="CollectionPath" String="I_InventoryCnsmpnGroupVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="P_InventoryConsumptionGroup"/><PropertyValue Property="ValueListProperty" String="InventoryConsumptionGroup"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="InventoryConsumptionGroup_Text"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.ValueListWithFixedValues"/></Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/Material"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Invtry mngmt postings for materials"/><PropertyValue Property="CollectionPath" String="I_MatlDocMaterialVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="Material"/><PropertyValue Property="ValueListProperty" String="Material"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Plant"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="MaterialName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="PlantName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="MaterialGroup"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="MaterialGroupName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="MaterialType"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="MaterialTypeName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/Plant" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Inventory management postings on plant"/><PropertyValue Property="CollectionPath" String="I_MatlDocPlantVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="Plant"/><PropertyValue Property="ValueListProperty" String="Plant"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="PlantName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Country"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CityCode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CityName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="StreetName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="HouseNumber"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/StorageLocation"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Invtry mngmt posting on storage location"/><PropertyValue Property="CollectionPath" String="I_MatlDocStorageLocationVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="StorageLocation"/><PropertyValue Property="ValueListProperty" String="StorageLocation"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Plant"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="StorageLocationName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="PlantName"/><Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Medium"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/SpecialStockIdfgSupplier"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Invtry mngmt postings on stk ident sup"/><PropertyValue Property="CollectionPath" String="I_MatlDocStockIdfgSupplierVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SpecialStockIdfgSupplier"/><PropertyValue Property="ValueListProperty" String="SpecialStockIdfgSupplier"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SupplierName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="StreetName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CityName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Country"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="PostalCode"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/SpecialStockIdfgSalesOrder"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Invtry mngmt postings on stk ident SO"/><PropertyValue Property="CollectionPath" String="I_MatlDocStkIdfgSlsOrdVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SpecialStockIdfgSalesOrder"/><PropertyValue Property="ValueListProperty" String="SpecialStockIdfgSalesOrder"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SalesOrganization"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="DistributionChannel"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SalesOffice"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SalesGroup"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SalesOrderType"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SoldToParty"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="OrganizationDivision"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/SpecialStockIdfgSalesOrderItem"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Invtry mngmt postings on stk ident SOI"/><PropertyValue Property="CollectionPath" String="I_MatlDocStkIdfgSlsOrdItmVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SpecialStockIdfgSalesOrderItem"/><PropertyValue Property="ValueListProperty" String="SpecialStockIdfgSalesOrderItem"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SpecialStockIdfgSalesOrder"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SalesOrganization"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="DistributionChannel"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SalesOffice"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SalesGroup"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SalesOrderType"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SoldToParty"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="OrganizationDivision"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="MaterialGroup"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/SpecialStockIdfgCustomer"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Invtry mngmt postings on stk ident cust"/><PropertyValue Property="CollectionPath" String="I_MatlDocStockIdfgCustomerVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SpecialStockIdfgCustomer"/><PropertyValue Property="ValueListProperty" String="SpecialStockIdfgCustomer"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CustomerName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="StreetName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CityName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Country"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="PostalCode"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/SpecialStockIdfgStockOwner"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Invtry mngmt postings on stk ident own"/><PropertyValue Property="CollectionPath" String="I_MatlDocStockIdfgOwnerVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SpecialStockIdfgStockOwner"/><PropertyValue Property="ValueListProperty" String="SpecialStockIdfgStockOwner"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="SupplierName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="StreetName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CityName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Country"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="PostalCode"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/InventorySpecialStockType"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Invtry postings on special stock types"/><PropertyValue Property="CollectionPath" String="I_MatlDocInvtrySpclStkTypeVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="InventorySpecialStockType"/><PropertyValue Property="ValueListProperty" String="InventorySpecialStockType"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="InventorySpecialStockTypeName"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/InventoryStockType"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Invtry mngmt postings on stock types"/><PropertyValue Property="CollectionPath" String="I_MatlDocInvtryStkTypeVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="InventoryStockType"/><PropertyValue Property="ValueListProperty" String="InventoryStockType"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="InventoryStockTypeName"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/WBSElementExternalID"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Invtry mngmt postings on stk ident WBS"/><PropertyValue Property="CollectionPath" String="I_MatlDocStockIdfgWBSVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="WBSElementExternalID"/><PropertyValue Property="ValueListProperty" String="WBSElementExternalID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="WBSDescription"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="WBSElementObject"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ApplicantName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Plant"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Location"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ProjectInternalID"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ProjectType"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/Currency"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Currency"/><PropertyValue Property="CollectionPath" String="I_Currency"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="Currency"/><PropertyValue Property="ValueListProperty" String="Currency"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Currency_Text"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Decimals"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CurrencyISOCode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="AlternativeCurrencyKey"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="IsPrimaryCurrencyForISOCrcy"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/MaterialGroup"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Product group Value help"/><PropertyValue Property="CollectionPath" String="I_ProductGroupVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="MaterialGroup"/><PropertyValue Property="ValueListProperty" String="ProductGroup"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ProductGroup_Text"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryResult/MaterialType"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Product Type Value Help"/><PropertyValue Property="CollectionPath" String="I_ProductTypeVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="MaterialType"/><PropertyValue Property="ValueListProperty" String="ProductType"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ProductType_Text"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ProductTypeCode"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryParameters/P_DisplayCurrency"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Currency"/><PropertyValue Property="CollectionPath" String="I_Currency"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="P_DisplayCurrency"/><PropertyValue Property="ValueListProperty" String="Currency"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Currency_Text"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Decimals"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CurrencyISOCode"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="AlternativeCurrencyKey"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="IsPrimaryCurrencyForISOCrcy"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.C_SlowOrNonMovingMatlQryParameters/P_InventoryConsumptionGroup"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Value Help for Inventory Consumption Groups"/><PropertyValue Property="CollectionPath" String="I_InventoryCnsmpnGroupVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="P_InventoryConsumptionGroup"/><PropertyValue Property="ValueListProperty" String="InventoryConsumptionGroup"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="InventoryConsumptionGroup_Text"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation><Annotation Term="Common.ValueListWithFixedValues"/></Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStkIdfgSlsOrdItmVHType/SoldToParty"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Customer"/><PropertyValue Property="CollectionPath" String="I_Customer_VH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SoldToParty"/><PropertyValue Property="ValueListProperty" String="Customer"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="OrganizationBPName1"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="OrganizationBPName2"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Country"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CityName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="StreetName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CustomerName"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStkIdfgSlsOrdVHType/SoldToParty"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Customer"/><PropertyValue Property="CollectionPath" String="I_Customer_VH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="SoldToParty"/><PropertyValue Property="ValueListProperty" String="Customer"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="OrganizationBPName1"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="OrganizationBPName2"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Country"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CityName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="StreetName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CustomerName"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStockIdfgWBSVHType/ControllingArea"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Controlling Area"/><PropertyValue Property="CollectionPath" String="I_ControllingArea"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ControllingArea"/><PropertyValue Property="ValueListProperty" String="ControllingArea"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="FiscalYearVariant"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ControllingAreaName"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ControllingAreaCurrency"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ChartOfAccounts"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ChartOfAccounts_Text"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CostCenterStandardHierarchy"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ProfitCenterStandardHierarchy"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="FinancialManagementArea"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ControllingAreaCurrencyRole"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CtrlgStdFinStatementVersion"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CtrlgStdFinStatementVersion_Text"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ProfitCenterAccountingCurrency"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStockIdfgWBSVHType/ResponsibleCostCenter"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Cost Center"/><PropertyValue Property="CollectionPath" String="I_CostCenterStdVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ControllingArea"/><PropertyValue Property="ValueListProperty" String="ControllingArea"/></Record>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ResponsibleCostCenter"/><PropertyValue Property="ValueListProperty" String="CostCenter"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="CostCenter_Text"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ValidityEndDate"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ValidityStartDate"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_MatlDocStockIdfgWBSVHType/ProfitCenter"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="Profit Center"/><PropertyValue Property="CollectionPath" String="I_ProfitCenterStdVH"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ControllingArea"/><PropertyValue Property="ValueListProperty" String="ControllingArea"/></Record>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="ProfitCenter"/><PropertyValue Property="ValueListProperty" String="ProfitCenter"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ProfitCenter_Text"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ValidityEndDate"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="ValidityStartDate"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMovingMatlOPg"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>P_NumberOfDays</PropertyPath>
+								<PropertyPath>P_KeyDate</PropertyPath>
+								<PropertyPath>P_DisplayCurrency</PropertyPath>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.NavigationRestrictions">
+					<Record>
+						<PropertyValue Property="RestrictedProperties">
+							<Collection>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="Parameters"/>
+									<PropertyValue Property="FilterRestrictions">
+										<Record><PropertyValue Property="Filterable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>P_NumberOfDays</PropertyPath>
+								<PropertyPath>P_KeyDate</PropertyPath>
+								<PropertyPath>P_DisplayCurrency</PropertyPath>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMovingMatlOPgHdr"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>P_DisplayCurrency</PropertyPath>
+								<PropertyPath>P_KeyDate</PropertyPath>
+								<PropertyPath>P_NumberOfDays</PropertyPath>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.NavigationRestrictions">
+					<Record>
+						<PropertyValue Property="RestrictedProperties">
+							<Collection>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="Parameters"/>
+									<PropertyValue Property="FilterRestrictions">
+										<Record><PropertyValue Property="Filterable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>P_DisplayCurrency</PropertyPath>
+								<PropertyPath>P_KeyDate</PropertyPath>
+								<PropertyPath>P_NumberOfDays</PropertyPath>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMovingMatlOPgResults"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>CnsmpnLatestPostgDate_fc</PropertyPath>
+								<PropertyPath>InventorySpecialStockType_fc</PropertyPath>
+								<PropertyPath>InventoryStockType_fc</PropertyPath>
+								<PropertyPath>MatlDocLatestPostgDate_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSalesOrder_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSalesOrderItem_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgStockOwner_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSupplier_fc</PropertyPath>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>MatlWrhsStkQtyInMatlBaseUnit</PropertyPath>
+								<PropertyPath>StockValueInCCCrcy</PropertyPath>
+								<PropertyPath>StockValueInDisplayCurrency</PropertyPath>
+								<PropertyPath>CnsmpnQtyInBaseUnitOnRefDate</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>CnsmpnLatestPostgDate_fc</PropertyPath>
+								<PropertyPath>InventorySpecialStockType_fc</PropertyPath>
+								<PropertyPath>InventoryStockType_fc</PropertyPath>
+								<PropertyPath>MatlDocLatestPostgDate_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSalesOrder_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSalesOrderItem_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgStockOwner_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSupplier_fc</PropertyPath>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMovingMatlPredicted"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>P_KeyDate</PropertyPath>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.NavigationRestrictions">
+					<Record>
+						<PropertyValue Property="RestrictedProperties">
+							<Collection>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="Parameters"/>
+									<PropertyValue Property="FilterRestrictions">
+										<Record><PropertyValue Property="Filterable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>P_KeyDate</PropertyPath>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMovingMatlPredictedResults"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>MatlWrhsStkQtyInMatlBaseUnit</PropertyPath>
+								<PropertyPath>CnsmpnQtyInBaseUnitOnRefDate</PropertyPath>
+								<PropertyPath>ConsumptionToStockRatio</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMovingMatlQry"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>P_NumberOfDays</PropertyPath>
+								<PropertyPath>P_KeyDate</PropertyPath>
+								<PropertyPath>P_DisplayCurrency</PropertyPath>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.NavigationRestrictions">
+					<Record>
+						<PropertyValue Property="RestrictedProperties">
+							<Collection>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="Parameters"/>
+									<PropertyValue Property="FilterRestrictions">
+										<Record><PropertyValue Property="Filterable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>P_NumberOfDays</PropertyPath>
+								<PropertyPath>P_KeyDate</PropertyPath>
+								<PropertyPath>P_DisplayCurrency</PropertyPath>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMovingMatlQryResults"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>CnsmpnLatestPostgDate_fc</PropertyPath>
+								<PropertyPath>InventorySpecialStockType_fc</PropertyPath>
+								<PropertyPath>InventoryStockType_fc</PropertyPath>
+								<PropertyPath>MaterialGroup_fc</PropertyPath>
+								<PropertyPath>MaterialType_fc</PropertyPath>
+								<PropertyPath>MatlDocLatestPostgDate_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgCustomer_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSalesOrder_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSalesOrderItem_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgStockOwner_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSupplier_fc</PropertyPath>
+								<PropertyPath>StorageLocation_fc</PropertyPath>
+								<PropertyPath>WBSElementExternalID_fc</PropertyPath>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>MatlWrhsStkQtyInMatlBaseUnit</PropertyPath>
+								<PropertyPath>StockValueInCCCrcy</PropertyPath>
+								<PropertyPath>StockValueInDisplayCurrency</PropertyPath>
+								<PropertyPath>CnsmpnQtyInBaseUnitOnRefDate</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>CnsmpnLatestPostgDate_fc</PropertyPath>
+								<PropertyPath>InventorySpecialStockType_fc</PropertyPath>
+								<PropertyPath>InventoryStockType_fc</PropertyPath>
+								<PropertyPath>MaterialGroup_fc</PropertyPath>
+								<PropertyPath>MaterialType_fc</PropertyPath>
+								<PropertyPath>MatlDocLatestPostgDate_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgCustomer_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSalesOrder_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSalesOrderItem_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgStockOwner_fc</PropertyPath>
+								<PropertyPath>SpecialStockIdfgSupplier_fc</PropertyPath>
+								<PropertyPath>StorageLocation_fc</PropertyPath>
+								<PropertyPath>WBSElementExternalID_fc</PropertyPath>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMovingMatlTmeSers"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>P_KeyDate</PropertyPath>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.NavigationRestrictions">
+					<Record>
+						<PropertyValue Property="RestrictedProperties">
+							<Collection>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="Parameters"/>
+									<PropertyValue Property="FilterRestrictions">
+										<Record><PropertyValue Property="Filterable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>P_KeyDate</PropertyPath>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMovingMatlTmeSersResults"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>MatlWrhsStkQtyInMatlBaseUnit</PropertyPath>
+								<PropertyPath>CnsmpnQtyInBaseUnitOnRefDate</PropertyPath>
+								<PropertyPath>ConsumptionToStockRatio</PropertyPath>
+								<PropertyPath>NumberOfBOMUsingTheMaterial</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMvgMatlBOMUsage"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>P_KeyDate</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.NavigationRestrictions">
+					<Record>
+						<PropertyValue Property="RestrictedProperties">
+							<Collection>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="Parameters"/>
+									<PropertyValue Property="FilterRestrictions">
+										<Record><PropertyValue Property="Filterable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>P_KeyDate</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMvgMatlCnsmpnByMvt"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+								<PropertyPath>P_StartDate</PropertyPath>
+								<PropertyPath>P_EndDate</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.NavigationRestrictions">
+					<Record>
+						<PropertyValue Property="RestrictedProperties">
+							<Collection>
+								<Record><PropertyValue Property="NavigationProperty" NavigationPropertyPath="Parameters"/>
+									<PropertyValue Property="FilterRestrictions">
+										<Record><PropertyValue Property="Filterable" Bool="false"/></Record>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>P_InventoryConsumptionGroup</PropertyPath>
+								<PropertyPath>P_StartDate</PropertyPath>
+								<PropertyPath>P_EndDate</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.MMIM_SLOWORNONMOVINGMATERIAL_SRV_Entities/C_SlowOrNonMvgMatlCnsmpnByMvtResults"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="Capabilities.FilterRestrictions">
+					<Record>
+						<PropertyValue Property="NonFilterableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+								<PropertyPath>MatlWrhsStkQtyInMatlBaseUnit</PropertyPath>
+								<PropertyPath>MatlCnsmpnQtyInMatlBaseUnit</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.SortRestrictions">
+					<Record>
+						<PropertyValue Property="NonSortableProperties">
+							<Collection>
+								<PropertyPath>ID</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="MMIM_SLOWORNONMOVINGMATERIAL_SRV.I_CurrencyType/Currency" xmlns="http://docs.oasis-open.org/odata/ns/edm"><Annotation Term="Common.UnitSpecificScale" Path="Decimals"/></Annotations><atom:link rel="self"
+				href="https://webidecp-s2aa57004.dispatcher.eu3.hana.ondemand.com/destinations/PrimaPixs/sap/opu/odata/sap/MMIM_SLOWORNONMOVINGMATERIAL_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-s2aa57004.dispatcher.eu3.hana.ondemand.com/destinations/PrimaPixs/sap/opu/odata/sap/MMIM_SLOWORNONMOVINGMATERIAL_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
