@@ -1,0 +1,39 @@
+<mvc:View controllerName="app.eci.zcaraltatrx2.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable" xmlns:core="sap.ui.core">
+	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false">
+		<semantic:titleHeading>
+			<Title text="{i18n>worklistTitle}"/>
+		</semantic:titleHeading>
+		<semantic:headerContent>
+			<!--id="smartFilterBar" -->
+			<smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="Head" persistencyKey="SmartFilter_Explored">
+				<smartFilterBar:layoutData>
+					<FlexItemData shrinkFactor="0"/>
+				</smartFilterBar:layoutData>
+			</smartFilterBar:SmartFilterBar>
+		</semantic:headerContent>
+		<semantic:content>
+			<!--initiallyVisibleFields="Businessdaydate,Retailstoreid,Workstationid,Transnumber,Transtypecode,Operatorid,Begintimestamp,CreatedBy"-->
+			<smartTable:SmartTable entitySet="Head" smartFilterId="smartFilterBar" showRowCount="true" enableAutoBinding="false"
+				persistencyKey="SmartTable_Explored" tableType="ResponsiveTable" beforeRebindTable="onBeforeRebindTable" useTablePersonalisation="true"
+				useVariantManagement="true" showVariantManagement="true" showTablePersonalisation="true">
+				<smartTable:customToolbar>
+					<OverflowToolbar >
+						<ToolbarSpacer/>
+						<Button icon="sap-icon://delete" text="Baja de transacción ( Alta Manual )" press="onExecuteBajaTrx"/>
+						<Button id="createButton" text="{i18n>masterCreate}" press="onCreate" icon="sap-icon://create"/>
+					</OverflowToolbar>
+				</smartTable:customToolbar>
+				<Table id="table" mode="SingleSelectLeft" selectionChange="" growing="true">
+					<items>
+						<ColumnListItem type="Active" vAlign="Middle" navigated="true" press="onRowSelectTable"></ColumnListItem>
+					</items>
+				</Table>
+				<smartTable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>

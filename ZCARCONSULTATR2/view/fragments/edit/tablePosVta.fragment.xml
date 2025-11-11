@@ -1,0 +1,109 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:m="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:table="sap.ui.table">
+	<table:Table id="tablePos" rows="{ path:'modelCreate>/to_Position', sorter: { path: 'Retailnumber', descending: false} }"
+		visibleRowCount="10" visible="{objectView>/editable}">
+		<table:extension>
+			<m:OverflowToolbar style="Clear">
+				<m:ToolbarSpacer/>
+				<m:Button id="addRowButtonPV" text="Agregar Fila" icon="sap-icon://add" press="onAddRowPV" visible="true"/>
+				<m:Button id="deleteRowButtonPV" text="Eliminar Fila" icon="sap-icon://delete" press="onDeleteRowPV" visible="true"/>
+			</m:OverflowToolbar>
+		</table:extension>
+		<table:columns>
+			<table:Column width="5rem">
+				<m:Label text=""/>
+				<table:template>
+					<core:Icon src="{= ${modelCreate>IndUpdate} === 'D' ? 'sap-icon://delete' : ''}" class="size1" color="#031E48">
+						<core:layoutData>
+							<m:FlexItemData growFactor="1"/>
+						</core:layoutData>
+					</core:Icon>
+				</table:template>
+			</table:Column>
+				<table:Column width="11rem">
+				<m:Label text="{/#PositionType/Retailnumber/@sap:label}"/>
+				<table:template>
+					<m:Text text="{modelCreate>Retailnumber}"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionType/Zzcoddpto/@sap:label}"/>
+				<table:template>
+					<m:Input value="{modelCreate>Zzcoddpto}" fieldGroupIds="fgDGP" maxLength="{= parseInt(${/#PositionType/Zzcoddpto/maxLength}) }"
+						change="onChangeValuePosition" required="true" editable="{= ${modelCreate>IndUpdate} === 'D' ? false : true}"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionType/Zzarthost/@sap:label}"/>
+				<table:template>
+					<m:Input value="{modelCreate>Zzarthost}" fieldGroupIds="fgDGP" maxLength="14"
+						change="onChangeValuePosition" editable="{= ${modelCreate>IndUpdate} === 'D' ? false : true}" liveChange="onLiveChangeNumber"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionType/Zztalla/@sap:label}"/>
+				<table:template>
+					<m:Input value="{modelCreate>Zztalla}" fieldGroupIds="fgDGP" maxLength="{= parseInt(${/#PositionType/Zztalla/maxLength}) }"
+						change="onChangeValuePosition" editable="{= ${modelCreate>IndUpdate} === 'D' ? false : true}"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionType/Retailquantity/@sap:label}"/>
+				<table:template>
+					<m:Input
+						value="{path:'modelCreate>Retailquantity', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"
+						fieldGroupIds="fgDGP" change="onChangeValuePosition" editable="{= ${modelCreate>IndUpdate} === 'D' ? false : true}"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionType/Zzecunimed/@sap:label}"/>
+				<table:template>
+					<m:Input value="{modelCreate>Zzecunimed}" fieldGroupIds="fgDGP" maxLength="2" change="onChangeValuePosition" liveChange="onLiveChangeNumber" editable="false"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionType/Salesamount/@sap:label}"/>
+				<table:template>
+					<m:Input
+						value="{path:'modelCreate>Salesamount', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"
+						fieldGroupIds="fgDGP" change="onChangeValuePosition" editable="{= ${modelCreate>IndUpdate} === 'D' ? false : true}"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionType/Zzlvimpneto/@sap:label}"/>
+				<table:template>
+					<m:Input
+						value="{path:'modelCreate>Zzlvimpneto', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"
+						fieldGroupIds="fgDGP" change="onChangeValuePosition" maxLength="{= parseInt(${/#PositionType/Zzlvimpneto/maxLength}) }"
+						editable="{= ${modelCreate>IndUpdate} === 'D' ? false : true}"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionType/Zzlvimpbruto/@sap:label}"/>
+				<table:template>
+					<m:Input
+						value="{path:'modelCreate>Zzlvimpbruto', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"
+						fieldGroupIds="fgDGP" change="onChangeValuePosition" maxLength="{= parseInt(${/#PositionType/Zzlvimpbruto/maxLength}) }"
+						editable="{= ${modelCreate>IndUpdate} === 'D' ? false : true}"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionType/ZzCalifArtic/@sap:label}"/>
+				<table:template>
+					<m:Input value="{= ${modelCreate>ZzCalifArtic} === '' || !${modelCreate>ZzCalifArtic} ? '00' : ${modelCreate>ZzCalifArtic} }"
+						fieldGroupIds="fgDGP" change="onChangeValuePosition" maxLength="2"
+						editable="{= ${modelCreate>IndUpdate} === 'D' ? false : true}" liveChange="onLiveChangeNumber"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionType/Zzcampoc/@sap:label}"/>
+				<table:template>
+					<!--<m:Input value="{= ${modelCreate>Zzcampoc} === '' || !${modelCreate>Zzcampoc} ? '0' : ${modelCreate>Zzcampoc} }"-->
+					<m:Input value="{modelCreate>Zzcampoc}" fieldGroupIds="fgDGP"
+						change="onChangeValuePosition" maxLength="1"
+						editable="{= ${modelCreate>IndUpdate} === 'D' ? false : true}" liveChange="onLiveChangeNumber"/>
+				</table:template>
+			</table:Column>
+		</table:columns>
+	</table:Table>
+</core:FragmentDefinition>

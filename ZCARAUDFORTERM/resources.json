@@ -1,0 +1,53 @@
+{
+    "resources": [
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "ext/controller/ListReportExt.controller.js"
+        },
+        {
+            "name": "webapp/ext/controller/ListReportExt.controller.js"
+        },
+        {
+            "name": ".project.json"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/ListReport/Hardtotal/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "localService/ZCDS_SB_C_AUDIT_TLOG_HT_VAN.xml"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": ".user.project.json"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "annotations/annotations.xml"
+        }
+    ]
+}

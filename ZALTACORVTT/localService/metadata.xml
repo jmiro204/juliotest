@@ -1,0 +1,473 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="cds_zcar_sd_corr_vtt" xml:lang="es" sap:schema-version="1">
+            <Annotation
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
+                <EntityType Name="I_DraftAdministrativeDataType" sap:label="Datos de gestión para borrador" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="DraftUUID"/>
+                        <PropertyRef Name="DraftEntityType"/>
+                    </Key>
+                    <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Borrador (ID técn.)" sap:quickinfo="Borrador (ID técnico)"/>
+                    <Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="ID entidad borrador" sap:quickinfo="ID de entidad de borrador"/>
+                    <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Borrador creado el"/>
+                    <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="CreatedByUserDescription" sap:label="Borrador creado por"/>
+                    <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Borrador modificado por última vez el"/>
+                    <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="LastChangedByUserDescription" sap:label="Borrador modificado por última vez por"/>
+                    <Property Name="DraftAccessType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Tp.acceso a borrador" sap:quickinfo="Tipo de acceso a borrador"/>
+                    <Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Borrador en tratamiento desde"/>
+                    <Property Name="InProcessByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="InProcessByUserDescription" sap:label="Borrador está siendo tratado por"/>
+                    <Property Name="DraftIsKeptByUser" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Borrador conservado por usuario"/>
+                    <Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Borrador bloqueado desde"/>
+                    <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Borrador creado por mí"/>
+                    <Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Borrador modif.por última vez por mí" sap:quickinfo="Borrador modificado por última vez por mí"/>
+                    <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Borrador tratado por mí"/>
+                    <Property Name="CreatedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Borrador creado por (descripción)"/>
+                    <Property Name="LastChangedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Borrador modif.por últ.vez por (descr.)" sap:quickinfo="Borrador modificado por última vez por (descripción)"/>
+                    <Property Name="InProcessByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Borrador está siendo tratado por (desc.)" sap:quickinfo="Borrador está siendo tratado por (descripción)"/>
+                </EntityType>
+                <EntityType Name="ZCAR_CDS_BAJA_ALTA_VHType" sap:value-list="true" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="BajaAlta"/>
+                    </Key>
+                    <Property Name="BajaAlta" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="Description" sap:label="Valor inferior" sap:quickinfo="Valores para dominios: valor individual/límite inferior"/>
+                    <Property Name="Description" Type="Edm.String" MaxLength="60" sap:label="Descrip.breve" sap:quickinfo="Texto breve p.valores fijos"/>
+                </EntityType>
+                <EntityType Name="ZCAR_CDS_C_CORR_VTTType" sap:label="Proyección Correcion VTT" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Guidreg"/>
+                        <PropertyRef Name="IsActiveEntity"/>
+                    </Key>
+                    <Property Name="Businessdaydate_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="Retailstoreid_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="Transactiontypecode_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="Transnumber_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="Workstationid_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="Guidreg" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                    <Property Name="Businessdaydate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:field-control="Businessdaydate_fc" sap:filter-restriction="interval" sap:label="Periodo de Venta"/>
+                    <Property Name="Retailstoreid" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:field-control="Retailstoreid_fc" sap:label="Tienda" sap:value-list="standard"/>
+                    <Property Name="Workstationid" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:field-control="Workstationid_fc" sap:label="Número de TPV"/>
+                    <Property Name="Transnumber" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:field-control="Transnumber_fc" sap:label="Número transacción"/>
+                    <Property Name="Transactiontypecode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:field-control="Transactiontypecode_fc" sap:text="Transtypecodetext" sap:label="Tipo trans." sap:quickinfo="Tipo de transacción" sap:value-list="fixed-values"/>
+                    <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Moneda medio pago" sap:quickinfo="Moneda de vía de pago" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                    <Property Name="Tenderamount" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Datos de cabecera" sap:quickinfo="Valor de medio de pago"/>
+                    <Property Name="Zzimptrans" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Importe total" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="Zbajaalta" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Baja/Alta" sap:value-list="fixed-values"/>
+                    <Property Name="Retailstoreidedit" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda"/>
+                    <Property Name="Zudercrea" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Modificado por"/>
+                    <Property Name="Creationtimestamp" Type="Edm.DateTimeOffset" Precision="7" sap:label="Hora creación oper." sap:quickinfo="Cronomarcador para hora de creación operación"/>
+                    <Property Name="Zusermod" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Modificado por"/>
+                    <Property Name="Lastchangetimestamp" Type="Edm.DateTimeOffset" Precision="7" sap:label="Hora última modif." sap:quickinfo="Cronomarcador última modificación para operación"/>
+                    <Property Name="Rowkey" Type="Edm.Int32" sap:label="Número natural" sap:quickinfo="Entero con signo de 4 bytes"/>
+                    <Property Name="Transtypecodetext" Type="Edm.String" MaxLength="60" sap:label="Descrip.breve" sap:quickinfo="Texto breve p.valores fijos"/>
+                    <Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Tiene borrador" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Borrador creado el" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Borrador modificado por última vez el" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Tiene doc.activo" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Está activo" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                    <NavigationProperty Name="DraftAdministrativeData" Relationship="cds_zcar_sd_corr_vtt.assoc_CE23DBFE682ABA81F72B96184A1B41CC" FromRole="FromRole_assoc_CE23DBFE682ABA81F72B96184A1B41CC" ToRole="ToRole_assoc_CE23DBFE682ABA81F72B96184A1B41CC"/>
+                    <NavigationProperty Name="SiblingEntity" Relationship="cds_zcar_sd_corr_vtt.assoc_EB8591DC3FF79B49991DC6802117654B" FromRole="FromRole_assoc_EB8591DC3FF79B49991DC6802117654B" ToRole="ToRole_assoc_EB8591DC3FF79B49991DC6802117654B"/>
+                    <NavigationProperty Name="to_Position" Relationship="cds_zcar_sd_corr_vtt.assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D" FromRole="FromRole_assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D" ToRole="ToRole_assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D"/>
+                </EntityType>
+                <EntityType Name="ZCAR_CDS_C_CORR_VTT_POSType" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Guidreg"/>
+                        <PropertyRef Name="Transnumber"/>
+                        <PropertyRef Name="Retailstoreid"/>
+                        <PropertyRef Name="Workstationid"/>
+                        <PropertyRef Name="Transactiontypecode"/>
+                        <PropertyRef Name="Rowkey"/>
+                        <PropertyRef Name="Guidregpos"/>
+                        <PropertyRef Name="IsActiveEntity"/>
+                    </Key>
+                    <Property Name="Guidreg" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="Transnumber" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Número transacción"/>
+                    <Property Name="Retailstoreid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda"/>
+                    <Property Name="Workstationid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Número de TPV"/>
+                    <Property Name="Transactiontypecode" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="Tipo trans." sap:quickinfo="Tipo de transacción"/>
+                    <Property Name="Rowkey" Type="Edm.Int32" Nullable="false" sap:label="Número natural" sap:quickinfo="Entero con signo de 4 bytes"/>
+                    <Property Name="Guidregpos" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                    <Property Name="Businessdaydate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Periodo de Venta"/>
+                    <Property Name="Zbajaalta" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Baja/Alta"/>
+                    <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Moneda medio pago" sap:quickinfo="Moneda de vía de pago" sap:creatable="false" sap:updatable="false" sap:semantics="currency-code"/>
+                    <Property Name="Tenderamount" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Valor medio pago" sap:quickinfo="Valor de medio de pago"/>
+                    <Property Name="Zmediopagomoneda" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="Tipo/Subtipo/Mp" sap:quickinfo="Tipo/Subtipo MP" sap:value-list="standard"/>
+                    <Property Name="Zcartipompg" Type="Edm.String" MaxLength="3" sap:label="Tipo Medio de Pago" sap:quickinfo="Tipo medio de pago"/>
+                    <Property Name="Zcarsubtmpg" Type="Edm.String" MaxLength="3" sap:label="Subtipo Med Pago" sap:quickinfo="Subtipo medio de pago" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="Zudercrea" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Modificado por"/>
+                    <Property Name="Creationtimestamp" Type="Edm.DateTimeOffset" Precision="7" sap:label="Hora creación oper." sap:quickinfo="Cronomarcador para hora de creación operación"/>
+                    <Property Name="Zusermod" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Modificado por"/>
+                    <Property Name="Lastchangetimestamp" Type="Edm.DateTimeOffset" Precision="7" sap:label="Hora última modif." sap:quickinfo="Cronomarcador última modificación para operación"/>
+                    <Property Name="Transnumberedit" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Número transacción"/>
+                    <Property Name="Businessdaydateedit" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Periodo de Venta"/>
+                    <Property Name="Retailstoreidedit" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda"/>
+                    <Property Name="Workstationidedit" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Número de TPV"/>
+                    <Property Name="Transactiontypecodeedit" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Tipo trans." sap:quickinfo="Tipo de transacción"/>
+                    <Property Name="Bajatransaction" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Baja Transaccion"/>
+                    <Property Name="Zzimptrans" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Importe total" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="Transtypecodetext" Type="Edm.String" MaxLength="60" sap:label="Descrip.breve" sap:quickinfo="Texto breve p.valores fijos"/>
+                    <Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Tiene borrador" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Borrador creado el" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Borrador modificado por última vez el" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Tiene doc.activo" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Está activo" sap:heading="" sap:quickinfo="" sap:creatable="false" sap:updatable="false"/>
+                    <NavigationProperty Name="DraftAdministrativeData" Relationship="cds_zcar_sd_corr_vtt.assoc_085E9CFC6776BC34A0164ADA5E14FCA1" FromRole="FromRole_assoc_085E9CFC6776BC34A0164ADA5E14FCA1" ToRole="ToRole_assoc_085E9CFC6776BC34A0164ADA5E14FCA1"/>
+                    <NavigationProperty Name="SiblingEntity" Relationship="cds_zcar_sd_corr_vtt.assoc_53F233D77119B5E7CDC991ED24C45C21" FromRole="FromRole_assoc_53F233D77119B5E7CDC991ED24C45C21" ToRole="ToRole_assoc_53F233D77119B5E7CDC991ED24C45C21"/>
+                    <NavigationProperty Name="to_Header" Relationship="cds_zcar_sd_corr_vtt.assoc_013A67647F09033E6FF9C00B0518CA6F" FromRole="FromRole_assoc_013A67647F09033E6FF9C00B0518CA6F" ToRole="ToRole_assoc_013A67647F09033E6FF9C00B0518CA6F"/>
+                </EntityType>
+                <EntityType Name="zcar_cds_i_mediopago_vhType" sap:label="Medios de pago" sap:value-list="true" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Mediopagosub"/>
+                        <PropertyRef Name="Mediopago"/>
+                    </Key>
+                    <Property Name="Mediopagosub" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:text="Mediopagotext" sap:label="Tipo/Subtipo/Mp" sap:quickinfo="Tipo/Subtipo MP"/>
+                    <Property Name="Mediopago" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Medio de Pago" sap:quickinfo="MEDIO DE PAGO"/>
+                    <Property Name="Desgloce" Type="Edm.String" MaxLength="3" sap:label="Desglose"/>
+                    <Property Name="Mediopagotext" Type="Edm.String" MaxLength="40" sap:label="Descr. Medio de pago" sap:quickinfo="Descripcion Subtipo medio de pago"/>
+                </EntityType>
+                <EntityType Name="zcds_audit_storeid_vhType" sap:label="Ayuda de busqueda tienda" sap:value-list="true" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Retailstoreid"/>
+                    </Key>
+                    <Property Name="Retailstoreid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda"/>
+                    <Property Name="RetailstoreidShow" Type="Edm.String" MaxLength="10"/>
+                    <Property Name="RetailstoreidText" Type="Edm.String" MaxLength="20"/>
+                </EntityType>
+                <EntityType Name="zcds_audit_tranty_vhType" sap:label="Ayuda de busqueda tipo de transacción" sap:value-list="true" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Transtypecode"/>
+                    </Key>
+                    <Property Name="Transtypecode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="Description" sap:label="Valor inferior" sap:quickinfo="Valores para dominios: valor individual/límite inferior"/>
+                    <Property Name="TranstypecodeShow" Type="Edm.String" MaxLength="10" sap:text="Description"/>
+                    <Property Name="Description" Type="Edm.String" MaxLength="60" sap:label="Descrip.breve" sap:quickinfo="Texto breve p.valores fijos"/>
+                </EntityType>
+                <ComplexType Name="DummyFunctionImportResult">
+                    <Property Name="IsInvalid" Type="Edm.Boolean" sap:label="VERDADERO"/>
+                </ComplexType>
+                <Association Name="assoc_085E9CFC6776BC34A0164ADA5E14FCA1" sap:content-version="1">
+                    <End Type="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTT_POSType" Multiplicity="1" Role="FromRole_assoc_085E9CFC6776BC34A0164ADA5E14FCA1"/>
+                    <End Type="cds_zcar_sd_corr_vtt.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_085E9CFC6776BC34A0164ADA5E14FCA1"/>
+                </Association>
+                <Association Name="assoc_53F233D77119B5E7CDC991ED24C45C21" sap:content-version="1">
+                    <End Type="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTT_POSType" Multiplicity="1" Role="FromRole_assoc_53F233D77119B5E7CDC991ED24C45C21"/>
+                    <End Type="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTT_POSType" Multiplicity="0..1" Role="ToRole_assoc_53F233D77119B5E7CDC991ED24C45C21"/>
+                </Association>
+                <Association Name="assoc_013A67647F09033E6FF9C00B0518CA6F" sap:content-version="1">
+                    <End Type="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTT_POSType" Multiplicity="1" Role="FromRole_assoc_013A67647F09033E6FF9C00B0518CA6F"/>
+                    <End Type="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType" Multiplicity="1" Role="ToRole_assoc_013A67647F09033E6FF9C00B0518CA6F"/>
+                </Association>
+                <Association Name="assoc_EB8591DC3FF79B49991DC6802117654B" sap:content-version="1">
+                    <End Type="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType" Multiplicity="1" Role="FromRole_assoc_EB8591DC3FF79B49991DC6802117654B"/>
+                    <End Type="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType" Multiplicity="0..1" Role="ToRole_assoc_EB8591DC3FF79B49991DC6802117654B"/>
+                </Association>
+                <Association Name="assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D" sap:content-version="1">
+                    <End Type="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType" Multiplicity="1" Role="FromRole_assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D">
+                        <OnDelete Action="Cascade"/>
+                    </End>
+                    <End Type="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTT_POSType" Multiplicity="*" Role="ToRole_assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D"/>
+                    <ReferentialConstraint>
+                        <Principal Role="FromRole_assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D">
+                            <PropertyRef Name="Guidreg"/>
+                        </Principal>
+                        <Dependent Role="ToRole_assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D">
+                            <PropertyRef Name="Guidreg"/>
+                        </Dependent>
+                    </ReferentialConstraint>
+                </Association>
+                <Association Name="assoc_CE23DBFE682ABA81F72B96184A1B41CC" sap:content-version="1">
+                    <End Type="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType" Multiplicity="1" Role="FromRole_assoc_CE23DBFE682ABA81F72B96184A1B41CC"/>
+                    <End Type="cds_zcar_sd_corr_vtt.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_CE23DBFE682ABA81F72B96184A1B41CC"/>
+                </Association>
+                <EntityContainer Name="cds_zcar_sd_corr_vtt_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                    <EntitySet Name="I_DraftAdministrativeData" EntityType="cds_zcar_sd_corr_vtt.I_DraftAdministrativeDataType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:addressable="false" sap:content-version="1"/>
+                    <EntitySet Name="ZCAR_CDS_BAJA_ALTA_VH" EntityType="cds_zcar_sd_corr_vtt.ZCAR_CDS_BAJA_ALTA_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                    <EntitySet Name="ZCAR_CDS_C_CORR_VTT" EntityType="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType" sap:deletable="false" sap:content-version="1"/>
+                    <EntitySet Name="ZCAR_CDS_C_CORR_VTT_POS" EntityType="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTT_POSType" sap:content-version="1"/>
+                    <EntitySet Name="zcar_cds_i_mediopago_vh" EntityType="cds_zcar_sd_corr_vtt.zcar_cds_i_mediopago_vhType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                    <EntitySet Name="zcds_audit_storeid_vh" EntityType="cds_zcar_sd_corr_vtt.zcds_audit_storeid_vhType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                    <EntitySet Name="zcds_audit_tranty_vh" EntityType="cds_zcar_sd_corr_vtt.zcds_audit_tranty_vhType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                    <AssociationSet Name="assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D" Association="cds_zcar_sd_corr_vtt.assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                        <End EntitySet="ZCAR_CDS_C_CORR_VTT" Role="FromRole_assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D"/>
+                        <End EntitySet="ZCAR_CDS_C_CORR_VTT_POS" Role="ToRole_assoc_BF2385A53A3C1E3B5DE6BEAFF331C07D"/>
+                    </AssociationSet>
+                    <AssociationSet Name="assoc_013A67647F09033E6FF9C00B0518CA6F" Association="cds_zcar_sd_corr_vtt.assoc_013A67647F09033E6FF9C00B0518CA6F" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                        <End EntitySet="ZCAR_CDS_C_CORR_VTT_POS" Role="FromRole_assoc_013A67647F09033E6FF9C00B0518CA6F"/>
+                        <End EntitySet="ZCAR_CDS_C_CORR_VTT" Role="ToRole_assoc_013A67647F09033E6FF9C00B0518CA6F"/>
+                    </AssociationSet>
+                    <AssociationSet Name="assoc_53F233D77119B5E7CDC991ED24C45C21" Association="cds_zcar_sd_corr_vtt.assoc_53F233D77119B5E7CDC991ED24C45C21" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                        <End EntitySet="ZCAR_CDS_C_CORR_VTT_POS" Role="FromRole_assoc_53F233D77119B5E7CDC991ED24C45C21"/>
+                        <End EntitySet="ZCAR_CDS_C_CORR_VTT_POS" Role="ToRole_assoc_53F233D77119B5E7CDC991ED24C45C21"/>
+                    </AssociationSet>
+                    <AssociationSet Name="assoc_EB8591DC3FF79B49991DC6802117654B" Association="cds_zcar_sd_corr_vtt.assoc_EB8591DC3FF79B49991DC6802117654B" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                        <End EntitySet="ZCAR_CDS_C_CORR_VTT" Role="FromRole_assoc_EB8591DC3FF79B49991DC6802117654B"/>
+                        <End EntitySet="ZCAR_CDS_C_CORR_VTT" Role="ToRole_assoc_EB8591DC3FF79B49991DC6802117654B"/>
+                    </AssociationSet>
+                    <AssociationSet Name="assoc_085E9CFC6776BC34A0164ADA5E14FCA1" Association="cds_zcar_sd_corr_vtt.assoc_085E9CFC6776BC34A0164ADA5E14FCA1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                        <End EntitySet="ZCAR_CDS_C_CORR_VTT_POS" Role="FromRole_assoc_085E9CFC6776BC34A0164ADA5E14FCA1"/>
+                        <End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_085E9CFC6776BC34A0164ADA5E14FCA1"/>
+                    </AssociationSet>
+                    <AssociationSet Name="assoc_CE23DBFE682ABA81F72B96184A1B41CC" Association="cds_zcar_sd_corr_vtt.assoc_CE23DBFE682ABA81F72B96184A1B41CC" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                        <End EntitySet="ZCAR_CDS_C_CORR_VTT" Role="FromRole_assoc_CE23DBFE682ABA81F72B96184A1B41CC"/>
+                        <End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_CE23DBFE682ABA81F72B96184A1B41CC"/>
+                    </AssociationSet>
+                    <FunctionImport Name="ZCAR_CDS_C_CORR_VTTActivate" ReturnType="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType" EntitySet="ZCAR_CDS_C_CORR_VTT" m:HttpMethod="POST" sap:action-for="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType">
+                        <Parameter Name="Guidreg" Type="Edm.Guid" Mode="In"/>
+                        <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    </FunctionImport>
+                    <FunctionImport Name="ZCAR_CDS_C_CORR_VTTDiscard" ReturnType="cds_zcar_sd_corr_vtt.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType">
+                        <Parameter Name="Guidreg" Type="Edm.Guid" Mode="In"/>
+                        <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    </FunctionImport>
+                    <FunctionImport Name="ZCAR_CDS_C_CORR_VTTEdit" ReturnType="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType" EntitySet="ZCAR_CDS_C_CORR_VTT" m:HttpMethod="POST" sap:action-for="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType">
+                        <Parameter Name="Guidreg" Type="Edm.Guid" Mode="In"/>
+                        <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                        <Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/>
+                    </FunctionImport>
+                    <FunctionImport Name="ZCAR_CDS_C_CORR_VTTPrepare" ReturnType="cds_zcar_sd_corr_vtt.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType">
+                        <Parameter Name="Guidreg" Type="Edm.Guid" Mode="In"/>
+                        <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    </FunctionImport>
+                    <FunctionImport Name="ZCAR_CDS_C_CORR_VTTResume" ReturnType="cds_zcar_sd_corr_vtt.DummyFunctionImportResult" m:HttpMethod="POST" sap:action-for="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType">
+                        <Parameter Name="Guidreg" Type="Edm.Guid" Mode="In"/>
+                        <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/>
+                    </FunctionImport>
+                </EntityContainer>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_corr_vtt.cds_zcar_sd_corr_vtt_Entities/ZCAR_CDS_C_CORR_VTT">
+                    <Annotation Term="Common.DraftRoot">
+                        <Record>
+                            <PropertyValue Property="ActivationAction" String="cds_zcar_sd_corr_vtt.cds_zcar_sd_corr_vtt_Entities/ZCAR_CDS_C_CORR_VTTActivate"/>
+                            <PropertyValue Property="DiscardAction" String="cds_zcar_sd_corr_vtt.cds_zcar_sd_corr_vtt_Entities/ZCAR_CDS_C_CORR_VTTDiscard"/>
+                            <PropertyValue Property="EditAction" String="cds_zcar_sd_corr_vtt.cds_zcar_sd_corr_vtt_Entities/ZCAR_CDS_C_CORR_VTTEdit"/>
+                            <PropertyValue Property="PreparationAction" String="cds_zcar_sd_corr_vtt.cds_zcar_sd_corr_vtt_Entities/ZCAR_CDS_C_CORR_VTTPrepare"/>
+                        </Record>
+                    </Annotation>
+                    <Annotation Term="Capabilities.FilterRestrictions">
+                        <Record>
+                            <PropertyValue Property="NonFilterableProperties">
+                                <Collection>
+                                    <PropertyPath>Businessdaydate_fc</PropertyPath>
+                                    <PropertyPath>Retailstoreid_fc</PropertyPath>
+                                    <PropertyPath>Transactiontypecode_fc</PropertyPath>
+                                    <PropertyPath>Transnumber_fc</PropertyPath>
+                                    <PropertyPath>Workstationid_fc</PropertyPath>
+                                </Collection>
+                            </PropertyValue>
+                            <PropertyValue Property="FilterExpressionRestrictions">
+                                <Collection>
+                                    <Record>
+                                        <PropertyValue Property="Property" PropertyPath="Businessdaydate"/>
+                                        <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                    <Annotation Term="Capabilities.NavigationRestrictions">
+                        <Record>
+                            <PropertyValue Property="RestrictedProperties">
+                                <Collection>
+                                    <Record>
+                                        <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Position"/>
+                                        <PropertyValue Property="InsertRestrictions">
+                                            <Record>
+                                                <PropertyValue Property="Insertable" Bool="true"/>
+                                            </Record>
+                                        </PropertyValue>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                    <Annotation Term="Capabilities.SortRestrictions">
+                        <Record>
+                            <PropertyValue Property="NonSortableProperties">
+                                <Collection>
+                                    <PropertyPath>Businessdaydate_fc</PropertyPath>
+                                    <PropertyPath>Retailstoreid_fc</PropertyPath>
+                                    <PropertyPath>Transactiontypecode_fc</PropertyPath>
+                                    <PropertyPath>Transnumber_fc</PropertyPath>
+                                    <PropertyPath>Workstationid_fc</PropertyPath>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_corr_vtt.cds_zcar_sd_corr_vtt_Entities/ZCAR_CDS_C_CORR_VTT_POS">
+                    <Annotation Term="Common.DraftNode">
+                        <Record/>
+                    </Annotation>
+                    <Annotation Term="Common.DraftActivationVia">
+                        <Collection>
+                            <String>cds_zcar_sd_corr_vtt.cds_zcar_sd_corr_vtt_Entities/ZCAR_CDS_C_CORR_VTT</String>
+                        </Collection>
+                    </Annotation>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType/Retailstoreid">
+                    <Annotation Term="Common.ValueList">
+                        <Record>
+                            <PropertyValue Property="Label" String="Tienda"/>
+                            <PropertyValue Property="CollectionPath" String="zcds_audit_storeid_vh"/>
+                            <PropertyValue Property="SearchSupported" Bool="false"/>
+                            <PropertyValue Property="Parameters">
+                                <Collection>
+                                    <Record Type="Common.ValueListParameterInOut">
+                                        <PropertyValue Property="LocalDataProperty" PropertyPath="Retailstoreid"/>
+                                        <PropertyValue Property="ValueListProperty" String="Retailstoreid"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="RetailstoreidText"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType/Transactiontypecode">
+                    <Annotation Term="Common.ValueList">
+                        <Record>
+                            <PropertyValue Property="Label" String="Tipo trans."/>
+                            <PropertyValue Property="CollectionPath" String="zcds_audit_tranty_vh"/>
+                            <PropertyValue Property="SearchSupported" Bool="true"/>
+                            <PropertyValue Property="Parameters">
+                                <Collection>
+                                    <Record Type="Common.ValueListParameterInOut">
+                                        <PropertyValue Property="LocalDataProperty" PropertyPath="Transactiontypecode"/>
+                                        <PropertyValue Property="ValueListProperty" String="Transtypecode"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="TranstypecodeShow"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="Description"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                    <Annotation Term="Common.ValueListWithFixedValues"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTTType/Zbajaalta">
+                    <Annotation Term="Common.ValueList">
+                        <Record>
+                            <PropertyValue Property="Label" String="Baja/Alta"/>
+                            <PropertyValue Property="CollectionPath" String="ZCAR_CDS_BAJA_ALTA_VH"/>
+                            <PropertyValue Property="SearchSupported" Bool="true"/>
+                            <PropertyValue Property="Parameters">
+                                <Collection>
+                                    <Record Type="Common.ValueListParameterInOut">
+                                        <PropertyValue Property="LocalDataProperty" PropertyPath="Zbajaalta"/>
+                                        <PropertyValue Property="ValueListProperty" String="BajaAlta"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="Description"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                    <Annotation Term="Common.ValueListWithFixedValues"/>
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTT_POSType/Zmediopagomoneda">
+                    <Annotation Term="Common.ValueList">
+                        <Record>
+                            <PropertyValue Property="Label" String="Tipo/Subtipo/Mp"/>
+                            <PropertyValue Property="CollectionPath" String="zcar_cds_i_mediopago_vh"/>
+                            <PropertyValue Property="SearchSupported" Bool="false"/>
+                            <PropertyValue Property="Parameters">
+                                <Collection>
+                                    <Record Type="Common.ValueListParameterInOut">
+                                        <PropertyValue Property="LocalDataProperty" PropertyPath="Zmediopagomoneda"/>
+                                        <PropertyValue Property="ValueListProperty" String="Mediopagosub"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="Mediopago"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="Desgloce"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="Mediopagotext"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_corr_vtt.cds_zcar_sd_corr_vtt_Entities">
+                    <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                    <Annotation Term="Aggregation.ApplySupported">
+                        <Record>
+                            <PropertyValue Property="Transformations">
+                                <Collection>
+                                    <String>aggregate</String>
+                                    <String>groupby</String>
+                                    <String>filter</String>
+                                </Collection>
+                            </PropertyValue>
+                            <PropertyValue Property="Rollup" EnumMember="None"/>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTT_POSType/Tenderamount">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_corr_vtt.ZCAR_CDS_C_CORR_VTT_POSType/Zcartipompg">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZCAR_SB_CORR_VTT/$metadata"/>
+                    <atom:link
+                        xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZCAR_SB_CORR_VTT/$metadata"/>
+                    </Schema>
+                </edmx:DataServices>
+            </edmx:Edmx>

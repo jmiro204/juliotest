@@ -1,0 +1,100 @@
+{
+    "resources": [
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/ErrorHandler.js"
+        },
+        {
+            "name": "controller/NotFound.controller.js"
+        },
+        {
+            "name": "controller/Worklist.controller.js"
+        },
+        {
+            "name": "controller/Object.controller.js"
+        },
+        {
+            "name": "controller/CopyOfObject.controller.js"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": ".project.json"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "localService/ZCAR_SB_CDS_TRANS_HEAD_V2/metadata.xml"
+        },
+        {
+            "name": "localService/ZCAR_CDS_SB_ALTA_TRX_VAN.xml"
+        },
+        {
+            "name": ".user.project.json"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "view/Object.view.xml"
+        },
+        {
+            "name": "view/CopyOfObject.view.xml"
+        },
+        {
+            "name": "view/NotFound.view.xml"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/fragments/ValueHelpDialog.fragment.xml"
+        },
+        {
+            "name": "view/fragments/ValueHelpDialogMP.fragment.xml"
+        },
+        {
+            "name": "view/fragments/Calendar.fragment.xml"
+        },
+        {
+            "name": "view/Worklist.view.xml"
+        },
+        {
+            "name": "view/ObjectNotFound.view.xml"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "model/transaction.json"
+        },
+        {
+            "name": "model/formatter.js"
+        }
+    ]
+}

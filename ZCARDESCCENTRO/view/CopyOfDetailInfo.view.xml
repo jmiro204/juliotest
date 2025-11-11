@@ -1,0 +1,33 @@
+<mvc:View controllerName="app.inetum.ZCARDESCENTRO.controller.DetailInfo" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:smartTable="sap.ui.comp.smarttable">
+	<semantic:DetailPage id="page" navButtonPress="onBackPress" showNavButton="true" busy="{detailView>/busy}"
+		title="Tienda: {Tpv>/RetailstoreidText}({Tpv>/Retailstoreid}) - TPV: {Tpv>/WorkstationidView} - { 'path':'Tpv>/Auditbusinessdaydate', 'type':'sap.ui.model.type.Date', 'formatOptions': { 'pattern': 'dd-MM-yyyy' } }"
+		busyIndicatorDelay="{detailView>/delay}">
+		<semantic:content>
+			<ObjectHeader id="idObjectRangeTrx" title="Rango de transacciones: " responsive="true"/>
+			<ScrollContainer >
+				<smartTable:SmartTable id="SmartTable" entitySet="Desgtpv" navButtonPress="onNavBack" tableType="ResponsiveTable" useExportToExcel="true"
+					beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="false" header="" showRowCount="false"
+					beforeRebindTable="onBeforeRebindTable" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" demandPopin="true"
+					enableAutoColumnWidth="true">
+					<smartTable:customToolbar>
+						<OverflowToolbar design="Transparent">
+							<Text id="idHardTotal" class="customTextHardTotal" text="Test"/>
+							<ToolbarSpacer/>
+							<Button text="Mostrar todos" id="showdesc" press="onShowTrxDesc(false)"/>
+							<Button text="Mostrar solo descuadres" id="hidedesc" press="onShowTrxDesc(true)"/>
+						</OverflowToolbar>
+					</smartTable:customToolbar>
+					<smartTable:layoutData>
+						<FlexItemData growFactor="1" baseSize="0%"/>
+					</smartTable:layoutData>
+				</smartTable:SmartTable>
+				<Toolbar>
+					<ToolbarSpacer/>
+					<Button text="Ir Forzar Terminal" id="ForzTerm" press="onNavigateToOtherView"/>
+					<Button text="Ir Cierre de Correcciones" press="onNavigateToOtherView"/>
+				</Toolbar>
+			</ScrollContainer>
+		</semantic:content>
+	</semantic:DetailPage>
+</mvc:View>

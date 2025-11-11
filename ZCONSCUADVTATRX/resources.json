@@ -1,0 +1,40 @@
+{
+    "resources": [
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "localService/ZCAR_SB_TRX_CUADRE_VENTA_VAN.xml"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "annotations/annotations.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "ext/controller/ListReportExt.controller.js"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/ListReport/Transaction/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}

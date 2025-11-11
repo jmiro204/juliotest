@@ -1,0 +1,56 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield" xmlns:smartTable="sap.ui.comp.smarttable">
+	<!--<smartTable:SmartTable id="positionMp" entitySet="Positionmp" tableBindingPath="to_PositionMp" smartFilterId="smartFilterBar" showRowCount="true"
+		enableAutoBinding="true" tableType="ResponsiveTable" beforeRebindTable="onBeforeRebindTable">
+		<smartTable:layoutData>
+			<FlexItemData growFactor="1" baseSize="0%"/>
+		</smartTable:layoutData>
+	</smartTable:SmartTable>-->
+	<Table id="positionMp" inset="false" items="{ path:'modelCreate>/to_PositionMp', sorter: { path: 'Tendernumber', descending: false} }"
+		visibleRowCount="3">
+		<columns>
+			<Column width="8em">
+				<Text text="{/#PositionmpType/Tendernumber/@sap:label}"/>
+			</Column>
+			<Column width="8em">
+				<Text text="{/#PositionmpType/Tenderamount/@sap:label}"/>
+			</Column>
+			<Column width="8em">
+				<Text text="{/#PositionmpType/Medpgsubtip/@sap:label}"/>
+			</Column>
+			<Column width="8em">
+				<Text text="{/#PositionmpType/ZzcodepagoNeg/@sap:label}"/>
+			</Column>
+			<Column width="8em">
+				<Text text="{/#PositionmpType/ZzcodpagoDesg/@sap:label}"/>
+			</Column>
+			<Column width="8em">
+				<Text text="{/#PositionmpType/Subtipo/@sap:label}"/>
+			</Column>
+			<Column width="12em">
+				<Text text="{/#PositionmpType/Cardnumber/@sap:label}"/>
+			</Column>
+			<Column width="12em">
+				<Text text="{/#PositionmpType/ZzPaypal/@sap:label}"/>
+			</Column>
+			<Column width="8em">
+				<Text text="{/#PositionmpType/Zzfechacadnac/@sap:label}"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle">
+				<Text text="{modelCreate>Tendernumber}"/>
+				<Text
+					text="{path:'modelCreate>Tenderamount', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 } }"/>
+			<!--	<Text text="({modelCreate>Mediopagotexts}) {modelCreate>Medpgsubtip}"/>-->
+				<Text text="{modelCreate>Mediopagotexts}"/>
+				<Text text="{modelCreate>ZzcodepagoNeg}"/>
+				<Text text="{modelCreate>ZzcodpagoDesg}"/>
+				<Text text="{modelCreate>Subtipo}"/>
+				<Text text="{modelCreate>Cardnumber}"/>
+				<Text text="{modelCreate>ZzPaypal}"/>
+				<Text text="{modelCreate>Zzfechacadnac}"/>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

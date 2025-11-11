@@ -1,0 +1,177 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="cds_zcar_sd_c_rep_txt_sta" xml:lang="es" sap:schema-version="1">
+            <Annotation
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
+                <EntityType Name="zcar_cds_c_rep_txt_staType" sap:label="Proyecion Parametrizacion status" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="task"/>
+                        <PropertyRef Name="retailbegin"/>
+                    </Key>
+                    <Property Name="Delete_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="Update_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="task" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Tarea"/>
+                    <Property Name="retailbegin" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda Inicio" sap:quickinfo="Tienda" sap:value-list="standard"/>
+                    <Property Name="retailend" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda Fin" sap:quickinfo="Tienda" sap:value-list="standard"/>
+                    <Property Name="daydatebegin" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Fecha Inicio" sap:quickinfo="Fecha de contabilización"/>
+                    <Property Name="daydateend" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Fecha Fin" sap:quickinfo="Fecha de contabilización"/>
+                    <Property Name="taskstatus" Type="Edm.String" MaxLength="1" sap:label="Validacion Activa" sap:quickinfo="Indicador de validacion activa"/>
+                    <Property Name="asigna_tarea" Type="Edm.String" MaxLength="1" sap:label="Primera/Ultima tarea" sap:quickinfo="Tarea de Auditoria que ejecuta la validacion"/>
+                    <Property Name="info_error" Type="Edm.String" MaxLength="1" sap:label="Informativa/Error" sap:quickinfo="Validacion informativa o provoca error"/>
+                    <Property Name="usuario" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Usuario" sap:quickinfo="Campo de sistema ABAP: Nombre del usuario actual"/>
+                    <Property Name="timestamp" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="CreationTimest(Esp)" sap:quickinfo="CreationTimestamp (Huso horario España)"/>
+                </EntityType>
+                <EntityType Name="zcds_audit_storeid_vhType" sap:label="Ayuda de busqueda tienda" sap:value-list="true" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Retailstoreid"/>
+                    </Key>
+                    <Property Name="Retailstoreid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda"/>
+                    <Property Name="RetailstoreidShow" Type="Edm.String" MaxLength="10"/>
+                    <Property Name="RetailstoreidText" Type="Edm.String" MaxLength="20"/>
+                </EntityType>
+                <EntityContainer Name="cds_zcar_sd_c_rep_txt_sta_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                    <EntitySet Name="zcar_cds_c_rep_txt_sta" EntityType="cds_zcar_sd_c_rep_txt_sta.zcar_cds_c_rep_txt_staType" sap:content-version="1" sap:deletable-path="Delete_mc" sap:updatable-path="Update_mc"/>
+                    <EntitySet Name="zcds_audit_storeid_vh" EntityType="cds_zcar_sd_c_rep_txt_sta.zcds_audit_storeid_vhType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                </EntityContainer>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_rep_txt_sta.zcar_cds_c_rep_txt_staType/retailbegin">
+                    <Annotation Term="Common.ValueList">
+                        <Record>
+                            <PropertyValue Property="Label" String="Tienda Inicio"/>
+                            <PropertyValue Property="CollectionPath" String="zcds_audit_storeid_vh"/>
+                            <PropertyValue Property="SearchSupported" Bool="false"/>
+                            <PropertyValue Property="Parameters">
+                                <Collection>
+                                    <Record Type="Common.ValueListParameterInOut">
+                                        <PropertyValue Property="LocalDataProperty" PropertyPath="retailbegin"/>
+                                        <PropertyValue Property="ValueListProperty" String="Retailstoreid"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="RetailstoreidText"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_rep_txt_sta.zcar_cds_c_rep_txt_staType/retailend">
+                    <Annotation Term="Common.ValueList">
+                        <Record>
+                            <PropertyValue Property="Label" String="Tienda Fin"/>
+                            <PropertyValue Property="CollectionPath" String="zcds_audit_storeid_vh"/>
+                            <PropertyValue Property="SearchSupported" Bool="false"/>
+                            <PropertyValue Property="Parameters">
+                                <Collection>
+                                    <Record Type="Common.ValueListParameterInOut">
+                                        <PropertyValue Property="LocalDataProperty" PropertyPath="retailend"/>
+                                        <PropertyValue Property="ValueListProperty" String="Retailstoreid"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="RetailstoreidText"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_rep_txt_sta.cds_zcar_sd_c_rep_txt_sta_Entities">
+                    <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                    <Annotation Term="Aggregation.ApplySupported">
+                        <Record>
+                            <PropertyValue Property="Transformations">
+                                <Collection>
+                                    <String>aggregate</String>
+                                    <String>groupby</String>
+                                    <String>filter</String>
+                                </Collection>
+                            </PropertyValue>
+                            <PropertyValue Property="Rollup" EnumMember="None"/>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_rep_txt_sta.zcar_cds_c_rep_txt_staType/daydatebegin">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_rep_txt_sta.zcar_cds_c_rep_txt_staType/daydateend">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_rep_txt_sta.zcar_cds_c_rep_txt_staType/task">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_rep_txt_sta.cds_zcar_sd_c_rep_txt_sta_Entities/zcar_cds_c_rep_txt_sta">
+                    <Annotation Term="Capabilities.FilterRestrictions">
+                        <Record>
+                            <PropertyValue Property="NonFilterableProperties">
+                                <Collection>
+                                    <PropertyPath>Delete_mc</PropertyPath>
+                                    <PropertyPath>Update_mc</PropertyPath>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                    <Annotation Term="Capabilities.SortRestrictions">
+                        <Record>
+                            <PropertyValue Property="NonSortableProperties">
+                                <Collection>
+                                    <PropertyPath>Delete_mc</PropertyPath>
+                                    <PropertyPath>Update_mc</PropertyPath>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZCAR_SB_C_REP_TXT_STA/$metadata"/>
+                    <atom:link
+                        xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZCAR_SB_C_REP_TXT_STA/$metadata"/>
+                    </Schema>
+                </edmx:DataServices>
+            </edmx:Edmx>

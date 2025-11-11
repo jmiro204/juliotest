@@ -1,0 +1,66 @@
+{
+ 
+ 	"Cardnumber_fc": 0,
+ 	"Transactions": "",
+ 	"Retailstoreid": "",
+ 	"Businessdaydate": "",
+ 	"Transindex": 0,
+ 	"Workstationid": "",
+ 	"Transnumber": "",
+ 	"Transtypecode": "",
+ 	"Transtypegroup": "",
+ 	"Operatorid": "",
+ 	"Begintimestamp": "",
+ 	"Origbusinessdate": null,
+ 	"Origstoreid": "",
+ 	"Origwrkstid": "",
+ 	"Origtransnumber": "",
+ 	"Zzimptrans": "",
+ 	"Tenderamount": "0.00",
+ 	"ZzcodepagoNeg": "",
+ 	"ZzcodpagoDesg": "",
+ 	"Cardnumber": "",
+ 	"Zzlinneg": "",
+ 	"Transcurrency": "",
+ 	"HasDraftEntity": false,
+ 	"DraftEntityCreationDateTime": null,
+ 	"DraftEntityLastChangeDateTime": null,
+ 	"HasActiveEntity": false,
+ 	"IsActiveEntity": false,
+ 	"DraftAdministrativeData": {
+ 		"__deferred": {
+ 			"uri": "Head(Transactions='000001009020230914336',IsActiveEntity=true)/DraftAdministrativeData"
+ 		}
+ 	},
+ 	"SiblingEntity": {
+ 		"__deferred": {
+ 			"uri": "Head(Transactions='000001009020230914336',IsActiveEntity=true)/SiblingEntity"
+ 		}
+ 	},
+ 	"to_Position": {
+ 		"Transactions": "",
+ 		"TransactionsGuuid": "00000000-0000-0000-0000-000000000000",
+ 		"Retailstoreid": "",
+ 		"Businessdaydate": "",
+ 		"Transindex": 0,
+ 		"Retailnumber": "",
+ 		"Zzcoddpto": "",
+ 		"Zzarthost": "",
+ 		"Retailquantity": "0.00",
+ 		"Salesamount": "0.00",
+ 		"Zzlvimpneto": "",
+ 		"Zzlvimpbruto": "",
+ 		"Itemid": "",
+ 		"Recordqualifier": "",
+ 		"Referenceid": "",
+ 		"Transcurrency": "EUR",
+ 		"Tendertypecode": "",
+ 		"Motivo": "",
+ 		"Custcardnumber": "",
+ 		"HasDraftEntity": false,
+ 		"DraftEntityCreationDateTime": null,
+ 		"DraftEntityLastChangeDateTime": null,
+ 		"HasActiveEntity": false,
+ 		"IsActiveEntity": false
+ 	}
+ }

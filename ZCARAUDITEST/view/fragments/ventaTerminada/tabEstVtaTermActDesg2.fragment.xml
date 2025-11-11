@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<Table id="table" width="auto" items="{ path: '/Estvtaactual', sorter: { path: 'Businessdaydate', descending: false } }" growing="true" growingScrollToLoad="true"-->
+	<!-- type="Navigation" press="onPress"-->
+	<!--id="tableEstadilloDesg2"-->
+	<Table  width="auto" items="{modelEstVentaVT>/}" noDataText="{worklistView>/tableNoDataText}"
+		busyIndicatorDelay="{worklistView>/tableBusyDelay}" updateFinished="onUpdateFinished" visible="{= ${worklistView>/DesgloceSelect} === 2 }">
+		<headerToolbar>
+			<Toolbar>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column >
+				<Text text=""/>
+			</Column>
+			<Column >
+				<Text text="Total Venta"/>
+			</Column>
+			<Column >
+				<Text text="Venta"/>
+			</Column>
+			<Column >
+				<Text text="Cumplimentac. CC"/>
+			</Column>
+			<Column >
+				<Text text="Cumplimentac. Otro CC"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{modelEstVentaVT>Formpag} {modelEstVentaVT>Descpago}"/>
+					<Text text="{path:'modelEstVentaVT>Totalimpvta',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVT>Impventa',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVT>Impcumpli',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVT>Impcumpliotro',type:'sap.ui.model.type.Float'}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Text text="Aprobado caja: {= ${modelDataCentro>/Cierrecaja} === 'X' ? 'Si' : 'No'}" class="customText"/>
+	<Text text="Cierre de correcciones: {= ${modelDataCentro>/Cierrecentro} === 'X' ? 'Si' : 'No'}" class="customText"/>
+	<Text text="Modificado: {= ${modelDataCentro>/Modifytrx} === 'X' ? 'Si' : 'No'}" class="customText"/>
+	<Select forceSelection="false" items="{worklistView>/Desgloce}" width="15em" selectedKey="{worklistView>/DesgloceSelect}" placeHolder="Desgloce" change="onSelect">
+		<core:Item key="{worklistView>id}" text="{worklistView>text}"/>
+	</Select>
+</core:FragmentDefinition>

@@ -1,0 +1,139 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="cds_zcar_cds_sd_gest_constante" xml:lang="es" sap:schema-version="1">
+            <Annotation
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
+                <EntityType Name="zcar_cds_c_gest_constanteType" sap:label="Gestión constante" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Cprog"/>
+                        <PropertyRef Name="Parname"/>
+                        <PropertyRef Name="Select1"/>
+                        <PropertyRef Name="Select2"/>
+                        <PropertyRef Name="Select3"/>
+                    </Key>
+                    <Property Name="Cprog" Type="Edm.String" Nullable="false" MaxLength="40" sap:display-format="UpperCase" sap:filter-restriction="single-value" sap:label="Programa de llamada" sap:updatable="false"/>
+                    <Property Name="Parname" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:filter-restriction="single-value" sap:label="Paramentro constante" sap:updatable="false"/>
+                    <Property Name="Select1" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Selector Breve" sap:quickinfo="Campo Selector (breve)" sap:updatable="false"/>
+                    <Property Name="Select2" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Selector Breve" sap:quickinfo="Campo Selector (breve)" sap:updatable="false"/>
+                    <Property Name="Select3" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="Campo Selector" sap:updatable="false"/>
+                    <Property Name="Parvalue" Type="Edm.String" MaxLength="100" sap:display-format="UpperCase" sap:label="Valor de constante"/>
+                    <Property Name="Descripcion" Type="Edm.String" MaxLength="50" sap:label="Campo de texto long.50" sap:heading=""/>
+                </EntityType>
+                <EntityContainer Name="cds_zcar_cds_sd_gest_constante_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                    <EntitySet Name="zcar_cds_c_gest_constante" EntityType="cds_zcar_cds_sd_gest_constante.zcar_cds_c_gest_constanteType" sap:content-version="1"/>
+                </EntityContainer>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_gest_constante.cds_zcar_cds_sd_gest_constante_Entities">
+                    <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                    <Annotation Term="Aggregation.ApplySupported">
+                        <Record>
+                            <PropertyValue Property="Transformations">
+                                <Collection>
+                                    <String>aggregate</String>
+                                    <String>groupby</String>
+                                    <String>filter</String>
+                                </Collection>
+                            </PropertyValue>
+                            <PropertyValue Property="Rollup" EnumMember="None"/>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_gest_constante.zcar_cds_c_gest_constanteType/Cprog">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                    <Annotation Term="Core.Immutable"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_gest_constante.zcar_cds_c_gest_constanteType/Descripcion">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_gest_constante.zcar_cds_c_gest_constanteType/Parname">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                    <Annotation Term="Core.Immutable"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_gest_constante.zcar_cds_c_gest_constanteType/Parvalue">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_gest_constante.zcar_cds_c_gest_constanteType/Select1">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                    <Annotation Term="Core.Immutable"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_gest_constante.zcar_cds_c_gest_constanteType/Select2">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                    <Annotation Term="Core.Immutable"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_gest_constante.zcar_cds_c_gest_constanteType/Select3">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                    <Annotation Term="Core.Immutable"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_gest_constante.cds_zcar_cds_sd_gest_constante_Entities/zcar_cds_c_gest_constante">
+                    <Annotation Term="Capabilities.FilterRestrictions">
+                        <Record>
+                            <PropertyValue Property="FilterExpressionRestrictions">
+                                <Collection>
+                                    <Record>
+                                        <PropertyValue Property="Property" PropertyPath="Cprog"/>
+                                        <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                    </Record>
+                                    <Record>
+                                        <PropertyValue Property="Property" PropertyPath="Parname"/>
+                                        <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZCAR_CDS_SB_GEST_CONSTANTE/$metadata"/>
+                    <atom:link
+                        xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZCAR_CDS_SB_GEST_CONSTANTE/$metadata"/>
+                    </Schema>
+                </edmx:DataServices>
+            </edmx:Edmx>

@@ -1,0 +1,186 @@
+<core:FragmentDefinition xmlns:m="sap.m" xmlns:core="sap.ui.core" xmlns="sap.ui.table">
+	<Table id="tableVtaNeta" ariaLabelledBy="title" selectionMode="None" enableColumnFreeze="true"
+		rows="{ path : 'modelVtaNeta>/', filters : [ { path : 'Tipo', operator : 'EQ', value1 : 'V'} ] }" showColumnVisibilityMenu="true"
+		firstVisibleRowChanged="onFirstChange">
+		<columns>
+			<!--<Column width="7.4rem" >
+				<m:Label text="Grupo" textAlign="Center" width="100%"/>
+				<template>
+					<m:Text text="{modelVtaNeta>Group}"/>
+				</template>
+			</Column>-->
+			<Column width="18rem">
+				<m:Label text="Tipo / Subtipo" textAlign="Center" width="100%"/>
+				<template>
+					<m:Text text="{modelVtaNeta>Tiposubtipo} {modelVtaNeta>Tiposubtipotext}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="2,1">
+				<multiLabels>
+					<m:Label text="Venta Terminada" textAlign="Center" width="100%"/>
+					<m:Label text="Nº. Oper." textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text text="{modelVtaNeta>Noper101}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="1">
+				<multiLabels>
+					<m:Label text="Venta Terminada" textAlign="Center" width="100%"/>
+					<m:Label text="Importe" textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text
+						text="{path:'modelVtaNeta>Noimp101', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="2,1">
+				<multiLabels>
+					<m:Label text="Abono" textAlign="Center" width="100%"/>
+					<m:Label text="Nº. Oper." textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text text="{modelVtaNeta>Noper102}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="1">
+				<multiLabels>
+					<m:Label text="Abono" textAlign="Center" width="100%"/>
+					<m:Label text="Importe" textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text
+						text="{path:'modelVtaNeta>Noimp102', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="2,1">
+				<multiLabels>
+					<m:Label text="Cumplimentaciones" textAlign="Center" width="100%"/>
+					<m:Label text="Nº. Oper." textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text text="{modelVtaNeta>Noper104}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="1">
+				<multiLabels>
+					<m:Label text="Cumplimentaciones" textAlign="Center" width="100%"/>
+					<m:Label text="Importe" textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text
+						text="{path:'modelVtaNeta>Noimp104', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="2,1">
+				<multiLabels>
+					<m:Label text="Venta en Proceso" textAlign="Center" width="100%"/>
+					<m:Label text="Nº. Oper." textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text text="{modelVtaNeta>Noper111}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="1">
+				<multiLabels>
+					<m:Label text="Venta en Proceso" textAlign="Center" width="100%"/>
+					<m:Label text="Importe" textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text
+						text="{path:'modelVtaNeta>Noimp111', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="2,1">
+				<multiLabels>
+					<m:Label text="Rescisiones" textAlign="Center" width="100%"/>
+					<m:Label text="Nº. Oper." textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text text="{modelVtaNeta>Noper103}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="1">
+				<multiLabels>
+					<m:Label text="Rescisiones" textAlign="Center" width="100%"/>
+					<m:Label text="Importe" textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text
+						text="{path:'modelVtaNeta>Noimp103', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="2,1">
+				<multiLabels>
+					<m:Label text="Total Neto" textAlign="Center" width="100%"/>
+					<m:Label text="Nº. Oper." textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text text="{modelVtaNeta>Noperneto}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+			<Column width="7.4rem" headerSpan="1">
+				<multiLabels>
+					<m:Label text="Total Neto" textAlign="Center" width="100%"/>
+					<m:Label text="Importe" textAlign="Center" width="100%"/>
+				</multiLabels>
+				<template>
+					<m:Text
+						text="{path:'modelVtaNeta>Noimpneto', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}">
+						<m:customData>
+							<core:CustomData key="title" value="{modelVtaNeta>Group}" writeToDom="true"/>
+						</m:customData>
+					</m:Text>
+				</template>
+			</Column>
+		</columns>
+	</Table>
+</core:FragmentDefinition>

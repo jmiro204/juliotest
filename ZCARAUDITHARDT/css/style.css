@@ -1,0 +1,14 @@
+span[data-title="T"] {
+    text-align: center !important;
+    font-weight: bold !important;
+}
+span[data-title="M"] {
+	color: green !important;
+    text-align: green !important;
+    font-weight: bold !important;
+}
+span[data-title="D"] {
+	color: green !important;
+    text-align: green !important;
+    font-weight: bold !important;
+}
