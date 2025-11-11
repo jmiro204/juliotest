@@ -1,0 +1,92 @@
+<mvc:View controllerName="app.inetum.ZCARCUADCENTRO.controller.DetailInfo" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:smartTable="sap.ui.comp.smarttable">
+	<semantic:DetailPage id="page" navButtonPress="onBackPress" showNavButton="true"
+		title="{i18n>txtStore} {Tpv>/RetailstoreidText}({Tpv>/Retailstoreid}) - TPV: {Tpv>/WorkstationidView} - { 'path':'Tpv>/Auditbusinessdaydate', 'type':'sap.ui.model.type.Date', 'formatOptions': { 'pattern': 'dd-MM-yyyy' } }"
+		busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:content>
+			<ObjectHeader id="idObjectRangeTrx" title="{i18n>txtRangeTrx} " responsive="true"/>
+			<ScrollContainer >
+				<smartTable:SmartTable id="SmartTable" entitySet="Desgtpv" navButtonPress="onNavBack" tableType="ResponsiveTable" useExportToExcel="true"
+					beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="false" header="" showRowCount="false"
+					beforeRebindTable="onBeforeRebindTable" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" demandPopin="true"
+					enableAutoColumnWidth="true">
+					<smartTable:customToolbar>
+						<OverflowToolbar design="Transparent">
+							<Text id="idHardTotal" class="customTextHardTotal"/>
+							<ToolbarSpacer/>
+							<!--	<Button text="Mostrar todos" id="showdesc" press="onShowTrxDesc(false)"/>
+						    <Button text="Mostrar solo descuadres" id="hidedesc" press="onShowTrxDesc(true)"/>-->
+						</OverflowToolbar>
+					</smartTable:customToolbar>
+					<smartTable:layoutData>
+						<FlexItemData growFactor="1" baseSize="0%"/>
+					</smartTable:layoutData>
+				</smartTable:SmartTable>
+				<Toolbar>
+					<ToolbarSpacer/>
+					<Button text="{i18n>txtGoForz}" id="ForzTerm" press="onNavigateToOtherView"/>
+					<Button text="{i18n>txtGoCorr}" press="onNavigateToOtherView"/>
+				</Toolbar>
+				<!--<Table growing="true" growingThreshold="9999"/>-->
+			</ScrollContainer>
+		</semantic:content>
+	</semantic:DetailPage>
+</mvc:View>
+<!--<mvc:View height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:semantic="sap.f.semantic"
+	controllerName="app.inetum.ZCARDESCENTRO.controller.DetailInfo" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:core="sap.ui.core">
+	<semantic:SemanticPage id="mySemanticPage" headerPinnable="false" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="true"
+		titleAreaShrinkRatio="1:1.6:1.6" showFooter="false">
+
+		<semantic:titleHeading>
+			<Title text="{/title}"/>
+		</semantic:titleHeading>
+
+		<semantic:headerContent>
+			<layout:HorizontalLayout allowWrapping="true">
+				<layout:VerticalLayout class="sapUiMediumMarginEnd">
+					<ObjectAttribute title="Tienda" text="{Retailstoreid} {RetailstoreidText}"/>
+					<ObjectAttribute title="Terminal" text="{Workstationid}"/>
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+		</semantic:headerContent>
+
+		<semantic:content>
+			<VBox fitContainer="true">
+				<smartTable:SmartTable id="SmartTable" entitySet="Desgtpv" navButtonPress="onNavBack" tableType="ResponsiveTable" useExportToExcel="true"
+					beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="" showRowCount="true"
+					beforeRebindTable="onBeforeRebindTable" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true">
+					<smartTable:layoutData>
+						<FlexItemData growFactor="1" baseSize="0%"/>
+					</smartTable:layoutData>
+				</smartTable:SmartTable>
+				<Toolbar>
+					<ToolbarSpacer/>
+					<Button text="Ir Forzar Terminal" id="ForzTerm" press="onNavigateToOtherView"/>
+					<Button text="Ir Cierre de Centros" press="onNavigateToOtherView"/>
+				</Toolbar>
+			</VBox>
+		</semantic:content>
+		<semantic:customShareActions>
+			<Button icon="sap-icon://bed" text="Bed"/>
+			<Button icon="sap-icon://flight" text="Flight"/>
+		</semantic:customShareActions>
+	</semantic:SemanticPage>
+</mvc:View>-->
+<!--<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:core="sap.ui.core"
+	xmlns:smartTable="sap.ui.comp.smarttable" controllerName="app.inetum.ZCARDESCENTRO.controller.DetailInfo" height="100%"
+	xmlns:table="sap.ui.table">
+	<VBox fitContainer="true">
+		<smartTable:SmartTable id="SmartTable" entitySet="Desgtpv" navButtonPress="onNavBack" tableType="ResponsiveTable" useExportToExcel="true"
+			beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="" showRowCount="true"
+			beforeRebindTable="onBeforeRebindTable" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true">
+			<smartTable:layoutData>
+				<FlexItemData growFactor="1" baseSize="0%"/>
+			</smartTable:layoutData>
+		</smartTable:SmartTable>
+		<Toolbar>
+			<ToolbarSpacer/>
+			<Button text="Ir Forzar Terminal" id="ForzTerm" press="onNavigateToOtherView"/>
+			<Button text="Ir Cierre de Centros" press="onNavigateToOtherView"/>
+		</Toolbar>
+	</VBox>
+</mvc:View>-->

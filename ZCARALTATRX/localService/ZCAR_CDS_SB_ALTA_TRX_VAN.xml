@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+	</edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+	</edmx:Reference>
+	<edmx:Reference
+		Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="../../../sap/zcar_cds_sb_alta_trx/$metadata">
+		<edmx:Include Namespace="ZCAR_CDS_SB_ALTA_TRX" Alias="SAP"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata-data-aggregation-ext/v4.0/cs02/vocabularies/Org.OData.Aggregation.V1.xml">
+		<edmx:Include Alias="Aggregation" Namespace="Org.OData.Aggregation.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/vocabularies/Org.OData.Capabilities.V1.xml">
+		<edmx:Include Alias="Capabilities" Namespace="Org.OData.Capabilities.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/vocabularies/Org.OData.Core.V1.xml">
+		<edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/os/complete/vocabularies/Org.OData.Measures.V1.xml">
+		<edmx:Include Alias="CQP" Namespace="Org.OData.Measures.V1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="zcar_cds_sb_alta_trx_van.v1">
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/Transindex">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/Transtypegroup">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/Begintimestamp">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/BegintimestampCreate">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/Zzlinneg">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/Turnover">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/Transcurrency">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/RetailstoreidText">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/CreatedBy">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/CreatedAt">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/LastChangedBy">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/LastChangedAt">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/LocalLastChangedAt">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/Origbusinessdate_fc">
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/Origstoreid_fc">
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/Origtransnumber_fc">
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType/Origwrkstid_fc">
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.HeadType">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="ID" String="collectionData"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="Datos de cabecera"/>
+										<PropertyValue Property="ID" String="dataHead"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Label" String="Datos de posición medio de pago"/>
+							<PropertyValue Property="ID" String="posTrxMP"/>
+							<PropertyValue Property="Target" AnnotationPath="to_Positionmp/@UI.LineItem"/>
+						</Record>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Label" String="Datos de posición"/>
+							<PropertyValue Property="ID" String="posTrx"/>
+							<PropertyValue Property="Target" AnnotationPath="to_Position/@UI.LineItem"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record>
+						<PropertyValue Property="TypeName" String="Alta de transacción"/>
+						<PropertyValue Property="TypeNamePlural" String="Transacciones"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="Transnumber"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Retailstoreid"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Businessdaydate"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Workstationid"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Transnumber"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzvofretir"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Operatorid"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="BegintimestampCreate"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Origbusinessdate"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Origstoreid"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Origwrkstid"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Origtransnumber"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzimptrans"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzimptranscalc"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzformpag"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ZzSenDesc"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Actualizarht"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="bajaManual"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="Crear TRX"/>
+							<PropertyValue Property="Action" String="">
+								<Annotation Term="Core.Messages">
+									<Collection>
+										<Record>
+											<PropertyValue Property="message" String="ERROR: Mandatory Value for Action not found"/>
+											<PropertyValue Property="severity" String="error"/>
+										</Record>
+									</Collection>
+								</Annotation>
+							</PropertyValue>
+							<PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="RetailstoreidText"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Retailstoreid"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="TranstypecodeText"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Workstationid"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Transnumber"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Operatorid"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="beginFecha"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="beginHora"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>Businessdaydate</PropertyPath>
+						<PropertyPath>Retailstoreid</PropertyPath>
+						<PropertyPath>beginFecha</PropertyPath>
+						<PropertyPath>beginHora</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.PositionType/Retailstoreid">
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.PositionType/Businessdaydate">
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.PositionType/Transindex">
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.PositionType/Itemid">
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.PositionType">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="ID" String="collectionData"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="Posición"/>
+										<PropertyValue Property="ID" String="dataHead"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Retailnumber"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzcoddpto"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzarthost"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zztalla"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ZzCalifArtic"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Retailquantity"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzecunimed"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Salesamount"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzlvimpneto"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzlvimpbruto"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Retailnumber"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzcoddpto"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzarthost"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zztalla"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ZzCalifArtic"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Retailquantity"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzecunimed"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Salesamount"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzlvimpneto"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzlvimpbruto"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.PositionmpType">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="ID" String="collectionData"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="Medio de pago"/>
+										<PropertyValue Property="ID" String="dataHead"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+							<Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Tenderamount"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Medpgsubtip"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Mediopagotexts"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ZzcodepagoNeg"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ZzcodpagoDesg"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Cardnumber"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzfechacadnac"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Tenderamount"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Medpgsubtip"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Mediopagotexts"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ZzcodepagoNeg"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="ZzcodpagoDesg"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Cardnumber"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Zzfechacadnac"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.zcar_cds_i_mediopago_vhType/Mediopagosub">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.zcar_cds_i_mediopago_vhType/Tipomp">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.zcar_cds_i_mediopago_vhType/Subtipmp">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.zcar_cds_i_mediopago_vhType/Istajeta">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.zcar_cds_i_mediopago_vhType/Vindfechavenc">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.zcar_cds_i_mediopago_vhType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Mediopagotext"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Tipomp"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Subtipmp"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>Mediopagotext</PropertyPath>
+						<PropertyPath>Mediopago</PropertyPath>
+						<PropertyPath>Desgloce</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.zcds_audit_storeid_vhType/RetailstoreidShow">
+				<Annotation Term="UI.HiddenFilter"/>
+				<Annotation Term="UI.Hidden"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.zcds_audit_storeid_vhType/RetailstoreidText">
+				<Annotation Term="UI.HiddenFilter"/>
+			</Annotations>
+			<Annotations Target="cds_zcar_cds_sd_alta_trx.zcds_audit_storeid_vhType">
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="Retailstoreid"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="RetailstoreidText"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

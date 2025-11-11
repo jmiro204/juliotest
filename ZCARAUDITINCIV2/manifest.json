@@ -1,0 +1,197 @@
+{
+    "_version": "1.9.0",
+    "sap.app": {
+        "id": "app.inetum.zcarauditinciv2",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZCAR_SB_INCIDENCIAS_AUDIT/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml",
+                    "annotations": [
+                        "ZCAR_SB_INCIDENCIAS_AUDIT_VAN",
+                        "annotation"
+                    ]
+                }
+            },
+            "ZCAR_SB_INCIDENCIAS_AUDIT_VAN": {
+                "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZCAR_SB_INCIDENCIAS_AUDIT_VAN',Version='0001')/$value/",
+                "type": "ODataAnnotation",
+                "settings": {
+                    "localUri": "localService/ZCAR_SB_INCIDENCIAS_AUDIT_VAN.xml"
+                }
+            },
+            "ZCAR_SB_CDS_TRANS_HEAD_V2": {
+                "uri": "/sap/opu/odata/sap/ZCAR_SB_CDS_TRANS_HEAD_V2/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/ZCAR_SB_CDS_TRANS_HEAD_V2/metadata.xml"
+                }
+            },
+            "annotation": {
+                "type": "ODataAnnotation",
+                "uri": "annotation.xml",
+                "settings": {
+                    "localUri": "annotation.xml"
+                }
+            }
+        },
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponent",
+            "version": "0.0.0"
+        }
+    },
+    "sap.ui": {
+        "fullWidth": true,
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://task",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "app.inetum.zcarauditinciv2.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.42.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.f": {},
+                "sap.ushell": {},
+                "sap.collaboration": {
+                    "lazy": true
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "app.inetum.zcarauditinciv2.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay"
+                }
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "Transaction": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneTime",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZCAR_SB_CDS_TRANS_HEAD_V2",
+                "preload": true
+            }
+        },
+        "services": {
+            "ShellUIService": {
+                "factoryName": "sap.ushell.ui5service.ShellUIService",
+                "lazy": false,
+                "settings": {
+                    "setTitle": "auto"
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "app.inetum.zcarauditinciv2.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "bypassed": {
+                    "target": [
+                        "notFound"
+                    ]
+                },
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "worklist",
+                    "target": [
+                        "worklist"
+                    ]
+                },
+                {
+                    "pattern": "Incidencias/{objectId}",
+                    "name": "object",
+                    "target": [
+                        "object"
+                    ]
+                }
+            ],
+            "targets": {
+                "worklist": {
+                    "viewName": "Worklist",
+                    "viewId": "worklist",
+                    "viewLevel": 1,
+                    "title": "{i18n>worklistViewTitle}"
+                },
+                "object": {
+                    "viewName": "Object",
+                    "viewId": "object",
+                    "viewLevel": 2,
+                    "title": "{i18n>objectViewTitle}"
+                },
+                "objectNotFound": {
+                    "viewName": "ObjectNotFound",
+                    "viewId": "objectNotFound"
+                },
+                "notFound": {
+                    "viewName": "NotFound",
+                    "viewId": "notFound"
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css",
+                    "id": ""
+                }
+            ]
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zcarauditinciv2",
+        "_version": "1.1.0"
+    }
+}

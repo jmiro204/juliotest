@@ -1,0 +1,185 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="cds_zcar_cds_sd_cierrestienda" xml:lang="es" sap:schema-version="1">
+            <Annotation
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
+                <EntityType Name="zcar_cds_c_cierresTiendaType" sap:label="Consumo de status de cierres por tienda" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="retailstoreid"/>
+                        <PropertyRef Name="ccentpos"/>
+                    </Key>
+                    <Property Name="Delete_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="Update_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="retailstoreid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:required-in-filter="true" sap:text="RetailstoreidText" sap:label="Tienda" sap:value-list="standard"/>
+                    <Property Name="ccentpos" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Numero POS de Centro" sap:quickinfo="Numero pos del centro de  venta"/>
+                    <Property Name="estado" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:text="ddtext" sap:label="Estado" sap:quickinfo="Estatus de la tienda" sap:value-list="standard"/>
+                    <Property Name="apertura" Type="Edm.DateTimeOffset" Precision="0" sap:label="Apertura" sap:quickinfo="Cronomarcador UTC en forma breve (AAAAMMDDhhmmss)"/>
+                    <Property Name="cierre" Type="Edm.DateTimeOffset" Precision="0" sap:label="Cierre" sap:quickinfo="Cronomarcador UTC en forma breve (AAAAMMDDhhmmss)"/>
+                    <Property Name="apertura_anterior" Type="Edm.DateTimeOffset" Precision="0" sap:label="Apertura Anterior" sap:quickinfo="Cronomarcador UTC en forma breve (AAAAMMDDhhmmss)"/>
+                    <Property Name="cierre_anterior" Type="Edm.DateTimeOffset" Precision="0" sap:label="Cierre Anterior" sap:quickinfo="Cronomarcador UTC en forma breve (AAAAMMDDhhmmss)"/>
+                    <Property Name="tienda_procesada" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Indicador" sap:quickinfo="Indicador general"/>
+                    <Property Name="RetailstoreidText" Type="Edm.String" MaxLength="20" sap:label="Desc. Tienda" sap:creatable="false" sap:updatable="false"/>
+                    <Property Name="ddtext" Type="Edm.String" MaxLength="60" sap:label="Descrip.breve" sap:quickinfo="Texto breve p.valores fijos"/>
+                </EntityType>
+                <EntityType Name="zcar_cds_i_cierresTienda_vhType" sap:label="ayuda de busqueda por dominio d007t" sap:value-list="true" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Domvalue_l"/>
+                    </Key>
+                    <Property Name="Domvalue_l" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Valor inferior" sap:quickinfo="Valores para dominios: valor individual/límite inferior"/>
+                    <Property Name="Ddtext" Type="Edm.String" MaxLength="60" sap:label="Descrip.breve" sap:quickinfo="Texto breve p.valores fijos"/>
+                </EntityType>
+                <EntityType Name="zcds_audit_storeid_vhType" sap:label="Ayuda de busqueda tienda" sap:value-list="true" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Retailstoreid"/>
+                    </Key>
+                    <Property Name="Retailstoreid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda"/>
+                    <Property Name="RetailstoreidShow" Type="Edm.String" MaxLength="10"/>
+                    <Property Name="RetailstoreidText" Type="Edm.String" MaxLength="20"/>
+                </EntityType>
+                <EntityContainer Name="cds_zcar_cds_sd_cierrestienda_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                    <EntitySet Name="zcar_cds_c_cierresTienda" EntityType="cds_zcar_cds_sd_cierrestienda.zcar_cds_c_cierresTiendaType" sap:requires-filter="true" sap:content-version="1" sap:deletable-path="Delete_mc" sap:updatable-path="Update_mc"/>
+                    <EntitySet Name="zcar_cds_i_cierresTienda_vh" EntityType="cds_zcar_cds_sd_cierrestienda.zcar_cds_i_cierresTienda_vhType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                    <EntitySet Name="zcds_audit_storeid_vh" EntityType="cds_zcar_cds_sd_cierrestienda.zcds_audit_storeid_vhType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                </EntityContainer>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_cierrestienda.zcar_cds_c_cierresTiendaType/retailstoreid">
+                    <Annotation Term="Common.ValueList">
+                        <Record>
+                            <PropertyValue Property="Label" String="Tienda"/>
+                            <PropertyValue Property="CollectionPath" String="zcds_audit_storeid_vh"/>
+                            <PropertyValue Property="SearchSupported" Bool="false"/>
+                            <PropertyValue Property="Parameters">
+                                <Collection>
+                                    <Record Type="Common.ValueListParameterInOut">
+                                        <PropertyValue Property="LocalDataProperty" PropertyPath="retailstoreid"/>
+                                        <PropertyValue Property="ValueListProperty" String="Retailstoreid"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="RetailstoreidText"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_cierrestienda.zcar_cds_c_cierresTiendaType/estado">
+                    <Annotation Term="Common.ValueList">
+                        <Record>
+                            <PropertyValue Property="Label" String="Estado"/>
+                            <PropertyValue Property="CollectionPath" String="zcar_cds_i_cierresTienda_vh"/>
+                            <PropertyValue Property="SearchSupported" Bool="false"/>
+                            <PropertyValue Property="Parameters">
+                                <Collection>
+                                    <Record Type="Common.ValueListParameterInOut">
+                                        <PropertyValue Property="LocalDataProperty" PropertyPath="estado"/>
+                                        <PropertyValue Property="ValueListProperty" String="Domvalue_l"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="Ddtext"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_cierrestienda.cds_zcar_cds_sd_cierrestienda_Entities">
+                    <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                    <Annotation Term="Aggregation.ApplySupported">
+                        <Record>
+                            <PropertyValue Property="Transformations">
+                                <Collection>
+                                    <String>aggregate</String>
+                                    <String>groupby</String>
+                                    <String>filter</String>
+                                </Collection>
+                            </PropertyValue>
+                            <PropertyValue Property="Rollup" EnumMember="None"/>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_cierrestienda.zcar_cds_c_cierresTiendaType/ccentpos">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_cierrestienda.zcar_cds_c_cierresTiendaType/ddtext">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_cds_sd_cierrestienda.cds_zcar_cds_sd_cierrestienda_Entities/zcar_cds_c_cierresTienda">
+                    <Annotation Term="Capabilities.FilterRestrictions">
+                        <Record>
+                            <PropertyValue Property="RequiresFilter" Bool="true"/>
+                            <PropertyValue Property="NonFilterableProperties">
+                                <Collection>
+                                    <PropertyPath>Delete_mc</PropertyPath>
+                                    <PropertyPath>Update_mc</PropertyPath>
+                                </Collection>
+                            </PropertyValue>
+                            <PropertyValue Property="RequiredProperties">
+                                <Collection>
+                                    <PropertyPath>retailstoreid</PropertyPath>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                    <Annotation Term="Capabilities.SortRestrictions">
+                        <Record>
+                            <PropertyValue Property="NonSortableProperties">
+                                <Collection>
+                                    <PropertyPath>Delete_mc</PropertyPath>
+                                    <PropertyPath>Update_mc</PropertyPath>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZCAR_CDS_SB_CIERRESTIENDA/$metadata"/>
+                    <atom:link
+                        xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZCAR_CDS_SB_CIERRESTIENDA/$metadata"/>
+                    </Schema>
+                </edmx:DataServices>
+            </edmx:Edmx>

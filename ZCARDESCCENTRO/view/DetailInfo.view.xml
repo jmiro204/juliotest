@@ -1,0 +1,66 @@
+<mvc:View controllerName="app.inetum.ZCARDESCENTRO.controller.DetailInfo" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:smartTable="sap.ui.comp.smarttable">
+	<semantic:DetailPage id="page" navButtonPress="onBackPress" showNavButton="true" busy="{detailView>/busy}"
+		title="Tienda: {Tpv>/RetailstoreidText}({Tpv>/Retailstoreid}) - TPV: {Tpv>/WorkstationidView} - { 'path':'Tpv>/Auditbusinessdaydate', 'type':'sap.ui.model.type.Date', 'formatOptions': { 'pattern': 'dd-MM-yyyy' } }"
+		busyIndicatorDelay="{detailView>/delay}">
+		<semantic:content>
+			<IconTabBar id="idIconTabBar" select="onFilterSelectTab" class="sapUiResponsiveContentPadding" selectedKey="{modelTab>/key}">
+				<items>
+					<IconTabFilter icon="sap-icon://indent" text="Original" key="org"/>
+					<IconTabFilter icon="sap-icon://outdent" text="Actual" key="act"/>
+				</items>
+				<content></content>
+			</IconTabBar>
+			<ObjectHeader id="idObjectRangeTrx" title="Rango de transacciones: " responsive="true"/>
+			<ScrollContainer >
+				<Table id="detailTeminal" items="{modelDetail>/}">
+					<headerToolbar>
+						<OverflowToolbar>
+							<Text id="idHardTotal" class="customTextHardTotal"/>
+							<ToolbarSpacer/>
+							<Button text="Mostrar todos" id="showdesc" press="onShowTrxDesc(false)"/>
+							<Button text="Mostrar solo descuadres" id="hidedesc" press="onShowTrxDesc(true)"/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column width="12em" headerMenu="columnHeaderMenu"><Text text="{/#Desgtpv/ConceptoCar/@sap:label}"/></Column>
+						<Column minScreenWidth="Tablet" demandPopin="true"><Text text="{/#Desgtpv/MedioPagoCar/@sap:label}"/></Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="End"><Text text="{/#Desgtpv/OperacionesconceptoCAR/@sap:label}"/></Column>
+						<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Center"><Text text="{/#Desgtpv/TotalMpagoMedioPagoCAR/@sap:label}"/></Column>
+						<Column hAlign="End"><Text text="{/#Desgtpv/OperacionesConcepto/@sap:label}"/></Column>
+						<Column hAlign="End"><Text text="{/#Desgtpv/MedioPagoEXT/@sap:label}"/></Column>
+						<Column hAlign="End"><Text text="{/#Desgtpv/Descvalue/@sap:label}"/></Column>
+					</columns>
+					<items>
+						<ColumnListItem vAlign="Middle">
+							<customData>
+								<core:CustomData key="mydata" value="{= ${modelDetail>Statuscriti} === 1 ? 'FAILED' : 'SUCCESS' }" writeToDom="true"/>
+							</customData>
+							<cells>
+								<Text text="{modelDetail>ConceptoCarDesc}"/>
+								<!--<Text text="{= ${modelDetail>MedioPagoCar} === '00' ? ${modelDetail>Formpagotext} : ${modelDetail>Formpagotext}.concat('(').concat(${modelDetail>MedioPagoCar}).concat(')') }"/>-->
+								<Text text="{modelDetail>Formpagotext}"/>
+								<Text text="{modelDetail>OperacionesconceptoCAR}"/>
+								<!--text="{modelDetail>TotalMpagoMedioPagoCAR}"-->
+								<Text
+									text="{path:'modelDetail>TotalMpagoMedioPagoCAR', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"/>
+								<Text text="{modelDetail>OperacionesConcepto}"/>
+								<!--<Text text="{modelDetail>MedioPagoEXT}"/>-->
+								<Text
+									text="{path:'modelDetail>MedioPagoEXT', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"/>
+								<!--<Text text="{modelDetail>Descvalue}"/>-->
+								<Text
+									text="{path:'modelDetail>Descvalue', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				<Toolbar>
+					<ToolbarSpacer/>
+					<Button text="Ir Forzar Terminal" id="ForzTerm" press="onNavigateToOtherView"/>
+					<Button text="Ir Cierre de Correcciones" press="onNavigateToOtherView"/>
+				</Toolbar>
+			</ScrollContainer>
+		</semantic:content>
+	</semantic:DetailPage>
+</mvc:View>

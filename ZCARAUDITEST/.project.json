@@ -1,0 +1,22 @@
+{
+  "mockpreview": {
+    "mockUri": "",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "deploy": {
+    "destination": "ECI_DEV",
+    "name": "ZCARAUDITEST"
+  },
+  "projectType": [
+    "sap.watt.uitools.ide.fiori",
+    "com.watt.common.builder.sapui5clientbuild"
+  ],
+  "build": {
+    "buildRequired": true,
+    "targetFolder": "dist",
+    "lastBuildDateTime": "Thu, 23 Oct 2025 10:32:52 GMT"
+  }
+}

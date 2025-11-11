@@ -1,0 +1,346 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="http://localhost:8080/webidedispatcher/destinations/ECI_DEV/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+	</edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="http://localhost:8080/webidedispatcher/destinations/ECI_DEV/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+	</edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="http://localhost:8080/webidedispatcher/destinations/ECI_DEV/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+	</edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="http://localhost:8080/webidedispatcher/destinations/ECI_DEV/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+	</edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="http://localhost:8080/webidedispatcher/destinations/ECI_DEV/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+	</edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="http://localhost:8080/webidedispatcher/destinations/ECI_DEV/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+	</edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="http://localhost:8080/webidedispatcher/destinations/ECI_DEV/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+	</edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="http://localhost:8080/webidedispatcher/destinations/ECI_DEV/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+	</edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="http://localhost:8080/webidedispatcher/destinations/ECI_DEV/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+		<edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+	</edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="cds_zcar_sd_incidencias_audit" xml:lang="es" sap:schema-version="1">
+			<Annotation xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
+			<EntityType Name="IncidenciasType" sap:label="Gestión de incidencias" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Retailstoreid"/>
+					<PropertyRef Name="Businessdaydate"/>
+					<PropertyRef Name="Workstationid"/>
+					<PropertyRef Name="Transnumber"/>
+				</Key>
+				<Property Name="Retailstoreid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda"
+					sap:value-list="standard"/>
+				<Property Name="Businessdaydate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Fe.contabiliz."
+					sap:quickinfo="Fecha de contabilización"/>
+				<Property Name="Workstationid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Número de TPV"/>
+				<Property Name="Transnumber" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Número transacción"/>
+				<Property Name="Transtypecode" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Tipo de transacción"
+					sap:quickinfo="Tipo de transacicón"/>
+				<Property Name="Begindate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Fecha de Venta"/>
+				<Property Name="Transtypecodemodif" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Tipo trans."
+					sap:quickinfo="Tipo de transacción"/>
+				<Property Name="Salesamountmodif" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Transcurrency" sap:label="Valor de venta"
+					sap:quickinfo="Valor venta real"/>
+				<Property Name="Transcurrency" Type="Edm.String" MaxLength="5" sap:label="Moneda transacción" sap:quickinfo="Moneda de la transacción"
+					sap:semantics="currency-code"/>
+				<Property Name="Origbusinessdate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Fe.contab.refer."
+					sap:quickinfo="Referencia a recibo original para fecha de contabilización"/>
+				<Property Name="Origstoreid" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda"/>
+				<Property Name="Origtransnumber" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Núm.transacción ref."
+					sap:quickinfo="Referencia a recibo original para número de transacción"/>
+				<Property Name="Origwrkstid" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Núm.TPV referenciado"
+					sap:quickinfo="Referencia a recibo original para ID de estación de trabajo"/>
+				<Property Name="Motivo" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Motivo de incidencia"/>
+				<Property Name="Observacion" Type="Edm.String" MaxLength="255" sap:display-format="UpperCase" sap:label="Observaciones"
+					sap:quickinfo="Observaciones audit"/>
+				<Property Name="Usuariocrea" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Modificado por"/>
+				<Property Name="Tmstcrea" Type="Edm.DateTimeOffset" Precision="7" sap:label="Hora creación oper."
+					sap:quickinfo="Cronomarcador para hora de creación operación"/>
+				<Property Name="Usuariomod" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Modificado por"/>
+				<Property Name="Tmstmod" Type="Edm.DateTimeOffset" Precision="7" sap:label="Hora última modif."
+					sap:quickinfo="Cronomarcador última modificación para operación"/>
+				<Property Name="Instancia" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Valor verdadero"
+					sap:quickinfo="Valor verdadero: Verdadero/Falso"/>
+				<Property Name="RetailstoreidText" Type="Edm.String" MaxLength="20"/>
+				<NavigationProperty Name="to_Position" Relationship="cds_zcar_sd_incidencias_audit.assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB"
+					FromRole="FromRole_assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB" ToRole="ToRole_assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB"/>
+				<NavigationProperty Name="to_PositionMp" Relationship="cds_zcar_sd_incidencias_audit.assoc_8997B286033E4F0E77EA611EE7CB2E8E"
+					FromRole="FromRole_assoc_8997B286033E4F0E77EA611EE7CB2E8E" ToRole="ToRole_assoc_8997B286033E4F0E77EA611EE7CB2E8E"/>
+			</EntityType>
+			<EntityType Name="InciposactType" sap:label="Gestión de incidencias medio pago - Actual" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Retailstoreid"/>
+					<PropertyRef Name="Businessdaydate"/>
+					<PropertyRef Name="Workstationid"/>
+					<PropertyRef Name="Transnumber"/>
+					<PropertyRef Name="Inexpos"/>
+				</Key>
+				<Property Name="Retailstoreid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda"
+					sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Businessdaydate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Fe.contabiliz."
+					sap:quickinfo="Fecha de contabilización" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Workstationid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Número de TPV"
+					sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Transnumber" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Número transacción"
+					sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Inexpos" Type="Edm.Int32" Nullable="false" sap:label="Número natural" sap:quickinfo="Entero con signo de 4 bytes"/>
+				<Property Name="Tendernumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Núm.pos.medio pago"
+					sap:quickinfo="Número posición vía de pago" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Mediopago" Type="Edm.String" MaxLength="2" sap:label="Medio de Pago" sap:quickinfo="MEDIO DE PAGO" sap:creatable="false"
+					sap:updatable="false"/>
+				<Property Name="Desgloce" Type="Edm.String" MaxLength="3" sap:label="Desglose" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Custcardnumbermodif" Type="Edm.String" MaxLength="25" sap:label="Nº tarjeta" sap:quickinfo="Número de la tarjeta de cliente"/>
+				<Property Name="Tenderamountmodif" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Transcurrency" sap:label="Imp. MP. Modif."
+					sap:quickinfo="Imp. medio de pago"/>
+				<Property Name="Tenderamountmodif2" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Transcurrency" sap:label="Imp. medio de pago"/>
+				<Property Name="Transcurrency" Type="Edm.String" MaxLength="5" sap:label="Moneda transacción" sap:quickinfo="Moneda de la transacción"
+					sap:semantics="currency-code"/>
+				<Property Name="Medpgsubtip" Type="Edm.String" MaxLength="8" sap:display-format="UpperCase" sap:label="Tipo/Subtipo/Mp"
+					sap:quickinfo="Tipo/Subtipo MP" sap:value-list="standard"/>
+				<NavigationProperty Name="to_Header" Relationship="cds_zcar_sd_incidencias_audit.assoc_8E8FAF49305F271216342CE0C6313692"
+					FromRole="FromRole_assoc_8E8FAF49305F271216342CE0C6313692" ToRole="ToRole_assoc_8E8FAF49305F271216342CE0C6313692"/>
+			</EntityType>
+			<EntityType Name="InciposantType" sap:label="Gestión de incidencias medio pago - Anterior" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Retailstoreid"/>
+					<PropertyRef Name="Businessdaydate"/>
+					<PropertyRef Name="Workstationid"/>
+					<PropertyRef Name="Transnumber"/>
+					<PropertyRef Name="Inexpos"/>
+				</Key>
+				<Property Name="Retailstoreid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda"
+					sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Businessdaydate" Type="Edm.DateTime" Nullable="false" Precision="0" sap:display-format="Date" sap:label="Fe.contabiliz."
+					sap:quickinfo="Fecha de contabilización" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Workstationid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Número de TPV"
+					sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Transnumber" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Número transacción"
+					sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Inexpos" Type="Edm.Int32" Nullable="false" sap:label="Número natural" sap:quickinfo="Entero con signo de 4 bytes"/>
+				<Property Name="Tendernumber" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Núm.pos.medio pago"
+					sap:quickinfo="Número posición vía de pago"/>
+				<Property Name="Cardnumber" Type="Edm.String" MaxLength="25" sap:label="Nº tarjeta"/>
+				<Property Name="Tenderamount" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Tendercurrency" sap:label="Imp. medio de pago"/>
+				<Property Name="Mediopago" Type="Edm.String" MaxLength="2" sap:label="Medio de Pago" sap:quickinfo="MEDIO DE PAGO"/>
+				<Property Name="Desgloce" Type="Edm.String" MaxLength="3" sap:label="Desglose"/>
+				<Property Name="Tendercurrency" Type="Edm.String" MaxLength="5" sap:label="Moneda medio pago" sap:quickinfo="Moneda de vía de pago"
+					sap:semantics="currency-code"/>
+				<NavigationProperty Name="to_Header" Relationship="cds_zcar_sd_incidencias_audit.assoc_2AA9AD0CE8156D7BA76B571E0DC17152"
+					FromRole="FromRole_assoc_2AA9AD0CE8156D7BA76B571E0DC17152" ToRole="ToRole_assoc_2AA9AD0CE8156D7BA76B571E0DC17152"/>
+			</EntityType>
+			<EntityType Name="zcar_cds_i_mediopago_vhType" sap:label="Medios de pago" sap:value-list="true" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Mediopagosub"/>
+					<PropertyRef Name="Mediopago"/>
+				</Key>
+				<Property Name="Mediopagosub" Type="Edm.String" Nullable="false" MaxLength="8" sap:display-format="UpperCase" sap:text="Mediopagotext"
+					sap:label="Tipo/Subtipo/Mp" sap:quickinfo="Tipo/Subtipo MP"/>
+				<Property Name="Mediopago" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Medio de Pago" sap:quickinfo="MEDIO DE PAGO"/>
+				<Property Name="Desgloce" Type="Edm.String" MaxLength="3" sap:label="Desglose"/>
+				<Property Name="Mediopagotext" Type="Edm.String" MaxLength="40" sap:label="Descr. Medio de pago"
+					sap:quickinfo="Descripcion Subtipo medio de pago"/>
+			</EntityType>
+			<EntityType Name="zcds_audit_storeid_vhType" sap:label="Ayuda de busqueda tienda" sap:value-list="true" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Retailstoreid"/>
+				</Key>
+				<Property Name="Retailstoreid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Tienda"/>
+				<Property Name="RetailstoreidShow" Type="Edm.String" MaxLength="10"/>
+				<Property Name="RetailstoreidText" Type="Edm.String" MaxLength="20"/>
+			</EntityType>
+			<Association Name="assoc_8997B286033E4F0E77EA611EE7CB2E8E" sap:content-version="1">
+				<End Type="cds_zcar_sd_incidencias_audit.IncidenciasType" Multiplicity="1" Role="FromRole_assoc_8997B286033E4F0E77EA611EE7CB2E8E">
+					<OnDelete Action="Cascade"/>
+				</End>
+				<End Type="cds_zcar_sd_incidencias_audit.InciposantType" Multiplicity="*" Role="ToRole_assoc_8997B286033E4F0E77EA611EE7CB2E8E"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_8997B286033E4F0E77EA611EE7CB2E8E">
+						<PropertyRef Name="Transnumber"/>
+						<PropertyRef Name="Workstationid"/>
+						<PropertyRef Name="Businessdaydate"/>
+						<PropertyRef Name="Retailstoreid"/>
+					</Principal>
+					<Dependent Role="ToRole_assoc_8997B286033E4F0E77EA611EE7CB2E8E">
+						<PropertyRef Name="Transnumber"/>
+						<PropertyRef Name="Workstationid"/>
+						<PropertyRef Name="Businessdaydate"/>
+						<PropertyRef Name="Retailstoreid"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB" sap:content-version="1">
+				<End Type="cds_zcar_sd_incidencias_audit.IncidenciasType" Multiplicity="1" Role="FromRole_assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB">
+					<OnDelete Action="Cascade"/>
+				</End>
+				<End Type="cds_zcar_sd_incidencias_audit.InciposactType" Multiplicity="*" Role="ToRole_assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB">
+						<PropertyRef Name="Transnumber"/>
+						<PropertyRef Name="Workstationid"/>
+						<PropertyRef Name="Businessdaydate"/>
+						<PropertyRef Name="Retailstoreid"/>
+					</Principal>
+					<Dependent Role="ToRole_assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB">
+						<PropertyRef Name="Transnumber"/>
+						<PropertyRef Name="Workstationid"/>
+						<PropertyRef Name="Businessdaydate"/>
+						<PropertyRef Name="Retailstoreid"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_8E8FAF49305F271216342CE0C6313692" sap:content-version="1">
+				<End Type="cds_zcar_sd_incidencias_audit.InciposactType" Multiplicity="1" Role="FromRole_assoc_8E8FAF49305F271216342CE0C6313692"/>
+				<End Type="cds_zcar_sd_incidencias_audit.IncidenciasType" Multiplicity="1" Role="ToRole_assoc_8E8FAF49305F271216342CE0C6313692"/>
+			</Association>
+			<Association Name="assoc_2AA9AD0CE8156D7BA76B571E0DC17152" sap:content-version="1">
+				<End Type="cds_zcar_sd_incidencias_audit.InciposantType" Multiplicity="1" Role="FromRole_assoc_2AA9AD0CE8156D7BA76B571E0DC17152"/>
+				<End Type="cds_zcar_sd_incidencias_audit.IncidenciasType" Multiplicity="1" Role="ToRole_assoc_2AA9AD0CE8156D7BA76B571E0DC17152"/>
+			</Association>
+			<EntityContainer Name="cds_zcar_sd_incidencias_audit_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx">
+				<EntitySet Name="Incidencias" EntityType="cds_zcar_sd_incidencias_audit.IncidenciasType" sap:content-version="1"/>
+				<EntitySet Name="Inciposact" EntityType="cds_zcar_sd_incidencias_audit.InciposactType" sap:content-version="1"/>
+				<EntitySet Name="Inciposant" EntityType="cds_zcar_sd_incidencias_audit.InciposantType" sap:updatable="false" sap:deletable="false"
+					sap:content-version="1"/>
+				<EntitySet Name="zcar_cds_i_mediopago_vh" EntityType="cds_zcar_sd_incidencias_audit.zcar_cds_i_mediopago_vhType" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+				<EntitySet Name="zcds_audit_storeid_vh" EntityType="cds_zcar_sd_incidencias_audit.zcds_audit_storeid_vhType" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+				<AssociationSet Name="assoc_8997B286033E4F0E77EA611EE7CB2E8E"
+					Association="cds_zcar_sd_incidencias_audit.assoc_8997B286033E4F0E77EA611EE7CB2E8E" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1">
+					<End EntitySet="Incidencias" Role="FromRole_assoc_8997B286033E4F0E77EA611EE7CB2E8E"/>
+					<End EntitySet="Inciposant" Role="ToRole_assoc_8997B286033E4F0E77EA611EE7CB2E8E"/>
+				</AssociationSet>
+				<AssociationSet Name="assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB"
+					Association="cds_zcar_sd_incidencias_audit.assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1">
+					<End EntitySet="Incidencias" Role="FromRole_assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB"/>
+					<End EntitySet="Inciposact" Role="ToRole_assoc_9E9C0D90C19A62DB4B0DCF6ABAF07CCB"/>
+				</AssociationSet>
+				<AssociationSet Name="assoc_2AA9AD0CE8156D7BA76B571E0DC17152"
+					Association="cds_zcar_sd_incidencias_audit.assoc_2AA9AD0CE8156D7BA76B571E0DC17152" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1">
+					<End EntitySet="Inciposant" Role="FromRole_assoc_2AA9AD0CE8156D7BA76B571E0DC17152"/>
+					<End EntitySet="Incidencias" Role="ToRole_assoc_2AA9AD0CE8156D7BA76B571E0DC17152"/>
+				</AssociationSet>
+				<AssociationSet Name="assoc_8E8FAF49305F271216342CE0C6313692"
+					Association="cds_zcar_sd_incidencias_audit.assoc_8E8FAF49305F271216342CE0C6313692" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1">
+					<End EntitySet="Inciposact" Role="FromRole_assoc_8E8FAF49305F271216342CE0C6313692"/>
+					<End EntitySet="Incidencias" Role="ToRole_assoc_8E8FAF49305F271216342CE0C6313692"/>
+				</AssociationSet>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_incidencias_audit.IncidenciasType/Retailstoreid">
+				<Annotation Term="Common.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Tienda"/>
+						<PropertyValue Property="CollectionPath" String="zcds_audit_storeid_vh"/>
+						<PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Retailstoreid"/>
+									<PropertyValue Property="ValueListProperty" String="Retailstoreid"/>
+								</Record>
+								<Record Type="Common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="RetailstoreidText"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_incidencias_audit.InciposactType/Medpgsubtip">
+				<Annotation Term="Common.ValueList">
+					<Record>
+						<PropertyValue Property="Label" String="Tipo/Subtipo/Mp"/>
+						<PropertyValue Property="CollectionPath" String="zcar_cds_i_mediopago_vh"/>
+						<PropertyValue Property="SearchSupported" Bool="false"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut">
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Medpgsubtip"/>
+									<PropertyValue Property="ValueListProperty" String="Mediopagosub"/>
+								</Record>
+								<Record Type="Common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Mediopago"/>
+								</Record>
+								<Record Type="Common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Desgloce"/>
+								</Record>
+								<Record Type="Common.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Mediopagotext"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_incidencias_audit.cds_zcar_sd_incidencias_audit_Entities">
+				<Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Rollup" EnumMember="None"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm"
+				Target="cds_zcar_sd_incidencias_audit.cds_zcar_sd_incidencias_audit_Entities/Incidencias">
+				<Annotation Term="Capabilities.NavigationRestrictions">
+					<Record>
+						<PropertyValue Property="RestrictedProperties">
+							<Collection>
+								<Record>
+									<PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Position"/>
+									<PropertyValue Property="InsertRestrictions">
+										<Record>
+											<PropertyValue Property="Insertable" Bool="true"/>
+										</Record>
+									</PropertyValue>
+								</Record>
+								<Record>
+									<PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_PositionMp"/>
+									<PropertyValue Property="InsertRestrictions">
+										<Record>
+											<PropertyValue Property="Insertable" Bool="true"/>
+										</Record>
+									</PropertyValue>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="http://localhost:8080/webidedispatcher/destinations/ECI_DEV/sap/opu/odata/sap/ZCAR_SB_INCIDENCIAS_AUDIT/$metadata"/>
+			<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="http://localhost:8080/webidedispatcher/destinations/ECI_DEV/sap/opu/odata/sap/ZCAR_SB_INCIDENCIAS_AUDIT/$metadata"/>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

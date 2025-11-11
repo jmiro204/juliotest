@@ -1,0 +1,164 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="cds_zcar_sd_c_form_pago" xml:lang="es" sap:schema-version="1">
+            <Annotation
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
+                <EntityType Name="zcar_cds_c_form_pagoType" sap:label="Proyecion Forma Pago" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="cforpago"/>
+                    </Key>
+                    <Property Name="cforpago_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="descpago_fc" Type="Edm.Byte" sap:label="Dyn. Field Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                    <Property Name="cforpago" Type="Edm.String" Nullable="false" MaxLength="2" sap:display-format="NonNegative" sap:field-control="cforpago_fc" sap:label="Forma de pago"/>
+                    <Property Name="descpago" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:field-control="descpago_fc" sap:label="Des.Med.Pago" sap:quickinfo="Descripcion Medio Pago"/>
+                    <Property Name="gr_estad" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="G.E" sap:quickinfo="Grupo Estadillo"/>
+                    <Property Name="npriormp" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Prioridad forma pago" sap:quickinfo="Prioridad forma de pago"/>
+                    <Property Name="npricump" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Prioridad cumpli" sap:quickinfo="Prioridad cumplimentación"/>
+                    <Property Name="npriresc" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Prioridad rescisión"/>
+                    <Property Name="cordesta" Type="Edm.String" MaxLength="2" sap:display-format="NonNegative" sap:label="Orden estadillos"/>
+                    <Property Name="cescliec" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="TOT CT" sap:quickinfo="Total  Clientes" sap:value-list="standard"/>
+                    <Property Name="cescliecportugal" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="TOT CT Portug" sap:quickinfo="Total clientes Protugal"/>
+                </EntityType>
+                <EntityType Name="zcar_cds_totct_vhType" sap:label="Ayuda de busqueda total Client Form Pago" sap:value-list="true" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="CESCLIEC"/>
+                    </Key>
+                    <Property Name="CESCLIEC" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="Description" sap:label="Valor inferior" sap:quickinfo="Valores para dominios: valor individual/límite inferior"/>
+                    <Property Name="Description" Type="Edm.String" MaxLength="60" sap:label="Descrip.breve" sap:quickinfo="Texto breve p.valores fijos"/>
+                </EntityType>
+                <EntityContainer Name="cds_zcar_sd_c_form_pago_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                    <EntitySet Name="zcar_cds_c_form_pago" EntityType="cds_zcar_sd_c_form_pago.zcar_cds_c_form_pagoType" sap:content-version="1"/>
+                    <EntitySet Name="zcar_cds_totct_vh" EntityType="cds_zcar_sd_c_form_pago.zcar_cds_totct_vhType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                </EntityContainer>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_form_pago.zcar_cds_c_form_pagoType/cescliec">
+                    <Annotation Term="Common.ValueList">
+                        <Record>
+                            <PropertyValue Property="Label" String=""/>
+                            <PropertyValue Property="CollectionPath" String="zcar_cds_totct_vh"/>
+                            <PropertyValue Property="SearchSupported" Bool="false"/>
+                            <PropertyValue Property="Parameters">
+                                <Collection>
+                                    <Record Type="Common.ValueListParameterInOut">
+                                        <PropertyValue Property="LocalDataProperty" PropertyPath="cescliec"/>
+                                        <PropertyValue Property="ValueListProperty" String="CESCLIEC"/>
+                                    </Record>
+                                    <Record Type="Common.ValueListParameterDisplayOnly">
+                                        <PropertyValue Property="ValueListProperty" String="Description"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_form_pago.cds_zcar_sd_c_form_pago_Entities">
+                    <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                    <Annotation Term="Aggregation.ApplySupported">
+                        <Record>
+                            <PropertyValue Property="Transformations">
+                                <Collection>
+                                    <String>aggregate</String>
+                                    <String>groupby</String>
+                                    <String>filter</String>
+                                </Collection>
+                            </PropertyValue>
+                            <PropertyValue Property="Rollup" EnumMember="None"/>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_form_pago.zcar_cds_c_form_pagoType/cescliecportugal">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_form_pago.zcar_cds_c_form_pagoType/cordesta">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_form_pago.zcar_cds_c_form_pagoType/gr_estad">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_form_pago.zcar_cds_c_form_pagoType/npricump">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_form_pago.zcar_cds_c_form_pagoType/npriormp">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_form_pago.zcar_cds_c_form_pagoType/npriresc">
+                    <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+                </Annotations>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcar_sd_c_form_pago.cds_zcar_sd_c_form_pago_Entities/zcar_cds_c_form_pago">
+                    <Annotation Term="Capabilities.FilterRestrictions">
+                        <Record>
+                            <PropertyValue Property="NonFilterableProperties">
+                                <Collection>
+                                    <PropertyPath>cforpago_fc</PropertyPath>
+                                    <PropertyPath>descpago_fc</PropertyPath>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                    <Annotation Term="Capabilities.SortRestrictions">
+                        <Record>
+                            <PropertyValue Property="NonSortableProperties">
+                                <Collection>
+                                    <PropertyPath>cforpago_fc</PropertyPath>
+                                    <PropertyPath>descpago_fc</PropertyPath>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZCAR_SB_FORM_PAGO/$metadata"/>
+                    <atom:link
+                        xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZCAR_SB_FORM_PAGO/$metadata"/>
+                    </Schema>
+                </edmx:DataServices>
+            </edmx:Edmx>

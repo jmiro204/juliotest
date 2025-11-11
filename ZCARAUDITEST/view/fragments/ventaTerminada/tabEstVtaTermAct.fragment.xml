@@ -1,0 +1,51 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<Table id="table" width="auto" items="{ path: '/Estvtaactual', sorter: { path: 'Businessdaydate', descending: false } }" growing="true" growingScrollToLoad="true"-->
+	<!-- type="Navigation" press="onPress"-->
+	<!--id="tableEstadillo"-->
+	<Table width="auto" items="{modelEstVentaVT>/}" noDataText="{worklistView>/tableNoDataText}"
+		busyIndicatorDelay="{worklistView>/tableBusyDelay}" updateFinished="onUpdateFinished" visible="{= ${worklistView>/DesgloceSelect} === 1 }">
+		<headerToolbar>
+			<Toolbar>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column >
+				<Text text=""/>
+				<footer>
+					<Text text="Efectivo por ventas: {worklistView>/totalEfectivoPorVent}"/>
+				</footer>
+			</Column>
+			<Column >
+				<Text text="Venta"/>
+				<footer>
+					<Text text="{worklistView>/Total/Totalimpvta}"/>
+				</footer>
+			</Column>
+			<Column >
+				<Text text="Devolución"/>
+			</Column>
+			<Column >
+				<Text text="Ent. a Cuenta"/>
+			</Column>
+			<Column >
+				<Text text="Devolución Ent. a cta"/>
+			</Column>
+			<Column >
+				<Text text="Total Neto"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{modelEstVentaVT>Formpag} {modelEstVentaVT>Descpago}"/>
+					<Text text="{path:'modelEstVentaVT>Totalimpvta',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVT>Impdev',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVT>Totalecta',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVT>Impentdevec',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVT>Imptotalneto',type:'sap.ui.model.type.Float'}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

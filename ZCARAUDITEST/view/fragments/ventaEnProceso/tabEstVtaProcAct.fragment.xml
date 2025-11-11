@@ -1,0 +1,41 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<Table id="table" width="auto" items="{ path: '/Estvtaactual', sorter: { path: 'Businessdaydate', descending: false } }" growing="true" growingScrollToLoad="true"-->
+	<!-- type="Navigation" press="onPress"-->
+	<!--id="tableEstadilloVP"-->
+	<Table  width="auto" items="{modelEstVentaVP>/}" noDataText="{worklistView>/tableNoDataText}"
+		busyIndicatorDelay="{worklistView>/tableBusyDelay}" updateFinished="onUpdateFinished" visible="{= ${worklistView>/DesgloceSelect} === 1 }">
+		<headerToolbar>
+			<Toolbar>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column >
+				<Text text=""/>
+			</Column>
+			<Column >
+				<Text text="Venta - ALTAS V.PROCESO"/>
+			</Column>
+			<Column >
+				<Text text="Ent. a Cuenta - ALTAS V.PROCESO"/>
+			</Column>
+			<Column >
+				<Text text="Devolución - RESCISIONES"/>
+			</Column>
+			<Column >
+				<Text text="Devolución Ent. a cta - RESCISIONES"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{modelEstVentaVP>Formpag} {modelEstVentaVP>Descpago}"/>
+					<Text text="{path:'modelEstVentaVP>Totalimpvta',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVP>Totalecta',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVP>Totaldevresci',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVP>Totaldevresciec',type:'sap.ui.model.type.Float'}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

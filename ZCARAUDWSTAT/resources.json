@@ -1,0 +1,34 @@
+{
+    "resources": [
+        {
+            "name": "i18n/ListReport/zcar_cds_c_aud_w_stat/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "localService/ZCAR_SB_AUD_W_STAT_VAN.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "neo-app.json"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified">
+	<Popover >
+			<u:Calendar select="onHandleCalendarSelect" minDate="{/minDate}" disabledDates="{path: '/disabled'}">
+			<u:disabledDates>
+				<u:DateRange startDate="{FperiodoClose}"/>
+			</u:disabledDates>
+		</u:Calendar>
+	</Popover>
+</core:FragmentDefinition>

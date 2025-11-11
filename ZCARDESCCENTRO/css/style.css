@@ -1,0 +1,40 @@
+.myBlueTitle .sapMObjLtitle {
+    color: blue !important;
+}
+
+.customButton {
+    margin-top: 1em !important;
+}
+
+.customTitle {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.3em !important;
+}
+
+.customTextHardTotal {
+    font-size: medium !important;
+    font-weight: bold !important;
+}
+
+.customTextHardTotalDet {
+    font-size: medium !important;
+    font-weight: bold !important;
+    margin-top: 1em !important;
+}
+
+div[id*="master--page"]>section {
+    text-align: center !important;
+}
+
+.classCountTitle {
+    font-weight: bold !important;
+}
+
+tr[data-mydata="FAILED"]>td>span {
+	font-weight: bold !important;
+    color: #b00 !important;
+}
+tr[data-mydata="SUCCESS"]>td>span {
+	font-weight: bold !important;
+    color: #107e3e !important;
+}

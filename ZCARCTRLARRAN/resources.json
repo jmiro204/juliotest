@@ -1,0 +1,50 @@
+{
+    "resources": [
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "i18n/ListReport/zcar_c_ctrl_arran/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "localService/ZCAR_SB_CTRL_ARRAN_VAN.xml"
+        },
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "localService/ZCAR_AUTH_AUDIT_SRV/metadata.xml"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": ".project.json"
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": "ext/controller/ListReportExt.controller.js"
+        },
+        {
+            "name": ".user.project.json"
+        }
+    ]
+}

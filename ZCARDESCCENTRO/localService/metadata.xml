@@ -1,0 +1,131 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="cds_zcds_sd_audit_imp_descht" xml:lang="es" sap:schema-version="1">
+            <Annotation
+                xmlns="http://docs.oasis-open.org/odata/ns/edm" Term="Core.SchemaVersion" String="1.0.0"/>
+                <EntityType Name="HeaderType" sap:label="Consumo de centros descuadrados" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Retailstoreid"/>
+                        <PropertyRef Name="transcurrency"/>
+                        <PropertyRef Name="Yeardate"/>
+                    </Key>
+                    <Property Name="Retailstoreid" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                    <Property Name="transcurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Moneda transacción" sap:quickinfo="Moneda de la transacción" sap:semantics="currency-code"/>
+                    <Property Name="Yeardate" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                    <Property Name="Tpvrech" Type="Edm.Int32"/>
+                    <Property Name="Valordesc" Type="Edm.Decimal" Precision="17" Scale="2"/>
+                    <Property Name="Trxrech" Type="Edm.Int32"/>
+                    <Property Name="Imptotalrechazo" Type="Edm.Decimal" Precision="15" Scale="2"/>
+                    <NavigationProperty Name="to_Positiontpv" Relationship="cds_zcds_sd_audit_imp_descht.assoc_079B40849495F8AA400474D652701364" FromRole="FromRole_assoc_079B40849495F8AA400474D652701364" ToRole="ToRole_assoc_079B40849495F8AA400474D652701364"/>
+                </EntityType>
+                <EntityType Name="PositiontpvType" sap:label="Consumo de centros/Tpv descuadrados" sap:content-version="1">
+                    <Key>
+                        <PropertyRef Name="Retailstoreid"/>
+                        <PropertyRef Name="transcurrency"/>
+                        <PropertyRef Name="Yeardate"/>
+                        <PropertyRef Name="Workstationid"/>
+                    </Key>
+                    <Property Name="Retailstoreid" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                    <Property Name="transcurrency" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Moneda transacción" sap:quickinfo="Moneda de la transacción" sap:semantics="currency-code"/>
+                    <Property Name="Yeardate" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                    <Property Name="Workstationid" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Número de TPV"/>
+                    <Property Name="ValordescTpv" Type="Edm.Decimal" Precision="17" Scale="2"/>
+                    <NavigationProperty Name="to_Headerstore" Relationship="cds_zcds_sd_audit_imp_descht.assoc_44C496C3E5197C67EF6FD233B307E796" FromRole="FromRole_assoc_44C496C3E5197C67EF6FD233B307E796" ToRole="ToRole_assoc_44C496C3E5197C67EF6FD233B307E796"/>
+                </EntityType>
+                <Association Name="assoc_079B40849495F8AA400474D652701364" sap:content-version="1">
+                    <End Type="cds_zcds_sd_audit_imp_descht.HeaderType" Multiplicity="1" Role="FromRole_assoc_079B40849495F8AA400474D652701364">
+                        <OnDelete Action="Cascade"/>
+                    </End>
+                    <End Type="cds_zcds_sd_audit_imp_descht.PositiontpvType" Multiplicity="*" Role="ToRole_assoc_079B40849495F8AA400474D652701364"/>
+                    <ReferentialConstraint>
+                        <Principal Role="FromRole_assoc_079B40849495F8AA400474D652701364">
+                            <PropertyRef Name="Yeardate"/>
+                            <PropertyRef Name="transcurrency"/>
+                            <PropertyRef Name="Retailstoreid"/>
+                        </Principal>
+                        <Dependent Role="ToRole_assoc_079B40849495F8AA400474D652701364">
+                            <PropertyRef Name="Yeardate"/>
+                            <PropertyRef Name="transcurrency"/>
+                            <PropertyRef Name="Retailstoreid"/>
+                        </Dependent>
+                    </ReferentialConstraint>
+                </Association>
+                <Association Name="assoc_44C496C3E5197C67EF6FD233B307E796" sap:content-version="1">
+                    <End Type="cds_zcds_sd_audit_imp_descht.PositiontpvType" Multiplicity="1" Role="FromRole_assoc_44C496C3E5197C67EF6FD233B307E796"/>
+                    <End Type="cds_zcds_sd_audit_imp_descht.HeaderType" Multiplicity="1" Role="ToRole_assoc_44C496C3E5197C67EF6FD233B307E796"/>
+                </Association>
+                <EntityContainer Name="cds_zcds_sd_audit_imp_descht_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                    <EntitySet Name="Header" EntityType="cds_zcds_sd_audit_imp_descht.HeaderType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                    <EntitySet Name="Positiontpv" EntityType="cds_zcds_sd_audit_imp_descht.PositiontpvType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                    <AssociationSet Name="assoc_44C496C3E5197C67EF6FD233B307E796" Association="cds_zcds_sd_audit_imp_descht.assoc_44C496C3E5197C67EF6FD233B307E796" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                        <End EntitySet="Positiontpv" Role="FromRole_assoc_44C496C3E5197C67EF6FD233B307E796"/>
+                        <End EntitySet="Header" Role="ToRole_assoc_44C496C3E5197C67EF6FD233B307E796"/>
+                    </AssociationSet>
+                    <AssociationSet Name="assoc_079B40849495F8AA400474D652701364" Association="cds_zcds_sd_audit_imp_descht.assoc_079B40849495F8AA400474D652701364" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                        <End EntitySet="Header" Role="FromRole_assoc_079B40849495F8AA400474D652701364"/>
+                        <End EntitySet="Positiontpv" Role="ToRole_assoc_079B40849495F8AA400474D652701364"/>
+                    </AssociationSet>
+                </EntityContainer>
+                <Annotations
+                    xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="cds_zcds_sd_audit_imp_descht.cds_zcds_sd_audit_imp_descht_Entities">
+                    <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                    <Annotation Term="Aggregation.ApplySupported">
+                        <Record>
+                            <PropertyValue Property="Transformations">
+                                <Collection>
+                                    <String>aggregate</String>
+                                    <String>groupby</String>
+                                    <String>filter</String>
+                                </Collection>
+                            </PropertyValue>
+                            <PropertyValue Property="Rollup" EnumMember="None"/>
+                        </Record>
+                    </Annotation>
+                </Annotations>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZCDS_SB_AUDIT_IMP_DESCHT/$metadata"/>
+                    <atom:link
+                        xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZCDS_SB_AUDIT_IMP_DESCHT/$metadata"/>
+                    </Schema>
+                </edmx:DataServices>
+            </edmx:Edmx>

@@ -1,0 +1,37 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<Table id="table" width="auto" items="{ path: '/Estvtaactual', sorter: { path: 'Businessdaydate', descending: false } }" growing="true" growingScrollToLoad="true"-->
+	<!-- type="Navigation" press="onPress"-->
+	<!--id="tableEstadilloDesg4"-->
+	<Table  width="auto" items="{modelEstVentaVT>/}" noDataText="{worklistView>/tableNoDataText}"
+		busyIndicatorDelay="{worklistView>/tableBusyDelay}" updateFinished="onUpdateFinished" visible="{= ${worklistView>/DesgloceSelect} === 4 }">
+		<headerToolbar>
+			<Toolbar>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column >
+				<Text text=""/>
+			</Column>
+			<Column >
+				<Text text="Total Dev. Ent. Cuenta"/>
+			</Column>
+			<Column >
+				<Text text="Dev. Ent. Cuenta"/>
+			</Column>
+			<Column >
+				<Text text="Traspaso"/>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{modelEstVentaVT>Formpag} {modelEstVentaVT>Descpago}"/>
+					<Text text="{path:'modelEstVentaVT>Impentdevec',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVT>Impentdevec01',type:'sap.ui.model.type.Float'}"/>
+					<Text text="{path:'modelEstVentaVT>Impentdevectrp',type:'sap.ui.model.type.Float'}"/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+</core:FragmentDefinition>

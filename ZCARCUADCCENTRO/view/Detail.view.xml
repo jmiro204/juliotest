@@ -1,0 +1,64 @@
+<mvc:View controllerName="app.inetum.ZCARCUADCENTRO.controller.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}"
+		title="{RetailstoreidText}({Retailstoreid}) - { 'path':'Auditbusinessdaydate', 'type':'sap.ui.model.type.Date', 'formatOptions': { 'pattern': 'dd-MM-yyyy' } }"
+		busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:content>
+			<SearchField id="searchTPV" placeholder="{i18n>txtFindTpv}" search="onSearchTPV" liveChange="onSearchTPV" width="12.5%"/>
+			<!--	items="{ path:'to_Positiontpv', filters: [{ path: 'ValordescTpv', operator: 'EQ', value1: '0' }], parameters: {expand: 'to_Tpvmaxmin'}}"-->
+			<List id="lineItemsList"
+				items="{ path:'to_Positiontpv', sorter: { path: 'WorkstationidView', descending: false}, events:{ dataReceived: '._dataReceived' } }"
+				busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}"
+				mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true" growingScrollToLoad="true" growingThreshold="50"
+				updateFinished="onUpdateFinished" selectionChange="onSelectionChangeDetail">
+				<items>
+					<!--<ObjectListItem title="Nº Terminal {WorkstationidView}" type="Active" press="onListItemPress">
+						<attributes>
+							<ObjectAttribute title="Importe Neto Descuadre" textDirection="LTR"
+								text="{path:'ValordescTpv', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"/>
+							<ObjectAttribute title="Importe Rechazado" textDirection="LTR"
+								text="{path:'SumWorkstationRechid', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"/>
+							<ObjectAttribute title="Rango Trx" textDirection="LTR" text="( {to_Tpvmaxmin/Transnumbermin} - {to_Tpvmaxmin/Transnumbermax} )"/>
+						</attributes>
+					</ObjectListItem>-->
+					<CustomListItem title="Nº Terminal {WorkstationidView}" type="Active" press="onListItemPress">
+						<HBox width="100%">
+							<HBox width="3em"><core:Icon size="2rem" src="sap-icon://sys-monitor" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"/></HBox>
+							<HBox width="20%">
+								<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+									<Text text="{i18n>txtNumberTerm} {WorkstationidView}" class="customTitle"/>
+									<Text text="Nº Trx. Descuadradas {DescTrxTerm}"/>
+									<ObjectAttribute title="{i18n>txtTermXMp}" textDirection="LTR"
+										text="{path:'ValordescTpv', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"/>
+									<ObjectAttribute title="{i18n>txtTermXTotal}" textDirection="LTR"
+										text="{path:'ValorDescTotTpv', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"/>
+									<ObjectAttribute title="{i18n>txtImpRech}" textDirection="LTR"
+										text="{path:'SumWorkstationRechid', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 }}"/>
+									<!--<ObjectAttribute title="Rango Trx" textDirection="LTR" text="( {to_Tpvmaxmin/Transnumbermin} - {to_Tpvmaxmin/Transnumbermax} )"/>-->
+									<ObjectAttribute title="{i18n>txtRangTrx}" textDirection="LTR" text="( {TrxInit} - {TrxEnd} )"/>
+								</VBox>
+							</HBox>
+							<HBox width="20%">
+								<Text text="Hard Total: {= ${DescStatusHardTotal} ? ${DescStatusHardTotal} : 'SIN HARDTOTAL' }" class="customTextHardTotalDet"/>
+							</HBox>
+							<HBox width="5%" class="customButton">
+								<Button icon="sap-icon://action" height="10em" press="onButtonPress">
+									<dependents>
+										<ActionSheet id="actionSheet" xmlns="sap.m" xmlns:core="sap.ui.core" showCancelButton="true" placement="Bottom">
+											<Button icon="sap-icon://credit-card" height="10em" text="Consulta Trx. Terminales" press="onNavtoCuadTerm"/>
+											<Button icon="sap-icon://indent" height="10em" text="Gestión de Trx. (Errores)" press="onNavtoGestTrx"/>
+											<Button icon="sap-icon://create-form" height="10em" text="Gestión de Observaciones" press="onNavtoAltaObserv"/>
+											<Button icon="sap-icon://create-form" height="10em" text="Gestión de Alta de Transacción" press="onNavtoAltaTrx"/>
+											<Button icon="sap-icon://collections-management" height="10em" text="Gestión de VTT" press="onNavtoAltaVtt"/>
+										</ActionSheet>
+									</dependents>
+								</Button>
+								<!--<Button icon="sap-icon://credit-card" height="2em" text="Consulta Trx. Terminales (Cuadre Venta)" press="onNavtoCuadTerm"/>-->
+							</HBox>
+						</HBox>
+					</CustomListItem>
+				</items>
+			</List>
+		</semantic:content>
+	</semantic:DetailPage>
+</mvc:View>

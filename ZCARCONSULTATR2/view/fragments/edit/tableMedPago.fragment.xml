@@ -1,0 +1,111 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:m="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:smartForm="sap.ui.comp.smartform"
+	xmlns:smartField="sap.ui.comp.smartfield" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:table="sap.ui.table">
+	<table:Table id="tablePosMp" rows="{ path:'modelCreate>/to_PositionMp', sorter: { path: 'Tendernumber', descending: false} }"
+		visibleRowCount="3" visible="{objectView>/editable}">
+		<table:extension>
+			<m:OverflowToolbar style="Clear">
+				<m:ToolbarSpacer/>
+				<m:Button id="addRowButtonMP" text="Agregar Fila" icon="sap-icon://add" press="onAddRowMP" visible="true"/>
+				<m:Button id="deleteRowButtonMP" text="Eliminar Fila" icon="sap-icon://delete" press="onDeleteRowMP" visible="true"/>
+			</m:OverflowToolbar>
+		</table:extension>
+		<table:columns>
+			<!--<table:Column width="11rem" visible="{objectView>/visibleTextRepercValue}">
+				<m:Label text="Tipo de importe"/>
+				<table:template>
+					<m:Text text="{= !${modelCreate>Tipoimp} ? ${i18n>TextIpImpMP} : ${i18n>TextIpImpVale} }"/>
+				</table:template>
+			</table:Column>-->
+			<table:Column width="5rem">
+				<m:Label text=""/>
+				<table:template>
+					<core:Icon src="{= ${modelCreate>IndUpdate} === 'D' ? 'sap-icon://delete' : ''}" class="size1" color="#031E48">
+						<core:layoutData>
+							<m:FlexItemData growFactor="1"/>
+						</core:layoutData>
+					</core:Icon>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionmpType/Tendernumber/@sap:label}"/>
+				<table:template>
+					<m:Text text="{modelCreate>Tendernumber}" wrapping="false"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionmpType/Tenderamount/@sap:label}"/>
+				<table:template>
+					<m:Input
+						value="{path:'modelCreate>Tenderamount', type:'sap.ui.model.type.Float', formatOptions: { maxIntegerDigits: 13, maxFractionDigits: 2, preserveDecimals: true }, constraints:{ precision:13, scale:2 } }"
+						fieldGroupIds="fgDGMP" change="onChangeValuePosition" required="true" editable="{= ${modelCreate>IndUpdate} === 'D' ? false : true}"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="20rem">
+				<m:Label text="{/#PositionmpType/Medpgsubtip/@sap:label}"/>
+				<table:template>
+					<m:Input value="{modelCreate>Medpgsubtip}" description="{modelCreate>Mediopagotexts}" showSuggestion="true" showValueHelp="true"
+						suggestionItems="{path:'/zcar_cds_i_mediopago_vh', templateShareable: true }" fieldGroupIds="fgDGMP" change="onChangeValuePosition"
+						valueHelpRequest="onValueHelpRequest" editable="{= ${modelCreate>Tipoimp} === undefined &amp;&amp; ${modelCreate>IndUpdate} !== 'D' }">
+						<m:suggestionItems required="true">
+							<core:Item text="{Mediopagotext}" key="{Mediopagosub}"/>
+						</m:suggestionItems>
+					</m:Input>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionmpType/ZzcodepagoNeg/@sap:label}"/>
+				<table:template>
+					<m:Text text="{modelCreate>ZzcodepagoNeg}" wrapping="false"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionmpType/ZzcodpagoDesg/@sap:label}"/>
+				<table:template>
+					<m:Text text="{modelCreate>ZzcodpagoDesg}" wrapping="false"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionmpType/Subtipo/@sap:label}"/>
+				<table:template>
+					<m:Text text="{modelCreate>Subtipo}"/>
+				</table:template>
+			</table:Column>
+			<!--	<table:Column width="11rem">
+				<m:Label text="{/#PositionmpType/Cardnumber/@sap:label}"/>
+				<table:template>
+					<m:Input value="{modelCreate>Cardnumber}" wrapping="false"
+						editable="{= ${modelCreate>HtMpagoExt} &amp;&amp; ${modelCreate>Medpgsubtip} !== '15400007' &amp;&amp; ${modelCreate>IndUpdate} !== 'D' }"  change="onChangeCardNumber"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionmpType/Zzfechacadnac/@sap:label}"/>
+				<table:template>
+					<m:Input value="{modelCreate>Zzfechacadnac}" maxLength="4" liveChange="onLiveChangeNumber"
+						editable="{= ${modelCreate>HtMpagoExt} &amp;&amp;  ${modelCreate>Medpgsubtip} !== '15400007' &amp;&amp; ${modelCreate>IndUpdate} !== 'D' }"/>
+				</table:template>
+			</table:Column>-->
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionmpType/Cardnumber/@sap:label}"/>
+				<table:template>
+					<m:Input value="{modelCreate>Cardnumber}" wrapping="false"
+						editable="{= ${modelCreate>Medpgsubtip} &amp;&amp; ${modelCreate>Medpgsubtip} !== '15400007' &amp;&amp; ${modelCreate>IndUpdate} !== 'D' ? true : false }"
+						change="onChangeCardNumber" fieldGroupIds="fgDGMP"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionmpType/Zzfechacadnac/@sap:label}"/>
+				<table:template>
+					<m:Input value="{modelCreate>Zzfechacadnac}" maxLength="4" liveChange="onLiveChangeNumber" fieldGroupIds="fgDGMP"
+						editable="{= ${modelCreate>Medpgsubtip} &amp;&amp; ${modelCreate>Medpgsubtip} !== '15400007' &amp;&amp; ${modelCreate>IndUpdate} !== 'D' ? true : false }"/>
+				</table:template>
+			</table:Column>
+			<table:Column width="11rem">
+				<m:Label text="{/#PositionmpType/ZzPaypal/@sap:label}"/>
+				<table:template>
+					<m:Input value="{modelCreate>ZzPaypal}" maxLength="17" fieldGroupIds="fgDGMP"
+						editable="{= ${modelCreate>Medpgsubtip} &amp;&amp; ${modelCreate>Medpgsubtip} === '15400007' &amp;&amp; ${modelCreate>IndUpdate} !== 'D' ? true : false }"/>
+				</table:template>
+			</table:Column>
+		</table:columns>
+	</table:Table>
+</core:FragmentDefinition>
