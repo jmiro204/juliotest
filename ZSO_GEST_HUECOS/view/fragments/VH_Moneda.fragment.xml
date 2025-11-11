@@ -1,7 +1,0 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<SelectDialog noDataText="{i18n>noCurrency}" title="{i18n>seleccionMoneda}" search="handleSearchCurrency" id="valueHelpCurrency"
-		confirm="handleHelpConfirmCurrency" cancel="handleHelpCloseCurrency" items="{path:'mainModel>/I_Currency' }" multiSelect="false"
-		class="sapUiPopupWithPadding" rememberSelections="true">
-		<StandardListItem title="{mainModel>Currency}" description="{mainModel>Currency_Text}"/>
-	</SelectDialog>
-</core:FragmentDefinition>

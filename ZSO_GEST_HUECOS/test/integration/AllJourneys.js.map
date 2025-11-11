@@ -1,1 +1,0 @@
-{"version":3,"file":"AllJourneys.js","names":["sap","ui","define","e","a","extendConfig","arrangements","viewNamespace","autoWait"],"sources":["AllJourneys-dbg.js"],"mappings":"AAAAA,IAAIC,GAAGC,OAAO,CAAC,mBAAmB,yBAAyB,uBAAuB,SAASC,EAAEC,GAAG,aAAaD,EAAEE,aAAa,CAACC,aAAa,IAAIF,EAAEG,cAAc,+BAA+BC,SAAS,MAAM"}

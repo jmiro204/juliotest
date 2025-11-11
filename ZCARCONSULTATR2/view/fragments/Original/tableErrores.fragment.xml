@@ -1,9 +1,0 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:smartForm="sap.ui.comp.smartform"
-	xmlns:smartField="sap.ui.comp.smartfield" xmlns:smartTable="sap.ui.comp.smarttable">
-	<smartTable:SmartTable id="smError2" entitySet="Error" tableBindingPath="to_Error" smartFilterId="smartFilterBar" showRowCount="true"
-		enableAutoBinding="true" tableType="ResponsiveTable" beforeRebindTable="onBeforeRebindTable">
-		<smartTable:layoutData>
-			<FlexItemData growFactor="1" baseSize="0%"/>
-		</smartTable:layoutData>
-	</smartTable:SmartTable>
-</core:FragmentDefinition>

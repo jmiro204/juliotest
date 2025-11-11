@@ -1,8 +1,0 @@
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<SelectDialog noDataText="{i18n>noSec}" title="{i18n>seleccionSec}" search="handleSearchGrupArti" id=""
-		confirm="handleHelpConfirmGrupArti" cancel="handleHelpCloseGrupArti"
-		items="{path:'Materials>/Seccion', filters: [{ path: 'MaterialType', operator: 'NE', value1: 'ZOFI' }] }" multiSelect="true"
-		class="sapUiPopupWithPadding" rememberSelections="false">
-		<StandardListItem title="{Materials>MaterialTypeName}" description="{Materials>MaterialType}"/>
-	</SelectDialog>
-</core:FragmentDefinition>
